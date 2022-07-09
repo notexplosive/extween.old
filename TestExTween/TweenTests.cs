@@ -70,5 +70,51 @@ namespace TestExTween
 
             tween.IsDone().Should().BeTrue();
         }
+        
+        [Fact]
+        public void tweens_can_be_reset()
+        {
+            var tweenable = new TweenableInt(0);
+            
+            var tween = new Tween<int>(tweenable,100, 1, EaseFunctions.Linear);
+
+            tween.UpdateAndGetOverflow(1);
+            var wasDone = tween.IsDone();
+            tween.Reset();
+
+            // Tweenable value is unchanged
+            tweenable.Value.Should().Be(100);
+            // Tween was done when it finished the first time
+            wasDone.Should().BeTrue();
+            // Tween is currently not done because it was reset
+            tween.IsDone().Should().BeFalse();
+        }
+
+        [Fact]
+        public void tween_update_returns_overflow()
+        {
+            var tweenable = new TweenableInt(0);
+            
+            var tween = new Tween<int>(tweenable,100, 1, EaseFunctions.Linear);
+
+            var firstOverflow = tween.UpdateAndGetOverflow(0.5f);
+            var secondOverflow = tween.UpdateAndGetOverflow(0.75f);
+
+            firstOverflow.Should().Be(0f);
+            secondOverflow.Should().Be(0.25f);
+        }
+        
+        [Fact]
+        public void tween_leaves_value_alone_when_overflowed()
+        {
+            var tweenable = new TweenableInt(0);
+            
+            var tween = new Tween<int>(tweenable,100, 1, EaseFunctions.Linear);
+
+            var overflow = tween.UpdateAndGetOverflow(20); // 20 seconds is significantly longer than 1 second
+
+            overflow.Should().Be(19);
+            tweenable.Value.Should().Be(100);
+        }
     }
 }

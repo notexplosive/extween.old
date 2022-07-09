@@ -1,4 +1,6 @@
-﻿namespace ExTween
+﻿using System;
+
+namespace ExTween
 {
     public class Tween<T>
     {
@@ -20,16 +22,37 @@
 
         public float CurrentTime { get; set; }
 
-        public void UpdateAndGetOverflow(float dt)
+        public float UpdateAndGetOverflow(float dt)
         {
             CurrentTime += dt;
-            var percent = CurrentTime / this.duration;
+            
+            float overflow = CurrentTime - this.duration;
+            float currentTimeMinusOverflow = CurrentTime;
+
+            if (overflow > 0)
+            {
+                currentTimeMinusOverflow -= overflow;
+            }
+            
+            var percent = currentTimeMinusOverflow / this.duration;
 
             this.tweenable.ForceSetValue(
                 this.tweenable.Lerp(
                     this.startingValue,
                     this.targetValue,
                     this.easeFunction(percent)));
+
+            return Math.Max(overflow, 0);
+        }
+
+        public bool IsDone()
+        {
+            return CurrentTime >= this.duration;
+        }
+
+        public void Reset()
+        {
+            CurrentTime = 0;
         }
     }
 
@@ -52,6 +75,11 @@
         public bool IsDone()
         {
             return this.timer <= 0;
+        }
+
+        public void Reset()
+        {
+            this.timer = this.startingTime;
         }
     }
 }
