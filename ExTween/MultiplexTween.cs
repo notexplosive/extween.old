@@ -46,7 +46,7 @@ namespace ExTween
 
         public MultiplexTween AddChannel(ITween tween)
         {
-            this.items.Add(tween);
+            this.Items.Add(tween);
             return this;
         }
 

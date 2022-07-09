@@ -5,11 +5,11 @@ namespace ExTween
 {
     public class TweenCollection
     {
-        protected readonly List<ITween> items = new();
+        protected readonly List<ITween> Items = new List<ITween>();
 
         protected void ForEachItem(Action<ITween> action)
         {
-            foreach (var item in this.items)
+            foreach (var item in this.Items)
             {
                 action(item);
             }
@@ -22,7 +22,7 @@ namespace ExTween
 
         public void Clear()
         {
-            this.items.Clear();
+            this.Items.Clear();
         }
     }
 }

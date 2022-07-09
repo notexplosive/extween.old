@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace ExTween
 {
@@ -18,18 +19,19 @@ namespace ExTween
         public void JumpTo(float time);
     }
 
+    [DebuggerDisplay("({startingValue}) -> ({targetValue}), Progress: {(int)(CurrentTime / TotalDuration * 100)}%")]
     public class Tween<T> : ITween
     {
-        private readonly Ease.Delegate easeDelegate;
+        private readonly Ease.Delegate ease;
         private readonly T targetValue;
         private readonly Tweenable<T> tweenable;
         private T startingValue;
 
-        public Tween(Tweenable<T> tweenable, T targetValue, float duration, Ease.Delegate easeDelegate)
+        public Tween(Tweenable<T> tweenable, T targetValue, float duration, Ease.Delegate ease)
         {
             this.tweenable = tweenable;
             this.targetValue = targetValue;
-            this.easeDelegate = easeDelegate;
+            this.ease = ease;
             this.startingValue = tweenable.Value;
             TotalDuration = duration;
             CurrentTime = 0;
@@ -70,7 +72,7 @@ namespace ExTween
                 this.tweenable.Lerp(
                     this.startingValue,
                     this.targetValue,
-                    this.easeDelegate(percent)));
+                    this.ease(percent)));
         }
 
         public bool IsDone()

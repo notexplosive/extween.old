@@ -18,9 +18,9 @@ namespace ExTween
                 return dt;
             }
 
-            var overflow = this.items[this.currentItemIndex].Update(dt);
+            var overflow = this.Items[this.currentItemIndex].Update(dt);
 
-            if (this.items[this.currentItemIndex].IsDone())
+            if (this.Items[this.currentItemIndex].IsDone())
             {
                 this.currentItemIndex++;
                 return Update(overflow);
@@ -31,7 +31,7 @@ namespace ExTween
 
         public bool IsDone()
         {
-            return this.currentItemIndex >= this.items.Count;
+            return this.currentItemIndex >= this.Items.Count;
         }
 
         public void Reset()
@@ -52,7 +52,7 @@ namespace ExTween
 
         public SequenceTween Add(ITween tween)
         {
-            this.items.Add(tween);
+            this.Items.Add(tween);
             return this;
         }
 
@@ -62,17 +62,17 @@ namespace ExTween
 
             var adjustedTargetTime = targetTime;
             
-            for (int i = 0; i < this.items.Count; i++)
+            for (int i = 0; i < this.Items.Count; i++)
             {
-                var itemDuration = this.items[i].TotalDuration;
+                var itemDuration = this.Items[i].TotalDuration;
                 if (adjustedTargetTime > itemDuration)
                 {
                     adjustedTargetTime -= itemDuration;
-                    this.items[i].Update(itemDuration);
+                    this.Items[i].Update(itemDuration);
                 }
                 else
                 {
-                    this.items[i].Update(adjustedTargetTime);
+                    this.Items[i].Update(adjustedTargetTime);
                     this.currentItemIndex = i;
                     break;
                 }

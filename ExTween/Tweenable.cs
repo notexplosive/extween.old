@@ -24,6 +24,11 @@ namespace ExTween
             Value = initializedValue;
         }
 
+        public static implicit operator T(Tweenable<T> tweenable)
+        {
+            return tweenable.Value;
+        }
+
         protected Tweenable(Getter getter, Setter setter)
         {
             this.getter = getter;
@@ -51,7 +56,14 @@ namespace ExTween
 
         public override string ToString()
         {
-            return $"Tweenable: {Value.ToString()}";
+            if (Value != null)
+            {
+                return $"Tweenable: {Value.ToString()}";
+            }
+            else
+            {
+                return "Tweenable: (null value)";
+            }
         }
     }
 
