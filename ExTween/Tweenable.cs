@@ -2,8 +2,6 @@
 
 namespace ExTween
 {
-    public delegate float EaseFunction(float x);
-
     public abstract class Tweenable<T>
     {
         public delegate T Getter();
@@ -15,7 +13,7 @@ namespace ExTween
         public T Value
         {
             get => this.getter();
-            set => this.setter(value);
+            private set => this.setter(value);
         }
 
         protected Tweenable(T initializedValue)
@@ -33,6 +31,16 @@ namespace ExTween
         }
 
         public abstract T Lerp(T startingValue, T targetValue, float percent);
+        
+        /// <summary>
+        /// Calls the tweenable's Setter with value
+        /// You probably don't want to call this. It's here to cause friction on purpose.
+        /// </summary>
+        /// <param name="value"></param>
+        public void ForceSetValue(T value)
+        {
+            Value = value;
+        }
     }
 
     public class TweenableInt : Tweenable<int>

@@ -12,8 +12,8 @@ namespace TestExTween
             var tweenable = new TweenableInt(-100);
             var tween = new Tween<int>(tweenable, 100, 1, EaseFunctions.Linear);
 
-            tween.updateAndGetOverflow(0.25f);
-            tween.updateAndGetOverflow(0.25f);
+            tween.UpdateAndGetOverflow(0.25f);
+            tween.UpdateAndGetOverflow(0.25f);
 
             tween.CurrentTime.Should().Be(0.5f);
             tweenable.Value.Should().Be(0);
@@ -31,10 +31,21 @@ namespace TestExTween
          
             // Create a tween and advance through it
             var tween = new Tween<float>(tweenable, 3.14f, 1, EaseFunctions.Linear);
-            tween.updateAndGetOverflow(1f);
+            tween.UpdateAndGetOverflow(1f);
 
             captureMe.Should().Be(3.14f); // the value has changed!
             tweenable.Value.Should().Be(3.14f); // the tweenable agrees that the value has changed.
+        }
+
+        [Fact]
+        public void long_duration()
+        {
+            var tweenable = new TweenableInt(0);
+
+            var tween = new Tween<int>(tweenable, 100, 50, EaseFunctions.Linear);
+            tween.UpdateAndGetOverflow(5);
+
+            tweenable.Value.Should().Be(10);
         }
     }
 }

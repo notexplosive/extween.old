@@ -22,20 +22,12 @@ namespace ExTween
 
         public float CurrentTime { get; set; }
 
-        public void updateAndGetOverflow(float f)
+        public void UpdateAndGetOverflow(float f)
         {
             CurrentTime += f;
             var percent = CurrentTime / this.duration;
 
-            this.tweenable.Value = this.tweenable.Lerp(this.startingValue, this.targetValue, this.easeFunction(percent));
-        }
-    }
-
-    public static class EaseFunctions
-    {
-        public static float Linear(float x)
-        {
-            return x;
+            this.tweenable.ForceSetValue(this.tweenable.Lerp(this.startingValue, this.targetValue, this.easeFunction(percent)));
         }
     }
 }
