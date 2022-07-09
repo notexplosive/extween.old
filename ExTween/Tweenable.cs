@@ -41,6 +41,11 @@ namespace ExTween
         {
             Value = value;
         }
+
+        public override string ToString()
+        {
+            return $"Tweenable: {Value.ToString()}";
+        }
     }
 
     public class TweenableInt : Tweenable<int>

@@ -37,7 +37,7 @@ namespace ExTween
         public float TotalDuration => 0;
     }
 
-    internal class WaitUntilTween : ITween
+    public class WaitUntilTween : ITween
     {
         private readonly Func<bool> condition;
 

@@ -8,13 +8,18 @@ namespace ExTween
         public bool IsDone();
         public void Reset();
         float TotalDuration { get; }
+        
+        public void Update(float dt)
+        {
+            UpdateAndGetOverflow(dt);
+        }
     }
     
     public class Tween<T> : ITween
     {
+        private T startingValue;
         private readonly float duration;
         private readonly EaseFunction easeFunction;
-        private readonly T startingValue;
         private readonly T targetValue;
         private readonly Tweenable<T> tweenable;
 
@@ -34,6 +39,13 @@ namespace ExTween
 
         public float UpdateAndGetOverflow(float dt)
         {
+            if (CurrentTime == 0)
+            {
+                // Re-set the starting value, it might have changed since constructor
+                // (or we might be running the tween a second time)
+                this.startingValue = this.tweenable.Value;
+            }
+            
             CurrentTime += dt;
             
             float overflow = CurrentTime - this.duration;

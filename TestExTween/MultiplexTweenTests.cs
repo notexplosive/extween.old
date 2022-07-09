@@ -79,5 +79,21 @@ namespace TestExTween
 
             tween.TotalDuration.Should().Be(7);
         }
+        
+        [Fact]
+        public void adding_to_a_multiplex_after_its_done_makes_it_not_done()
+        {
+            var tweenableA = new TweenableInt(0);
+            var tweenableB = new TweenableInt(0);
+            var tween = new MultiplexTween();
+            tween.AddChannel(new Tween<int>(tweenableA, 100, 1, EaseFunctions.Linear));
+
+            tween.UpdateAndGetOverflow(1.2f);
+            tween.AddChannel(new Tween<int>(tweenableB, 100, 1, EaseFunctions.Linear));
+            tween.UpdateAndGetOverflow(0.5f);
+
+            tweenableA.Value.Should().Be(100);
+            tweenableB.Value.Should().Be(50);
+        }
     }
 }
