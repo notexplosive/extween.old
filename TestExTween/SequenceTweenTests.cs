@@ -22,7 +22,7 @@ namespace TestExTween
             sequence.Add(new Tween<float>(tweenable, 100, 0.5f, EaseFunctions.Linear));
             sequence.Add(new Tween<float>(tweenable, 200, 1, EaseFunctions.Linear));
 
-            sequence.UpdateAndGetOverflow(0.75f);
+            sequence.Update(0.75f);
 
             tweenable.Value.Should().Be(125);
         }
@@ -45,7 +45,7 @@ namespace TestExTween
             tween.Add(new CallbackTween(Hit));
             tween.Add(new Tween<int>(tweenable, 10, 1f, EaseFunctions.Linear));
 
-            tween.UpdateAndGetOverflow(1.5f);
+            tween.Update(1.5f);
 
             tweenable.Value.Should().Be(5);
             hitCount.Should().Be(3);
@@ -66,8 +66,8 @@ namespace TestExTween
             tween.Add(new WaitUntilTween(() => false));
             tween.Add(new CallbackTween(Hit));
 
-            tween.UpdateAndGetOverflow(0);
-            tween.UpdateAndGetOverflow(0);
+            tween.Update(0);
+            tween.Update(0);
 
             hitCount.Should().Be(1);
         }
@@ -87,7 +87,7 @@ namespace TestExTween
             tween.Add(new WaitUntilTween(() => true));
             tween.Add(new CallbackTween(Hit));
 
-            tween.UpdateAndGetOverflow(0);
+            tween.Update(0);
 
             hitCount.Should().Be(2);
         }
@@ -99,9 +99,9 @@ namespace TestExTween
             var tween = new SequenceTween();
             tween.Add(new Tween<int>(tweenable, 100, 1, EaseFunctions.Linear));
 
-            tween.UpdateAndGetOverflow(1.2f);
+            tween.Update(1.2f);
             tween.Add(new Tween<int>(tweenable, 120, 1, EaseFunctions.Linear));
-            tween.UpdateAndGetOverflow(0.5f);
+            tween.Update(0.5f);
 
             tweenable.Value.Should().Be(110);
         }

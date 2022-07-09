@@ -9,19 +9,19 @@
             this.currentItemIndex = 0;
         }
         
-        public float UpdateAndGetOverflow(float dt)
+        public float Update(float dt)
         {
             if (IsDone())
             {
                 return dt;
             }
 
-            var overflow = this.items[this.currentItemIndex].UpdateAndGetOverflow(dt);
+            var overflow = this.items[this.currentItemIndex].Update(dt);
 
             if (this.items[this.currentItemIndex].IsDone())
             {
                 this.currentItemIndex++;
-                return UpdateAndGetOverflow(overflow);
+                return Update(overflow);
             }
 
             return overflow;

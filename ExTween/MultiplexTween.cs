@@ -23,14 +23,14 @@ namespace ExTween
 
     public class MultiplexTween : TweenCollection, ITween
     {
-        public float UpdateAndGetOverflow(float dt)
+        public float Update(float dt)
         {
             float totalOverflow = 0;
             var hasTried = false;
             ForEachItem(
                 tween =>
                 {
-                    var pendingOverflow = tween.UpdateAndGetOverflow(dt);
+                    var pendingOverflow = tween.Update(dt);
                     if (!hasTried)
                     {
                         hasTried = true;

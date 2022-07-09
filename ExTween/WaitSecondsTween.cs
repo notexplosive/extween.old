@@ -15,7 +15,7 @@ namespace ExTween
 
         public float TotalDuration => this.duration;
         
-        public float UpdateAndGetOverflow(float dt)
+        public float Update(float dt)
         {
             if (IsDone())
             {

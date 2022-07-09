@@ -12,8 +12,8 @@ namespace TestExTween
             var tweenable = new TweenableInt(-100);
             var tween = new Tween<int>(tweenable, 100, 1, EaseFunctions.Linear);
 
-            tween.UpdateAndGetOverflow(0.25f);
-            tween.UpdateAndGetOverflow(0.25f);
+            tween.Update(0.25f);
+            tween.Update(0.25f);
 
             tween.CurrentTime.Should().Be(0.5f);
             tweenable.Value.Should().Be(0);
@@ -31,7 +31,7 @@ namespace TestExTween
          
             // Create a tween and advance through it
             var tween = new Tween<float>(tweenable, 3.14f, 1, EaseFunctions.Linear);
-            tween.UpdateAndGetOverflow(1f);
+            tween.Update(1f);
 
             captureMe.Should().Be(3.14f); // the value has changed!
             tweenable.Value.Should().Be(3.14f); // the tweenable agrees that the value has changed.
@@ -43,7 +43,7 @@ namespace TestExTween
             var tweenable = new TweenableInt(0);
 
             var tween = new Tween<int>(tweenable, 100, 50, EaseFunctions.Linear);
-            tween.UpdateAndGetOverflow(5);
+            tween.Update(5);
 
             tweenable.Value.Should().Be(10);
         }
@@ -54,9 +54,9 @@ namespace TestExTween
             var tweenable = new TweenableInt(0);
             var tween = new Tween<int>(tweenable, 100, 5, EaseFunctions.Linear);
 
-            tween.UpdateAndGetOverflow(2);
+            tween.Update(2);
             var wasDone = tween.IsDone();
-            tween.UpdateAndGetOverflow(3);
+            tween.Update(3);
 
             wasDone.Should().BeFalse();
             tween.IsDone().Should().BeTrue();
@@ -67,9 +67,9 @@ namespace TestExTween
         {
             var tween = new WaitSecondsTween(5);
 
-            tween.UpdateAndGetOverflow(2);
+            tween.Update(2);
             var wasDone = tween.IsDone();
-            tween.UpdateAndGetOverflow(3);
+            tween.Update(3);
 
             wasDone.Should().BeFalse();
             tween.IsDone().Should().BeTrue();
@@ -80,7 +80,7 @@ namespace TestExTween
         {
             var tween = new WaitSecondsTween(0);
 
-            tween.UpdateAndGetOverflow(0);
+            tween.Update(0);
 
             tween.IsDone().Should().BeTrue();
         }
@@ -92,7 +92,7 @@ namespace TestExTween
             
             var tween = new Tween<int>(tweenable,100, 1, EaseFunctions.Linear);
 
-            tween.UpdateAndGetOverflow(1);
+            tween.Update(1);
             var wasDone = tween.IsDone();
             tween.Reset();
 
@@ -111,8 +111,8 @@ namespace TestExTween
             
             var tween = new Tween<int>(tweenable,100, 1, EaseFunctions.Linear);
 
-            var firstOverflow = tween.UpdateAndGetOverflow(0.5f);
-            var secondOverflow = tween.UpdateAndGetOverflow(0.75f);
+            var firstOverflow = tween.Update(0.5f);
+            var secondOverflow = tween.Update(0.75f);
 
             // no overflow, tween consumed the whole time
             firstOverflow.Should().Be(0f);
@@ -124,9 +124,9 @@ namespace TestExTween
         {
             var tweenable = new WaitSecondsTween(1);
 
-            var firstOverflow = tweenable.UpdateAndGetOverflow(0.5f);
-            var secondOverflow = tweenable.UpdateAndGetOverflow(1f);
-            var thirdOverflow = tweenable.UpdateAndGetOverflow(0.25f);
+            var firstOverflow = tweenable.Update(0.5f);
+            var secondOverflow = tweenable.Update(1f);
+            var thirdOverflow = tweenable.Update(0.25f);
 
             firstOverflow.Should().Be(0);
             secondOverflow.Should().Be(0.5f);
@@ -140,7 +140,7 @@ namespace TestExTween
             
             var tween = new Tween<int>(tweenable,100, 1, EaseFunctions.Linear);
 
-            var overflow = tween.UpdateAndGetOverflow(20); // 20 seconds is significantly longer than 1 second
+            var overflow = tween.Update(20); // 20 seconds is significantly longer than 1 second
 
             overflow.Should().Be(19);
             tweenable.Value.Should().Be(100);

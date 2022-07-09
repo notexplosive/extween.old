@@ -16,7 +16,7 @@ namespace TestExTween
                 .AddChannel(new Tween<int>(tweenableA, 100, 1, EaseFunctions.Linear))
                 .AddChannel(new Tween<int>(tweenableB, 200, 1, EaseFunctions.Linear));
 
-            tween.UpdateAndGetOverflow(0.5f);
+            tween.Update(0.5f);
 
             tweenableA.Value.Should().Be(50);
             tweenableB.Value.Should().Be(100);
@@ -32,7 +32,7 @@ namespace TestExTween
                 .AddChannel(new Tween<int>(tweenableA, 100, 1, EaseFunctions.Linear))
                 .AddChannel(new Tween<int>(tweenableB, 200, 2, EaseFunctions.Linear));
 
-            tween.UpdateAndGetOverflow(1.5f);
+            tween.Update(1.5f);
 
             tweenableA.Value.Should().Be(100);
             tweenableB.Value.Should().Be(150);
@@ -48,7 +48,7 @@ namespace TestExTween
                 .AddChannel(new Tween<int>(tweenableA, 100, 0.25f, EaseFunctions.Linear))
                 .AddChannel(new Tween<int>(tweenableB, 200, 1f, EaseFunctions.Linear));
 
-            var overflow = tween.UpdateAndGetOverflow(1.2f);
+            var overflow = tween.Update(1.2f);
 
             overflow.Should().BeApproximately(0.2f, 0.00001f);
         }
@@ -62,8 +62,8 @@ namespace TestExTween
                 .AddChannel(new WaitSecondsTween(2))
                 .AddChannel(new CallbackTween(() => { hitCount++; }));
 
-            tween.UpdateAndGetOverflow(0.25f);
-            tween.UpdateAndGetOverflow(0.25f);
+            tween.Update(0.25f);
+            tween.Update(0.25f);
 
             hitCount.Should().Be(1);
         }
@@ -88,9 +88,9 @@ namespace TestExTween
             var tween = new MultiplexTween();
             tween.AddChannel(new Tween<int>(tweenableA, 100, 1, EaseFunctions.Linear));
 
-            tween.UpdateAndGetOverflow(1.2f);
+            tween.Update(1.2f);
             tween.AddChannel(new Tween<int>(tweenableB, 100, 1, EaseFunctions.Linear));
-            tween.UpdateAndGetOverflow(0.5f);
+            tween.Update(0.5f);
 
             tweenableA.Value.Should().Be(100);
             tweenableB.Value.Should().Be(50);

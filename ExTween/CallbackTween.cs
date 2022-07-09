@@ -12,7 +12,7 @@ namespace ExTween
             this.behavior = behavior;
         }
         
-        public float UpdateAndGetOverflow(float dt)
+        public float Update(float dt)
         {
             if (!this.hasExecuted)
             {
@@ -46,7 +46,7 @@ namespace ExTween
             this.condition = condition;
         }
         
-        public float UpdateAndGetOverflow(float dt)
+        public float Update(float dt)
         {
             if (this.condition())
             {
