@@ -7,7 +7,7 @@ namespace TestExTween
     public class TweenTests
     {
         [Fact]
-        public void linear_lerp()
+        public void int_linear_lerp()
         {
             var tweenable = new TweenableInt(-100);
             var tween = new Tween(tweenable, 100, 1, EaseFunctions.Linear);
