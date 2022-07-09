@@ -27,7 +27,7 @@ namespace ExTween
             CurrentTime = 0;
         }
 
-        public float CurrentTime { get; set; }
+        public float CurrentTime { get; private set; }
 
         public float UpdateAndGetOverflow(float dt)
         {
