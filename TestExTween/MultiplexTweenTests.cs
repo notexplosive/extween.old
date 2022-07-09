@@ -1,4 +1,5 @@
-﻿using ExTween;
+﻿using System;
+using ExTween;
 using FluentAssertions;
 using Xunit;
 
@@ -94,6 +95,47 @@ namespace TestExTween
 
             tweenableA.Value.Should().Be(100);
             tweenableB.Value.Should().Be(50);
+        }
+
+        [Fact]
+        public void random_access_multiplex_tween()
+        {
+            var tweenableX = new TweenableFloat();
+            var tweenableY = new TweenableFloat();
+
+            var tween = new MultiplexTween()
+                .AddChannel(new Tween<float>(tweenableX, 100, 1, EaseFunctions.Linear))
+                .AddChannel(new Tween<float>(tweenableY, 50, 1, EaseFunctions.Linear))
+                ;
+
+
+            float ExpectedX(float x)
+            {
+                return x * 100;
+            }
+
+            float ExpectedY(float y)
+            {
+                return y * 50;
+            }
+            
+            tween.JumpTo(0.25f);
+            tweenableX.Value.Should().Be(ExpectedX(0.25f));
+            tweenableY.Value.Should().Be(ExpectedY(0.25f));
+            
+            tween.JumpTo(0.05f);
+            tweenableX.Value.Should().Be(ExpectedX(0.05f));
+            tweenableY.Value.Should().Be(ExpectedY(0.05f));
+            
+            // random access means RANDOM access
+            var random = new Random(0x0badf00d);
+            for (int i = 0; i < 1000; i++)
+            {
+                var time = (float)random.NextDouble();
+                tween.JumpTo(time);
+                tweenableX.Value.Should().Be(ExpectedX(time));
+                tweenableY.Value.Should().Be(ExpectedY(time));
+            }
         }
     }
 }

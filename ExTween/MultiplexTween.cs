@@ -1,26 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ExTween
 {
-    public class TweenCollection
-    {
-        protected List<ITween> items = new();
-
-        public void ForEachItem(Action<ITween> action)
-        {
-            foreach (var item in this.items)
-            {
-                action(item);
-            }
-        }
-
-        public void Reset()
-        {
-            ForEachItem(item => item.Reset());
-        }
-    }
-
     public class MultiplexTween : TweenCollection, ITween
     {
         public float Update(float dt)
@@ -50,6 +31,17 @@ namespace ExTween
             var result = true;
             ForEachItem(item => result = result && item.IsDone());
             return result;
+        }
+
+        public void Reset()
+        {
+            ResetAllItems();
+        }
+
+        public void JumpTo(float time)
+        {
+            Reset();
+            ForEachItem(item => { item.JumpTo(time); });
         }
 
         public MultiplexTween AddChannel(ITween tween)

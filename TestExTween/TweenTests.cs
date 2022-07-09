@@ -145,5 +145,24 @@ namespace TestExTween
             overflow.Should().Be(19);
             tweenable.Value.Should().Be(100);
         }
+
+        [Fact]
+        public void tween_can_jump_to_arbitrary_value()
+        {
+            var tweenable = new TweenableInt(0);
+            
+            var tween = new Tween<int>(tweenable,100, 1, EaseFunctions.Linear);
+
+            tween.JumpTo(0.3f);
+            var valueAt30Percent = tweenable.Value;
+            tween.JumpTo(0f);
+            var valueAt0Percent = tweenable.Value;
+            tween.JumpTo(0.6f);
+            var valueAt60Percent = tweenable.Value;
+            
+            valueAt30Percent.Should().Be(30);
+            valueAt0Percent.Should().Be(0);
+            valueAt60Percent.Should().Be(60);
+        }
     }
 }

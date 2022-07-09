@@ -1,4 +1,5 @@
-﻿using ExTween;
+﻿using System;
+using ExTween;
 using FluentAssertions;
 using Xunit;
 
@@ -104,6 +105,74 @@ namespace TestExTween
             tween.Update(0.5f);
 
             tweenable.Value.Should().Be(110);
+        }
+
+        [Fact]
+        public void jump_to_value_within_a_single_sequence_item()
+        {
+            var tweenable = new TweenableInt();
+
+            var tween = new SequenceTween()
+                .Add(new CallbackTween(() => { tweenable.ForceSetValue(0); }))
+                .Add(new Tween<int>(tweenable, 100, 1, EaseFunctions.Linear))
+                .Add(new Tween<int>(tweenable, -100, 1, EaseFunctions.Linear));
+            
+            tween.JumpTo(0.3f);
+            var valueAt30Percent = tweenable.Value;
+            tween.JumpTo(0f);
+            var valueAt0Percent = tweenable.Value;
+            tween.JumpTo(0.6f);
+            var valueAt60Percent = tweenable.Value;
+            
+            valueAt30Percent.Should().Be(30);
+            valueAt0Percent.Should().Be(0);
+            valueAt60Percent.Should().Be(60);
+        }
+
+        [Fact]
+        public void random_access_sequence_tween()
+        {
+            var tweenable = new TweenableInt();
+
+            var tween = new SequenceTween()
+                    // You need a callback at the start that sets everything to their starting values
+                    .Add(new CallbackTween(() =>
+                    {
+                        tweenable.ForceSetValue(0);
+                    }))
+                    .Add(new Tween<int>(tweenable, 100, 1, EaseFunctions.Linear))
+                    .Add(new Tween<int>(tweenable, 200, 1, EaseFunctions.Linear))
+                    .Add(new Tween<int>(tweenable, 400, 1, EaseFunctions.Linear))
+                ;
+
+            int ExpectedValue(float time)
+            {
+                if (time < 1)
+                {
+                    return (int)(time * 100);
+                }
+
+                if (time < 2)
+                {
+                    return (int) ((time - 1) * 100) + 100;
+                }
+
+                if (time < 3)
+                {
+                    return (int) ((time - 2) * 200) + 100 + 100;
+                }
+
+                return 400;
+            }
+            
+            // random access means RANDOM access
+            var random = new Random(0x0badf00d);
+            for (int i = 0; i < 1000; i++)
+            {
+                var time = (float)random.NextDouble() * 3;
+                tween.JumpTo(time);
+                tweenable.Value.Should().Be(ExpectedValue(time));                
+            }
         }
     }
 }

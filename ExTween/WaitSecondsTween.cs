@@ -36,5 +36,10 @@ namespace ExTween
         {
             this.timer = this.duration;
         }
+
+        public void JumpTo(float time)
+        {
+            this.timer = this.duration - time;
+        }
     }
 }

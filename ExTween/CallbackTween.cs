@@ -33,6 +33,11 @@ namespace ExTween
         {
             this.hasExecuted = false;
         }
+        
+        public void JumpTo(float time)
+        {
+            Update(time);
+        }
 
         public float TotalDuration => 0;
     }
@@ -66,7 +71,12 @@ namespace ExTween
         {
             // no op
         }
-        
+
+        public void JumpTo(float time)
+        {
+            Update(time);
+        }
+
         public float TotalDuration => 0;
     }
 }

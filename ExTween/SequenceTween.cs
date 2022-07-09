@@ -32,6 +32,12 @@
             return this.currentItemIndex >= this.items.Count;
         }
 
+        public void Reset()
+        {
+            ResetAllItems();
+            this.currentItemIndex = 0;
+        }
+
         public float TotalDuration
         {
             get
@@ -42,9 +48,33 @@
             }
         }
 
-        public void Add(ITween tween)
+        public SequenceTween Add(ITween tween)
         {
             this.items.Add(tween);
+            return this;
+        }
+
+        public void JumpTo(float targetTime)
+        {
+            Reset();
+
+            var adjustedTargetTime = targetTime;
+            
+            for (int i = 0; i < this.items.Count; i++)
+            {
+                var itemDuration = this.items[i].TotalDuration;
+                if (adjustedTargetTime > itemDuration)
+                {
+                    adjustedTargetTime -= itemDuration;
+                    this.items[i].Update(itemDuration);
+                }
+                else
+                {
+                    this.items[i].Update(adjustedTargetTime);
+                    this.currentItemIndex = i;
+                    break;
+                }
+            }
         }
     }
 }

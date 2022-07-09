@@ -15,6 +15,7 @@ namespace ExTween
 
         public bool IsDone();
         public void Reset();
+        public void JumpTo(float time);
     }
 
     public class Tween<T> : ITween
@@ -28,9 +29,9 @@ namespace ExTween
         {
             this.tweenable = tweenable;
             this.targetValue = targetValue;
-            this.TotalDuration = duration;
             this.easeFunction = easeFunction;
             this.startingValue = tweenable.Value;
+            TotalDuration = duration;
             CurrentTime = 0;
         }
 
@@ -49,33 +50,43 @@ namespace ExTween
 
             CurrentTime += dt;
 
-            var overflow = CurrentTime - this.TotalDuration;
-            var currentTimeMinusOverflow = CurrentTime;
+            var overflow = CurrentTime - TotalDuration;
 
             if (overflow > 0)
             {
-                currentTimeMinusOverflow -= overflow;
+                CurrentTime -= overflow;
             }
 
-            var percent = currentTimeMinusOverflow / this.TotalDuration;
+            ApplyTimeToValue();
+
+            return Math.Max(overflow, 0);
+        }
+
+        private void ApplyTimeToValue()
+        {
+            var percent = CurrentTime / TotalDuration;
 
             this.tweenable.ForceSetValue(
                 this.tweenable.Lerp(
                     this.startingValue,
                     this.targetValue,
                     this.easeFunction(percent)));
-
-            return Math.Max(overflow, 0);
         }
 
         public bool IsDone()
         {
-            return CurrentTime >= this.TotalDuration;
+            return CurrentTime >= TotalDuration;
         }
 
         public void Reset()
         {
             CurrentTime = 0;
+        }
+
+        public void JumpTo(float time)
+        {
+            CurrentTime = time;
+            ApplyTimeToValue();
         }
     }
 }
