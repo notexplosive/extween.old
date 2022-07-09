@@ -20,16 +20,16 @@ namespace ExTween
 
     public class Tween<T> : ITween
     {
-        private readonly EaseFunction easeFunction;
+        private readonly EaseFunctions.Delegate easeDelegate;
         private readonly T targetValue;
         private readonly Tweenable<T> tweenable;
         private T startingValue;
 
-        public Tween(Tweenable<T> tweenable, T targetValue, float duration, EaseFunction easeFunction)
+        public Tween(Tweenable<T> tweenable, T targetValue, float duration, EaseFunctions.Delegate easeDelegate)
         {
             this.tweenable = tweenable;
             this.targetValue = targetValue;
-            this.easeFunction = easeFunction;
+            this.easeDelegate = easeDelegate;
             this.startingValue = tweenable.Value;
             TotalDuration = duration;
             CurrentTime = 0;
@@ -70,7 +70,7 @@ namespace ExTween
                 this.tweenable.Lerp(
                     this.startingValue,
                     this.targetValue,
-                    this.easeFunction(percent)));
+                    this.easeDelegate(percent)));
         }
 
         public bool IsDone()
