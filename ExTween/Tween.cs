@@ -7,6 +7,7 @@ namespace ExTween
         public float UpdateAndGetOverflow(float dt);
         public bool IsDone();
         public void Reset();
+        float TotalDuration { get; }
     }
     
     public class Tween<T> : ITween
@@ -28,6 +29,8 @@ namespace ExTween
         }
 
         public float CurrentTime { get; private set; }
+
+        public float TotalDuration => this.duration;
 
         public float UpdateAndGetOverflow(float dt)
         {

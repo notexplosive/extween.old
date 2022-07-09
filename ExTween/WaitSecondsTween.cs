@@ -4,14 +4,16 @@ namespace ExTween
 {
     public class WaitSecondsTween : ITween
     {
-        private readonly float startingTime;
+        private readonly float duration;
         private float timer;
 
-        public WaitSecondsTween(float startingTime)
+        public WaitSecondsTween(float duration)
         {
-            this.startingTime = startingTime;
-            this.timer = startingTime;
+            this.duration = duration;
+            this.timer = duration;
         }
+
+        public float TotalDuration => this.duration;
         
         public float UpdateAndGetOverflow(float dt)
         {
@@ -32,7 +34,7 @@ namespace ExTween
 
         public void Reset()
         {
-            this.timer = this.startingTime;
+            this.timer = this.duration;
         }
     }
 }
