@@ -2,7 +2,14 @@
 
 namespace ExTween
 {
-    public class Tween<T>
+    public interface ITween
+    {
+        public float UpdateAndGetOverflow(float dt);
+        public bool IsDone();
+        public void Reset();
+    }
+    
+    public class Tween<T> : ITween
     {
         private readonly float duration;
         private readonly EaseFunction easeFunction;
@@ -53,33 +60,6 @@ namespace ExTween
         public void Reset()
         {
             CurrentTime = 0;
-        }
-    }
-
-    public class WaitSecondsTween
-    {
-        private readonly float startingTime;
-        private float timer;
-
-        public WaitSecondsTween(float startingTime)
-        {
-            this.startingTime = startingTime;
-            this.timer = startingTime;
-        }
-        
-        public void UpdateAndGetOverflow(int dt)
-        {
-            this.timer -= dt;
-        }
-
-        public bool IsDone()
-        {
-            return this.timer <= 0;
-        }
-
-        public void Reset()
-        {
-            this.timer = this.startingTime;
         }
     }
 }

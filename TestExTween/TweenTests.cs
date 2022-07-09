@@ -49,7 +49,21 @@ namespace TestExTween
         }
         
         [Fact]
-        public void finished_tweens_report_when_done()
+        public void finished_value_tweens_report_when_done()
+        {
+            var tweenable = new TweenableInt(0);
+            var tween = new Tween<int>(tweenable, 100, 5, EaseFunctions.Linear);
+
+            tween.UpdateAndGetOverflow(2);
+            var wasDone = tween.IsDone();
+            tween.UpdateAndGetOverflow(3);
+
+            wasDone.Should().BeFalse();
+            tween.IsDone().Should().BeTrue();
+        }
+        
+        [Fact]
+        public void finished_wait_tweens_report_when_done()
         {
             var tween = new WaitSecondsTween(5);
 
@@ -100,8 +114,23 @@ namespace TestExTween
             var firstOverflow = tween.UpdateAndGetOverflow(0.5f);
             var secondOverflow = tween.UpdateAndGetOverflow(0.75f);
 
+            // no overflow, tween consumed the whole time
             firstOverflow.Should().Be(0f);
             secondOverflow.Should().Be(0.25f);
+        }
+
+        [Fact]
+        public void wait_tween_overflows()
+        {
+            var tweenable = new WaitSecondsTween(1);
+
+            var firstOverflow = tweenable.UpdateAndGetOverflow(0.5f);
+            var secondOverflow = tweenable.UpdateAndGetOverflow(1f);
+            var thirdOverflow = tweenable.UpdateAndGetOverflow(0.25f);
+
+            firstOverflow.Should().Be(0);
+            secondOverflow.Should().Be(0.5f);
+            thirdOverflow.Should().Be(0.25f);
         }
         
         [Fact]
