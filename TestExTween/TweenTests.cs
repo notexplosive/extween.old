@@ -47,5 +47,28 @@ namespace TestExTween
 
             tweenable.Value.Should().Be(10);
         }
+        
+        [Fact]
+        public void finished_tweens_report_when_done()
+        {
+            var tween = new WaitSecondsTween(5);
+
+            tween.UpdateAndGetOverflow(2);
+            var wasDone = tween.IsDone();
+            tween.UpdateAndGetOverflow(3);
+
+            wasDone.Should().BeFalse();
+            tween.IsDone().Should().BeTrue();
+        }
+
+        [Fact]
+        public void zero_time_tween_finishes_instantly()
+        {
+            var tween = new WaitSecondsTween(0);
+
+            tween.UpdateAndGetOverflow(0);
+
+            tween.IsDone().Should().BeTrue();
+        }
     }
 }

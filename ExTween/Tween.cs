@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace ExTween
+﻿namespace ExTween
 {
     public class Tween<T>
     {
-        private Tweenable<T> tweenable;
-        private T startingValue;
-        private readonly T targetValue;
         private readonly float duration;
         private readonly EaseFunction easeFunction;
+        private readonly T startingValue;
+        private readonly T targetValue;
+        private readonly Tweenable<T> tweenable;
 
         public Tween(Tweenable<T> tweenable, T targetValue, float duration, EaseFunction easeFunction)
         {
@@ -22,12 +20,38 @@ namespace ExTween
 
         public float CurrentTime { get; set; }
 
-        public void UpdateAndGetOverflow(float f)
+        public void UpdateAndGetOverflow(float dt)
         {
-            CurrentTime += f;
+            CurrentTime += dt;
             var percent = CurrentTime / this.duration;
 
-            this.tweenable.ForceSetValue(this.tweenable.Lerp(this.startingValue, this.targetValue, this.easeFunction(percent)));
+            this.tweenable.ForceSetValue(
+                this.tweenable.Lerp(
+                    this.startingValue,
+                    this.targetValue,
+                    this.easeFunction(percent)));
+        }
+    }
+
+    public class WaitSecondsTween
+    {
+        private readonly float startingTime;
+        private float timer;
+
+        public WaitSecondsTween(float startingTime)
+        {
+            this.startingTime = startingTime;
+            this.timer = startingTime;
+        }
+        
+        public void UpdateAndGetOverflow(int dt)
+        {
+            this.timer -= dt;
+        }
+
+        public bool IsDone()
+        {
+            return this.timer <= 0;
         }
     }
 }
