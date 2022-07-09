@@ -30,6 +30,13 @@ namespace ExTween
             this.setter = setter;
         }
 
+        /// <summary>
+        /// The equivalent of: `startingValue + (targetValue - startingValue) * percent` for the template type.
+        /// </summary>
+        /// <param name="startingValue">Starting value of the interpolation</param>
+        /// <param name="targetValue">Ending value of the interpolation</param>
+        /// <param name="percent">Progress along interpolation from 0f to 1f</param>
+        /// <returns>The interpolated value</returns>
         public abstract T Lerp(T startingValue, T targetValue, float percent);
         
         /// <summary>
@@ -74,7 +81,7 @@ namespace ExTween
         {
         }
 
-        public TweenableFloat(int i) : base(i)
+        public TweenableFloat(float i) : base(i)
         {
         }
         
