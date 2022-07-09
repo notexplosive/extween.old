@@ -1,6 +1,6 @@
 ﻿namespace ExTween
 {
-    public static class EaseFunctions
+    public static class Ease
     {
         public delegate float Delegate(float x);
 

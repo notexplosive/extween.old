@@ -10,7 +10,7 @@ namespace TestExTween
         public void int_linear_lerp()
         {
             var tweenable = new TweenableInt(-100);
-            var tween = new Tween<int>(tweenable, 100, 1, EaseFunctions.Linear);
+            var tween = new Tween<int>(tweenable, 100, 1, Ease.Linear);
 
             tween.Update(0.25f);
             tween.Update(0.25f);
@@ -30,7 +30,7 @@ namespace TestExTween
             var tweenable = new TweenableFloat(() => captureMe, val => captureMe = val);
          
             // Create a tween and advance through it
-            var tween = new Tween<float>(tweenable, 3.14f, 1, EaseFunctions.Linear);
+            var tween = new Tween<float>(tweenable, 3.14f, 1, Ease.Linear);
             tween.Update(1f);
 
             captureMe.Should().Be(3.14f); // the value has changed!
@@ -42,7 +42,7 @@ namespace TestExTween
         {
             var tweenable = new TweenableInt(0);
 
-            var tween = new Tween<int>(tweenable, 100, 50, EaseFunctions.Linear);
+            var tween = new Tween<int>(tweenable, 100, 50, Ease.Linear);
             tween.Update(5);
 
             tweenable.Value.Should().Be(10);
@@ -52,7 +52,7 @@ namespace TestExTween
         public void finished_value_tweens_report_when_done()
         {
             var tweenable = new TweenableInt(0);
-            var tween = new Tween<int>(tweenable, 100, 5, EaseFunctions.Linear);
+            var tween = new Tween<int>(tweenable, 100, 5, Ease.Linear);
 
             tween.Update(2);
             var wasDone = tween.IsDone();
@@ -90,7 +90,7 @@ namespace TestExTween
         {
             var tweenable = new TweenableInt(0);
             
-            var tween = new Tween<int>(tweenable,100, 1, EaseFunctions.Linear);
+            var tween = new Tween<int>(tweenable,100, 1, Ease.Linear);
 
             tween.Update(1);
             var wasDone = tween.IsDone();
@@ -109,7 +109,7 @@ namespace TestExTween
         {
             var tweenable = new TweenableInt(0);
             
-            var tween = new Tween<int>(tweenable,100, 1, EaseFunctions.Linear);
+            var tween = new Tween<int>(tweenable,100, 1, Ease.Linear);
 
             var firstOverflow = tween.Update(0.5f);
             var secondOverflow = tween.Update(0.75f);
@@ -138,7 +138,7 @@ namespace TestExTween
         {
             var tweenable = new TweenableInt(0);
             
-            var tween = new Tween<int>(tweenable,100, 1, EaseFunctions.Linear);
+            var tween = new Tween<int>(tweenable,100, 1, Ease.Linear);
 
             var overflow = tween.Update(20); // 20 seconds is significantly longer than 1 second
 
@@ -151,7 +151,7 @@ namespace TestExTween
         {
             var tweenable = new TweenableInt(0);
             
-            var tween = new Tween<int>(tweenable,100, 1, EaseFunctions.Linear);
+            var tween = new Tween<int>(tweenable,100, 1, Ease.Linear);
 
             tween.JumpTo(0.3f);
             var valueAt30Percent = tweenable.Value;

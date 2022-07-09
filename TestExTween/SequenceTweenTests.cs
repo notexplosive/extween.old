@@ -12,7 +12,7 @@ namespace TestExTween
         {
             var tweenable = new TweenableFloat(0);
             var sequence = new SequenceTween();
-            sequence.Add(new Tween<float>(tweenable, 100, 1, EaseFunctions.Linear));
+            sequence.Add(new Tween<float>(tweenable, 100, 1, Ease.Linear));
         }
 
         [Fact]
@@ -20,8 +20,8 @@ namespace TestExTween
         {
             var tweenable = new TweenableFloat(0);
             var sequence = new SequenceTween();
-            sequence.Add(new Tween<float>(tweenable, 100, 0.5f, EaseFunctions.Linear));
-            sequence.Add(new Tween<float>(tweenable, 200, 1, EaseFunctions.Linear));
+            sequence.Add(new Tween<float>(tweenable, 100, 0.5f, Ease.Linear));
+            sequence.Add(new Tween<float>(tweenable, 200, 1, Ease.Linear));
 
             sequence.Update(0.75f);
 
@@ -44,7 +44,7 @@ namespace TestExTween
             tween.Add(new CallbackTween(Hit));
             tween.Add(new CallbackTween(Hit));
             tween.Add(new CallbackTween(Hit));
-            tween.Add(new Tween<int>(tweenable, 10, 1f, EaseFunctions.Linear));
+            tween.Add(new Tween<int>(tweenable, 10, 1f, Ease.Linear));
 
             tween.Update(1.5f);
 
@@ -98,10 +98,10 @@ namespace TestExTween
         {
             var tweenable = new TweenableInt();
             var tween = new SequenceTween();
-            tween.Add(new Tween<int>(tweenable, 100, 1, EaseFunctions.Linear));
+            tween.Add(new Tween<int>(tweenable, 100, 1, Ease.Linear));
 
             tween.Update(1.2f);
-            tween.Add(new Tween<int>(tweenable, 120, 1, EaseFunctions.Linear));
+            tween.Add(new Tween<int>(tweenable, 120, 1, Ease.Linear));
             tween.Update(0.5f);
 
             tweenable.Value.Should().Be(110);
@@ -114,8 +114,8 @@ namespace TestExTween
 
             var tween = new SequenceTween()
                 .Add(new CallbackTween(() => { tweenable.ForceSetValue(0); }))
-                .Add(new Tween<int>(tweenable, 100, 1, EaseFunctions.Linear))
-                .Add(new Tween<int>(tweenable, -100, 1, EaseFunctions.Linear));
+                .Add(new Tween<int>(tweenable, 100, 1, Ease.Linear))
+                .Add(new Tween<int>(tweenable, -100, 1, Ease.Linear));
             
             tween.JumpTo(0.3f);
             var valueAt30Percent = tweenable.Value;
@@ -140,9 +140,9 @@ namespace TestExTween
                     {
                         tweenable.ForceSetValue(0);
                     }))
-                    .Add(new Tween<int>(tweenable, 100, 1, EaseFunctions.Linear))
-                    .Add(new Tween<int>(tweenable, 200, 1, EaseFunctions.Linear))
-                    .Add(new Tween<int>(tweenable, 400, 1, EaseFunctions.Linear))
+                    .Add(new Tween<int>(tweenable, 100, 1, Ease.Linear))
+                    .Add(new Tween<int>(tweenable, 200, 1, Ease.Linear))
+                    .Add(new Tween<int>(tweenable, 400, 1, Ease.Linear))
                 ;
 
             int ExpectedValue(float time)

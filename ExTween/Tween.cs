@@ -20,12 +20,12 @@ namespace ExTween
 
     public class Tween<T> : ITween
     {
-        private readonly EaseFunctions.Delegate easeDelegate;
+        private readonly Ease.Delegate easeDelegate;
         private readonly T targetValue;
         private readonly Tweenable<T> tweenable;
         private T startingValue;
 
-        public Tween(Tweenable<T> tweenable, T targetValue, float duration, EaseFunctions.Delegate easeDelegate)
+        public Tween(Tweenable<T> tweenable, T targetValue, float duration, Ease.Delegate easeDelegate)
         {
             this.tweenable = tweenable;
             this.targetValue = targetValue;

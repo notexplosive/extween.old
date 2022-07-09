@@ -14,8 +14,8 @@ namespace TestExTween
             var tweenableB = new TweenableInt(0);
 
             var tween = new MultiplexTween()
-                .AddChannel(new Tween<int>(tweenableA, 100, 1, EaseFunctions.Linear))
-                .AddChannel(new Tween<int>(tweenableB, 200, 1, EaseFunctions.Linear));
+                .AddChannel(new Tween<int>(tweenableA, 100, 1, Ease.Linear))
+                .AddChannel(new Tween<int>(tweenableB, 200, 1, Ease.Linear));
 
             tween.Update(0.5f);
 
@@ -30,8 +30,8 @@ namespace TestExTween
             var tweenableB = new TweenableInt(0);
 
             var tween = new MultiplexTween()
-                .AddChannel(new Tween<int>(tweenableA, 100, 1, EaseFunctions.Linear))
-                .AddChannel(new Tween<int>(tweenableB, 200, 2, EaseFunctions.Linear));
+                .AddChannel(new Tween<int>(tweenableA, 100, 1, Ease.Linear))
+                .AddChannel(new Tween<int>(tweenableB, 200, 2, Ease.Linear));
 
             tween.Update(1.5f);
 
@@ -46,8 +46,8 @@ namespace TestExTween
             var tweenableB = new TweenableInt(0);
 
             var tween = new MultiplexTween()
-                .AddChannel(new Tween<int>(tweenableA, 100, 0.25f, EaseFunctions.Linear))
-                .AddChannel(new Tween<int>(tweenableB, 200, 1f, EaseFunctions.Linear));
+                .AddChannel(new Tween<int>(tweenableA, 100, 0.25f, Ease.Linear))
+                .AddChannel(new Tween<int>(tweenableB, 200, 1f, Ease.Linear));
 
             var overflow = tween.Update(1.2f);
 
@@ -87,10 +87,10 @@ namespace TestExTween
             var tweenableA = new TweenableInt(0);
             var tweenableB = new TweenableInt(0);
             var tween = new MultiplexTween();
-            tween.AddChannel(new Tween<int>(tweenableA, 100, 1, EaseFunctions.Linear));
+            tween.AddChannel(new Tween<int>(tweenableA, 100, 1, Ease.Linear));
 
             tween.Update(1.2f);
-            tween.AddChannel(new Tween<int>(tweenableB, 100, 1, EaseFunctions.Linear));
+            tween.AddChannel(new Tween<int>(tweenableB, 100, 1, Ease.Linear));
             tween.Update(0.5f);
 
             tweenableA.Value.Should().Be(100);
@@ -104,8 +104,8 @@ namespace TestExTween
             var tweenableY = new TweenableFloat();
 
             var tween = new MultiplexTween()
-                .AddChannel(new Tween<float>(tweenableX, 100, 1, EaseFunctions.Linear))
-                .AddChannel(new Tween<float>(tweenableY, 50, 1, EaseFunctions.Linear))
+                .AddChannel(new Tween<float>(tweenableX, 100, 1, Ease.Linear))
+                .AddChannel(new Tween<float>(tweenableY, 50, 1, Ease.Linear))
                 ;
 
 
