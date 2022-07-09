@@ -1,4 +1,6 @@
-﻿namespace ExTween
+﻿using System;
+
+namespace ExTween
 {
     public class SequenceTween : TweenCollection, ITween
     {

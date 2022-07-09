@@ -123,6 +123,10 @@ namespace TestExTween
             tweenableX.Value.Should().Be(ExpectedX(0.25f));
             tweenableY.Value.Should().Be(ExpectedY(0.25f));
             
+            tween.JumpTo(0.0f);
+            tweenableX.Value.Should().Be(ExpectedX(0.0f));
+            tweenableY.Value.Should().Be(ExpectedY(0.0f));
+            
             tween.JumpTo(0.05f);
             tweenableX.Value.Should().Be(ExpectedX(0.05f));
             tweenableY.Value.Should().Be(ExpectedY(0.05f));

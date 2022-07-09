@@ -7,14 +7,14 @@ namespace ExTween
         public float Update(float dt)
         {
             float totalOverflow = 0;
-            var hasTried = false;
+            var hasInitializedOverflow = false;
             ForEachItem(
                 tween =>
                 {
                     var pendingOverflow = tween.Update(dt);
-                    if (!hasTried)
+                    if (!hasInitializedOverflow)
                     {
-                        hasTried = true;
+                        hasInitializedOverflow = true;
                         totalOverflow = pendingOverflow;
                     }
                     else
