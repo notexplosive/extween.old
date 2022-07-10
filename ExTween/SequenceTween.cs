@@ -40,13 +40,20 @@ namespace ExTween
             this.currentItemIndex = 0;
         }
 
-        public float TotalDuration
+        public ITweenDuration TotalDuration
         {
             get
             {
                 var total = 0f;
-                ForEachItem(item => total += item.TotalDuration);
-                return total;
+                ForEachItem(item =>
+                {
+                    if (item.TotalDuration is KnownTweenDuration itemDuration)
+                    {
+                        total += itemDuration;
+                    }
+                });
+                
+                return new KnownTweenDuration(total);
             }
         }
 
@@ -65,10 +72,21 @@ namespace ExTween
             for (int i = 0; i < this.Items.Count; i++)
             {
                 var itemDuration = this.Items[i].TotalDuration;
-                if (adjustedTargetTime > itemDuration)
+                if (itemDuration is UnknownTweenDuration)
                 {
-                    adjustedTargetTime -= itemDuration;
-                    this.Items[i].Update(itemDuration);
+                    // We don't know how long this tween is, so we have to update it manually
+                    var overflow = this.Items[i].Update(adjustedTargetTime);
+                    adjustedTargetTime -= overflow;
+
+                    if (!this.Items[i].IsDone())
+                    {
+                        break;
+                    }
+                }
+                else if (itemDuration is KnownTweenDuration exactTweenDuration && adjustedTargetTime > exactTweenDuration)
+                {
+                    adjustedTargetTime -= exactTweenDuration;
+                    this.Items[i].Update(exactTweenDuration);
                 }
                 else
                 {

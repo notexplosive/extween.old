@@ -78,7 +78,7 @@ namespace TestExTween
                 .AddChannel(new WaitSecondsTween(4))
                 .AddChannel(new WaitSecondsTween(5));
 
-            tween.TotalDuration.Should().Be(7);
+            tween.TotalDuration.Get().Should().Be(7);
         }
         
         [Fact]

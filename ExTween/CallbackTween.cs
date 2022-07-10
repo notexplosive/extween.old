@@ -39,7 +39,7 @@ namespace ExTween
             Update(time);
         }
 
-        public float TotalDuration => 0;
+        public ITweenDuration TotalDuration => new KnownTweenDuration(0);
     }
 
     public class WaitUntilTween : ITween
@@ -77,6 +77,6 @@ namespace ExTween
             Update(time);
         }
 
-        public float TotalDuration => 0;
+        public ITweenDuration TotalDuration => new UnknownTweenDuration();
     }
 }

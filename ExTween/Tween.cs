@@ -5,7 +5,7 @@ namespace ExTween
 {
     public interface ITween
     {
-        float TotalDuration { get; }
+        public ITweenDuration TotalDuration { get; }
 
         /// <summary>
         ///     Updates the tween and returns the overflow.
@@ -33,13 +33,13 @@ namespace ExTween
             this.targetValue = targetValue;
             this.ease = ease;
             this.startingValue = tweenable.Value;
-            TotalDuration = duration;
+            TotalDuration = new KnownTweenDuration(duration);
             CurrentTime = 0;
         }
 
         public float CurrentTime { get; private set; }
 
-        public float TotalDuration { get; }
+        public ITweenDuration TotalDuration { get; }
 
         public float Update(float dt)
         {
@@ -52,7 +52,7 @@ namespace ExTween
 
             CurrentTime += dt;
 
-            var overflow = CurrentTime - TotalDuration;
+            var overflow = CurrentTime - TotalDuration.Get();
 
             if (overflow > 0)
             {
@@ -66,7 +66,7 @@ namespace ExTween
 
         private void ApplyTimeToValue()
         {
-            var percent = CurrentTime / TotalDuration;
+            var percent = CurrentTime / TotalDuration.Get();
 
             this.tweenable.ForceSetValue(
                 this.tweenable.Lerp(
@@ -77,7 +77,7 @@ namespace ExTween
 
         public bool IsDone()
         {
-            return CurrentTime >= TotalDuration;
+            return CurrentTime >= TotalDuration.Get();
         }
 
         public void Reset()
@@ -89,6 +89,40 @@ namespace ExTween
         {
             CurrentTime = time;
             ApplyTimeToValue();
+        }
+    }
+    
+    public interface ITweenDuration
+    {
+        public float Get();
+    }
+    
+    public readonly struct KnownTweenDuration : ITweenDuration
+    {
+        public KnownTweenDuration(float duration)
+        {
+            Value = duration;
+        }
+
+        private float Value { get; }
+
+        public float Get()
+        {
+            return Value;
+        }
+
+        public static implicit operator float(KnownTweenDuration me)
+        {
+            return me.Get();
+        }
+    }
+    
+    
+    public class UnknownTweenDuration : ITweenDuration
+    {
+        public float Get()
+        {
+            throw new Exception("Value unknown");
         }
     }
 }

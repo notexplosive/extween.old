@@ -13,7 +13,7 @@ namespace ExTween
             this.timer = duration;
         }
 
-        public float TotalDuration => this.duration;
+        public ITweenDuration TotalDuration => new KnownTweenDuration(this.duration);
         
         public float Update(float dt)
         {

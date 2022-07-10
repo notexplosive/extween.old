@@ -50,13 +50,20 @@ namespace ExTween
             return this;
         }
 
-        public float TotalDuration
+        public ITweenDuration TotalDuration
         {
             get
             {
                 var result = 0f;
-                ForEachItem(item => result = Math.Max(result, item.TotalDuration));
-                return result;
+                ForEachItem(item =>
+                {
+                    if (item.TotalDuration is KnownTweenDuration itemDuration)
+                    {
+                        result = Math.Max(result, itemDuration);
+                    }
+                });
+                
+                return new KnownTweenDuration(result);
             }
         }
     }

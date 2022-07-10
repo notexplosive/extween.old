@@ -19,9 +19,9 @@ namespace TestExTween
         public void transition_to_next_item()
         {
             var tweenable = new TweenableFloat(0);
-            var sequence = new SequenceTween();
-            sequence.Add(new Tween<float>(tweenable, 100, 0.5f, Ease.Linear));
-            sequence.Add(new Tween<float>(tweenable, 200, 1, Ease.Linear));
+            var sequence = new SequenceTween()
+                .Add(new Tween<float>(tweenable, 100, 0.5f, Ease.Linear))
+                .Add(new Tween<float>(tweenable, 200, 1, Ease.Linear));
 
             sequence.Update(0.75f);
 
@@ -116,17 +116,60 @@ namespace TestExTween
                 .Add(new CallbackTween(() => { tweenable.ForceSetValue(0); }))
                 .Add(new Tween<int>(tweenable, 100, 1, Ease.Linear))
                 .Add(new Tween<int>(tweenable, -100, 1, Ease.Linear));
-            
+
             tween.JumpTo(0.3f);
             var valueAt30Percent = tweenable.Value;
             tween.JumpTo(0f);
             var valueAt0Percent = tweenable.Value;
             tween.JumpTo(0.6f);
             var valueAt60Percent = tweenable.Value;
-            
+
             valueAt30Percent.Should().Be(30);
             valueAt0Percent.Should().Be(0);
             valueAt60Percent.Should().Be(60);
+        }
+
+        [Fact]
+        public void condition_blocks_jump_to()
+        {
+            var hitCount = 0;
+            void Hit()
+            {
+                hitCount++;
+            }
+            
+            var tween = new SequenceTween()
+                    .Add(new CallbackTween(Hit))
+                    .Add(new WaitUntilTween(() => false))
+                    .Add(new CallbackTween(Hit))
+                ;
+
+            tween.JumpTo(1);
+            
+            hitCount.Should().Be(1);
+        }
+        
+        [Fact]
+        public void condition_permits_jump_to()
+        {
+            var hitCount = 0;
+            var permit = false;
+            void Hit()
+            {
+                hitCount++;
+            }
+
+            
+            var tween = new SequenceTween()
+                    .Add(new CallbackTween(Hit))
+                    .Add(new CallbackTween(()=>permit = true))
+                    .Add(new WaitUntilTween(() => permit))
+                    .Add(new CallbackTween(Hit))
+                ;
+
+            tween.JumpTo(1);
+            
+            hitCount.Should().Be(2);
         }
 
         [Fact]
@@ -136,10 +179,7 @@ namespace TestExTween
 
             var tween = new SequenceTween()
                     // You need a callback at the start that sets everything to their starting values
-                    .Add(new CallbackTween(() =>
-                    {
-                        tweenable.ForceSetValue(0);
-                    }))
+                    .Add(new CallbackTween(() => { tweenable.ForceSetValue(0); }))
                     .Add(new Tween<int>(tweenable, 100, 1, Ease.Linear))
                     .Add(new Tween<int>(tweenable, 200, 1, Ease.Linear))
                     .Add(new Tween<int>(tweenable, 400, 1, Ease.Linear))
@@ -149,7 +189,7 @@ namespace TestExTween
             {
                 if (time < 1)
                 {
-                    return (int)(time * 100);
+                    return (int) (time * 100);
                 }
 
                 if (time < 2)
@@ -164,14 +204,14 @@ namespace TestExTween
 
                 return 400;
             }
-            
+
             // random access means RANDOM access
             var random = new Random(0x0badf00d);
-            for (int i = 0; i < 1000; i++)
+            for (var i = 0; i < 1000; i++)
             {
-                var time = (float)random.NextDouble() * 3;
+                var time = (float) random.NextDouble() * 3;
                 tween.JumpTo(time);
-                tweenable.Value.Should().Be(ExpectedValue(time));                
+                tweenable.Value.Should().Be(ExpectedValue(time));
             }
         }
     }
