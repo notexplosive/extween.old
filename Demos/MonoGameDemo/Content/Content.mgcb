@@ -20,3 +20,16 @@
 /processorParam:TextureFormat=Compressed
 /build:Font.spritefont
 
+#begin pointfree.ttf
+/copy:pointfree.ttf
+
+#begin Roboto-Regular.ttf
+/copy:Roboto-Regular.ttf
+
+#begin SubtitleFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:SubtitleFont.spritefont
+

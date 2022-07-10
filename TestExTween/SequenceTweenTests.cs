@@ -158,7 +158,6 @@ namespace TestExTween
             {
                 hitCount++;
             }
-
             
             var tween = new SequenceTween()
                     .Add(new CallbackTween(Hit))

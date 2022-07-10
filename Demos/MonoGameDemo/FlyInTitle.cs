@@ -6,28 +6,34 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoGameDemo
 {
-    public class TitleSlide : Slide
+    public class FlyInTitle : Slide
     {
+        private readonly SpriteFont font;
+        private readonly string message;
         private readonly List<Glyph> glyphs = new List<Glyph>();
 
+        public FlyInTitle(SpriteFont font, string message)
+        {
+            this.font = font;
+            this.message = message;
+        }
+        
         protected override void BuildTween(SequenceTween tween)
         {
             this.glyphs.Clear();
 
-            var totalString = "NotExplosive";
-            var totalStringSize = Demo.Font.MeasureString(totalString);
+            var totalStringSize = this.font.MeasureString(this.message);
             
             {
-                var i = 0;
-                foreach (var letter in totalString)
+                foreach (var letter in this.message)
                 {
                     this.glyphs.Add(new Glyph
                     {
                         Text = letter.ToString(),
-                        Position = new TweenableVector2(new Vector2(800 / totalString.Length * i, 600)),
-                        Scale = new TweenableFloat(1)
+                        Position = new TweenableVector2(new Vector2(0, 600)),
+                        Scale = new TweenableFloat(1),
+                        Font = this.font
                     });
-                    i++;
                 }
             }
 
@@ -42,14 +48,14 @@ namespace MonoGameDemo
 
                 multiplex
                     .AddChannel(new SequenceTween()
-                        .Add(new WaitSecondsTween(glyphIndex / 20f))
+                        .Add(new WaitSecondsTween(glyphIndex / 15f))
                         .Add(new MultiplexTween()
                             .AddChannel(
                                 new SequenceTween()
                                     .Add(new Tween<Vector2>(this.glyphs[glyphIndex].Position,
-                                        new Vector2(targetX, targetY - 80), duration * 8 / 10, Ease.Linear))
+                                        new Vector2(targetX + 100, targetY - 200), duration / 2, Ease.QuadFastSlow))
                                     .Add(new Tween<Vector2>(this.glyphs[glyphIndex].Position,
-                                        new Vector2(targetX, targetY), duration * 2 / 10, Ease.Linear))
+                                        new Vector2(targetX, targetY), duration / 2, Ease.QuadSlowFast))
                             )
                             .AddChannel(
                                 new SequenceTween()
@@ -66,7 +72,7 @@ namespace MonoGameDemo
                     )
                     ;
 
-                var glyphSize = Demo.Font.MeasureString(this.glyphs[glyphIndex].Text);
+                var glyphSize = this.font.MeasureString(this.glyphs[glyphIndex].Text);
                 targetX += glyphSize.X;
             }
         }
@@ -79,18 +85,29 @@ namespace MonoGameDemo
         {
             foreach (var glyph in this.glyphs)
             {
-                var offset = Demo.Font.MeasureString(glyph.Text) / 2;
-                spriteBatch.DrawString(Demo.Font, glyph.Text, glyph.Position + offset, Color.Black, glyph.Angle, offset,
-                    glyph.Scale, SpriteEffects.None, 0f);
+                glyph.Draw(spriteBatch);
             }
         }
+    }
+    
+    public class Glyph
+    {
+        public TweenableVector2 Position { get; set; } = new TweenableVector2();
+        public string Text { get; set; }
+        public TweenableFloat Angle { get; } = new TweenableFloat();
+        public TweenableFloat Scale { get; set; } = new TweenableFloat();
+        public SpriteFont Font { get; set; }
 
-        private class Glyph
+        public void Draw(SpriteBatch spriteBatch)
         {
-            public TweenableVector2 Position { get; set; } = new TweenableVector2();
-            public string Text { get; set; }
-            public TweenableFloat Angle { get; } = new TweenableFloat();
-            public TweenableFloat Scale { get; set; } = new TweenableFloat();
+            if (Font == null)
+            {
+                Font = Demo.TitleFont;
+            }
+            
+            var offset = Font.MeasureString(Text) / 2;
+            spriteBatch.DrawString(Font, Text, Position + offset, Color.Black, Angle, offset,
+                Scale, SpriteEffects.None, 0f);
         }
     }
 }

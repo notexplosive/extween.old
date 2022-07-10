@@ -1,19 +1,36 @@
 ﻿using System.Collections.Generic;
 using ExTween;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoGameDemo
 {
     public class SlideDeck
     {
-        private int slideIndex;
-
-        private readonly List<Slide> slides = new List<Slide>
+        private readonly List<ICue> cues = new List<ICue>
         {
-            new TitleSlide()
+            new FlyInTitle(Demo.TitleFont, "Tweens"),
+            new FlyInTitle(Demo.SubtitleFont, "A presentation by NotExplosive"),
+            new ClearCue()
         };
 
-        public void Begin()
+        private readonly List<Slide> preservedSlides = new List<Slide>();
+        private int slideIndex;
+
+        public ICue CurrentCue
+        {
+            get
+            {
+                if (this.slideIndex >= 0 && this.cues.Count > this.slideIndex)
+                {
+                    return this.cues[this.slideIndex];
+                }
+
+                return null;
+            }
+        }
+
+        public void Prepare()
         {
             LoadCurrentSlide();
         }
@@ -26,10 +43,15 @@ namespace MonoGameDemo
 
         private void LoadCurrentSlide()
         {
-            if (this.slideIndex >= 0 && this.slides.Count > this.slideIndex)
+            if (CurrentCue is ClearCue)
             {
-                var slide = this.slides[this.slideIndex];
+                this.preservedSlides.Clear();
+            }
+            
+            if (CurrentCue is Slide slide)
+            {
                 slide.Setup();
+                this.preservedSlides.Add(slide);
             }
         }
 
@@ -39,25 +61,42 @@ namespace MonoGameDemo
             LoadCurrentSlide();
         }
 
-        public void DrawCurrentSlide(SpriteBatch spriteBatch)
+        public void DrawPreservedSlides(SpriteBatch spriteBatch)
         {
-            if (this.slideIndex >= 0 && this.slides.Count > this.slideIndex)
+            foreach (var slide in this.preservedSlides)
             {
-                var slide = this.slides[this.slideIndex];
                 slide.Draw(spriteBatch);
             }
         }
 
-        public void UpdateCurrentSlide(float dt)
+        public void Update(float dt)
         {
-            if (this.slideIndex >= 0 && this.slides.Count > this.slideIndex)
+            foreach(var slide in this.preservedSlides)
             {
-                this.slides[this.slideIndex].UpdateTween(dt);
+                slide.UpdateTween(dt);
             }
+        }
+
+        private class ClearCue : ICue
+        {
+            public bool IsDone()
+            {
+                return true;
+            }
+        }
+
+        public bool IsIdle()
+        {
+            return CurrentCue.IsDone();
         }
     }
 
-    public abstract class Slide
+    public interface ICue
+    {
+        public bool IsDone();
+    }
+
+    public abstract class Slide : ICue
     {
         private readonly SequenceTween tween = new SequenceTween();
 
@@ -67,10 +106,15 @@ namespace MonoGameDemo
             this.tween.Add(new CallbackTween(OnTweenBegin));
             BuildTween(this.tween);
         }
-        
+
         protected abstract void BuildTween(SequenceTween sequenceTween);
         protected abstract void OnTweenBegin();
         public abstract void Draw(SpriteBatch spriteBatch);
+
+        public bool IsDone()
+        {
+            return this.tween.IsDone();
+        }
 
         public void UpdateTween(float dt)
         {

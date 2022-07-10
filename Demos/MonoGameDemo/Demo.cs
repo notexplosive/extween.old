@@ -10,7 +10,7 @@ namespace MonoGameDemo
         private readonly GraphicsDeviceManager graphics;
         private bool hasStarted;
         private SlideDeck slideDeck;
-        private bool spacePressed;
+        private bool spacePressedLastFrame;
         private SpriteBatch spriteBatch;
 
         public Demo()
@@ -21,16 +21,22 @@ namespace MonoGameDemo
             IsMouseVisible = true;
         }
 
-        public static SpriteFont Font { get; private set; }
+        public static SpriteFont TitleFont { get; private set; }
+        public static SpriteFont SubtitleFont { get; private set; }
 
         protected override void Initialize()
         {
             base.Initialize(); // this creates the graphics device
+            
+            this.graphics.PreferredBackBufferWidth = 1920;
+            this.graphics.PreferredBackBufferHeight = 1080;
+            this.graphics.ApplyChanges();
         }
 
         protected override void LoadContent()
         {
-            Demo.Font = Content.Load<SpriteFont>("Font");
+            Demo.TitleFont = Content.Load<SpriteFont>("Font");
+            Demo.SubtitleFont = Content.Load<SpriteFont>("SubtitleFont");
             this.slideDeck = new SlideDeck();
             this.spriteBatch = new SpriteBatch(GraphicsDevice);
         }
@@ -38,16 +44,26 @@ namespace MonoGameDemo
         protected override void Update(GameTime gameTime)
         {
             var keyboard = Keyboard.GetState();
-            this.spacePressed = keyboard.GetPressedKeys().Contains(Keys.Space);
+            var spacePressedThisFrame = keyboard.GetPressedKeys().Contains(Keys.Space);
+
+            if (!this.spacePressedLastFrame && spacePressedThisFrame)
+            {
+                if (this.slideDeck.IsIdle() || keyboard.GetPressedKeys().Contains(Keys.LeftShift))
+                {
+                    this.slideDeck.NextSlide();
+                }
+            }
+            
+            this.spacePressedLastFrame = spacePressedThisFrame;
 
             if (!this.hasStarted)
             {
-                this.slideDeck.Begin();
+                this.slideDeck.Prepare();
                 this.hasStarted = true;
             }
             else
             {
-                this.slideDeck.UpdateCurrentSlide(1 / 60f);
+                this.slideDeck.Update(1 / 60f);
             }
         }
 
@@ -60,14 +76,14 @@ namespace MonoGameDemo
         {
             this.graphics.GraphicsDevice.Clear(Color.LightBlue);
 
-            this.spriteBatch.Begin(SpriteSortMode.BackToFront, null, null, null, null, null,
+            this.spriteBatch.Begin(SpriteSortMode.Immediate, null, SamplerState.PointWrap, null, null, null,
                 Matrix.CreateTranslation(
                     new Vector3(
                         Demo.Instance.Width / 2f,
                         Demo.Instance.Height / 2f,
                         0
                     )));
-            this.slideDeck.DrawCurrentSlide(this.spriteBatch);
+            this.slideDeck.DrawPreservedSlides(this.spriteBatch);
             this.spriteBatch.End();
         }
     }
