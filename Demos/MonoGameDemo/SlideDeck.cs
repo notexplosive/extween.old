@@ -10,8 +10,8 @@ namespace MonoGameDemo
         private readonly List<ICue> cues = new List<ICue>
         {
             new FlyInTitle(Demo.TitleFont, "Tweens"),
-            new FlyInTitle(Demo.SubtitleFont, "A presentation by NotExplosive"),
-            new ClearCue()
+            new ClearCue(),
+            new FlyInTitle(Demo.TitleFont, "Tweens"),
         };
 
         private readonly List<Slide> preservedSlides = new List<Slide>();

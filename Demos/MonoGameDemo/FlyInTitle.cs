@@ -10,7 +10,7 @@ namespace MonoGameDemo
     {
         private readonly SpriteFont font;
         private readonly string message;
-        private readonly List<Glyph> glyphs = new List<Glyph>();
+        private readonly List<SpriteFontGlyph> glyphs = new List<SpriteFontGlyph>();
 
         public FlyInTitle(SpriteFont font, string message)
         {
@@ -27,10 +27,10 @@ namespace MonoGameDemo
             {
                 foreach (var letter in this.message)
                 {
-                    this.glyphs.Add(new Glyph
+                    this.glyphs.Add(new SpriteFontGlyph
                     {
                         Text = letter.ToString(),
-                        Position = new TweenableVector2(new Vector2(0, 600)),
+                        Position = new TweenableVector2(new Vector2(0, 500)),
                         Scale = new TweenableFloat(1),
                         Font = this.font
                     });
@@ -87,27 +87,6 @@ namespace MonoGameDemo
             {
                 glyph.Draw(spriteBatch);
             }
-        }
-    }
-    
-    public class Glyph
-    {
-        public TweenableVector2 Position { get; set; } = new TweenableVector2();
-        public string Text { get; set; }
-        public TweenableFloat Angle { get; } = new TweenableFloat();
-        public TweenableFloat Scale { get; set; } = new TweenableFloat();
-        public SpriteFont Font { get; set; }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            if (Font == null)
-            {
-                Font = Demo.TitleFont;
-            }
-            
-            var offset = Font.MeasureString(Text) / 2;
-            spriteBatch.DrawString(Font, Text, Position + offset, Color.Black, Angle, offset,
-                Scale, SpriteEffects.None, 0f);
         }
     }
 }
