@@ -24,6 +24,12 @@ namespace TestExTween.Art
         }
         
         [Fact]
+        public void render_every_punctuation_minimum_fidelity()
+        {
+            VerifyEveryChar(char.IsPunctuation);
+        }
+        
+        [Fact]
         public void render_every_digit_minimum_fidelity()
         {
             VerifyEveryChar(char.IsDigit);
