@@ -53,7 +53,6 @@ namespace ExTween.Art
 
                 var currentPoint = value.Position;
                 currentPoint *= FontSize / 2f;
-                var radius = Thickness / 2;
 
                 if (value.ShouldDraw)
                 {
@@ -61,8 +60,6 @@ namespace ExTween.Art
                     {
                         painter.DrawLine(prevPoint + RenderOffset, currentPoint + RenderOffset, Thickness, color);
                     }
-
-                    painter.DrawCircle(currentPoint + RenderOffset, radius, radius, 10, color);
                 }
 
                 prevPoint = currentPoint;

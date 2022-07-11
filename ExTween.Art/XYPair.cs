@@ -1,4 +1,6 @@
-﻿namespace ExTween.Art
+﻿using System;
+
+namespace ExTween.Art
 {
     public interface IXyPair<T>
     {
@@ -77,6 +79,16 @@
         public static FloatXyPair operator -(FloatXyPair left, FloatXyPair right)
         {
             return new FloatXyPair(left.X - right.X, left.Y - right.Y);
+        }
+
+        public float Length()
+        {
+            return MathF.Sqrt(X * X + Y * Y);
+        }
+
+        public IntXyPair ToIntXy()
+        {
+            return new IntXyPair((int) X, (int) Y);
         }
     }
 
