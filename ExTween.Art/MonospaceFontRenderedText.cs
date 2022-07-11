@@ -1,6 +1,6 @@
 ﻿namespace ExTween.Art
 {
-    public class DynamicMonospaceFontRenderedText : TweenableVisualElement
+    public class MonospaceFontRenderedText : TweenableVisualElement
     {
         private readonly float fontSize;
         private readonly int numberOfSegments;
@@ -9,7 +9,7 @@
         private readonly string text;
         private readonly float thickness;
 
-        public DynamicMonospaceFontRenderedText(float fontSize, string text, float thickness = 6,
+        public MonospaceFontRenderedText(float fontSize, string text, float thickness = 6,
             int numberOfSegments = 0, float paddingBetweenLetters = 20)
         {
             this.fontSize = fontSize;
@@ -22,7 +22,7 @@
 
             for (var i = 0; i < this.text.Length; i++)
             {
-                this.patterns[i] = DynamicMonospaceFont.Instance.GetPatternForLetter(this.text[i]);
+                this.patterns[i] = MonospaceFont.Instance.GetPatternForLetter(this.text[i]);
             }
         }
 
@@ -30,7 +30,7 @@
             new FloatXyPair(CharSize.X * this.text.Length + this.paddingBetweenLetters * (this.text.Length - 1),
                 CharSize.Y);
 
-        public FloatXyPair CharSize => DynamicMonospaceFont.Instance.CharacterSize(this.fontSize);
+        public FloatXyPair CharSize => MonospaceFont.Instance.CharacterSize(this.fontSize);
 
         public override void Draw(Painter painter)
         {

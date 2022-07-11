@@ -1,8 +1,8 @@
 ﻿namespace ExTween.Art
 {
-    public class DynamicMonospaceFont
+    public class MonospaceFont
     {
-        public static readonly DynamicMonospaceFont Instance = new DynamicMonospaceFont();
+        public static readonly MonospaceFont Instance = new MonospaceFont();
 
         public TweenPattern GetPatternForLetter(char letter)
         {

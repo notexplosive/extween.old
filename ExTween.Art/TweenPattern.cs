@@ -17,7 +17,7 @@ namespace ExTween.Art
             this.shouldDraw = shouldDraw;
         }
 
-        public override FloatXyPair Size => DynamicMonospaceFont.Instance.CharacterSize(FontSize);
+        public override FloatXyPair Size => MonospaceFont.Instance.CharacterSize(FontSize);
 
         public float Thickness { get; set; }
         public float FontSize { get; set; }
