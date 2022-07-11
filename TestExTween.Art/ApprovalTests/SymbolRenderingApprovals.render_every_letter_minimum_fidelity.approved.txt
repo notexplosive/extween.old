@@ -1,0 +1,3828 @@
+﻿-- A --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- B --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- C --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- D --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- E --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- F --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- G --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- H --
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+xxxxxxxxxxxxxxxx
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+
+
+-- I --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- J --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- K --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- L --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- M --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- N --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- O --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- P --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Q --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- R --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- S --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- T --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- U --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- V --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- W --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- X --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Y --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Z --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- a --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- b --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- c --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- d --
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+x              x
+xx             x
+ xxx           x
+   xx          x
+    xx         x
+      xx       x
+      xxx      x
+    xxx  xx    x
+   xx     xx   x
+ xxx       xxx x
+xx           xxx
+x             xx
+xx             x
+ x             x
+  x            x
+  xx           x
+   xx          x
+    xx         x
+     x         x
+      x        x
+      xx       x
+
+
+-- e --
+                
+                
+                
+                
+                
+                
+x               
+x               
+xx              
+ xx             
+  xx            
+   xx           
+    xx          
+     xx         
+      xx        
+      xxx       
+     xx xx      
+    xx   xx     
+   xx     xx    
+  xx       xx   
+ xx         xx  
+xx           xx 
+xxxxxxxxxxxxxxxx
+xx              
+ xx             
+  xx            
+   xx           
+    xx          
+     xx         
+      xx        
+
+
+-- f --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- g --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- h --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- i --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- j --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- k --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- l --
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+
+
+-- m --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- n --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- o --
+                
+                
+                
+                
+                
+                
+               x
+              xx
+             xx 
+            xx  
+           xx   
+          xx    
+         xx     
+        xx      
+       xx       
+      xxx       
+     xx xx      
+    xx   xx     
+   xx     xx    
+  xx       xx   
+ xx         xx  
+xx           xx 
+x             xx
+xx           xxx
+ xx         xx  
+  xx       xx   
+   xx     xx    
+    xx   xx     
+     xx xx      
+      xxx       
+
+
+-- p --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- q --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- r --
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x             xx
+x            xx 
+x          xxx  
+x         xx    
+x        xx     
+x      xx       
+x     xxx       
+x   xx  xxx     
+x  xx     xx    
+xxxx       xxx  
+xx           xx 
+x             xx
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+
+
+-- s --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- t --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- u --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- v --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- w --
+           x    
+          x     
+          x     
+          x     
+          x     
+         x      
+         x      
+         x      
+         x      
+        x       
+        x       
+        x      x
+        x      x
+       x       x
+       x       x
+x      x      x 
+x      x      x 
+x     x x     x 
+x     x x     x 
+ x    x x    x  
+ x    x x    x  
+ x   x   x   x  
+ x   x   x   x  
+  x  x   x  x   
+  x  x   x  x   
+  x x     x x   
+  x x     x x   
+   xx     xx    
+   xx     xx    
+   x       x    
+
+
+-- x --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- y --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- z --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ª --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- µ --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- º --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- À --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Á --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Â --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ã --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ä --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Å --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Æ --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ç --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- È --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- É --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ê --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ë --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ì --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Í --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Î --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ï --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ð --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ñ --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ò --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ó --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ô --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Õ --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ö --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ø --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ù --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ú --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Û --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ü --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Ý --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- Þ --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ß --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- à --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- á --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- â --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ã --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ä --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- å --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- æ --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ç --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- è --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- é --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ê --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ë --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ì --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- í --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- î --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ï --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ð --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ñ --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ò --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ó --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ô --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- õ --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ö --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ø --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ù --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ú --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- û --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ü --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- ý --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
+-- þ --
+       x        
+      x x       
+      x x       
+     x   x      
+     x   x      
+    x     x     
+    x     x     
+   x       x    
+   x       x    
+  x         x   
+  x         x   
+ x           x  
+ x           x  
+x             x 
+x             x 
+x             xx
+x             xx
+ x           x  
+ x           x  
+  x         x   
+  x         x   
+   x       x    
+   x       x    
+    x     x     
+    x     x     
+     x   x      
+     x   x      
+      x x       
+      x x       
+       x        
+
+
