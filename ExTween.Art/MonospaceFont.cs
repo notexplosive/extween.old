@@ -13,6 +13,26 @@
         public TweenableFloat X { get; } = new TweenableFloat();
         public TweenableFloat Y { get; } = new TweenableFloat();
         public TweenableInt ShouldDraw { get; } = new TweenableInt(1);
+
+        public State GetStateAtPercent(float percent)
+        {
+            var duration = Tween.TotalDuration;
+            Tween.JumpTo(duration.Get() * percent);
+
+            return new State(new FloatXyPair(X.Value, Y.Value), ShouldDraw.Value == 1);
+        }
+
+        public readonly struct State
+        {
+            public FloatXyPair Position { get; }
+            public bool ShouldDraw { get; }
+
+            public State(FloatXyPair position, bool shouldDraw)
+            {
+                Position = position;
+                ShouldDraw = shouldDraw;
+            }
+        }
     }
 
     public class MonospaceFont : IFont

@@ -21,14 +21,6 @@ namespace ExTween.Art
         public int NumberOfSegments { get; set; }
         public FloatXyPair RenderOffset { get; set; }
 
-        public State GetValuesAtPercent(float percent)
-        {
-            var duration = this.kit.Tween.TotalDuration;
-            this.kit.Tween.JumpTo(duration.Get() * percent);
-
-            return new State(new FloatXyPair(this.kit.X.Value, this.kit.Y.Value), this.kit.ShouldDraw.Value == 1);
-        }
-
         public override void Draw(Painter painter)
         {
             if (this.kit.Tween is TweenCollection {ChildrenWithDurationCount: 0})
@@ -44,7 +36,7 @@ namespace ExTween.Art
             {
                 var color = StrokeColor.Black;
 
-                var value = GetValuesAtPercent((float) i / MinimumNumberOfSegments());
+                var value = this.kit.GetStateAtPercent((float) i / MinimumNumberOfSegments());
 
                 var currentPoint = value.Position;
                 currentPoint *= this.font.FontSize / 2f;
@@ -70,18 +62,6 @@ namespace ExTween.Art
             }
 
             return NumberOfSegments;
-        }
-
-        public struct State
-        {
-            public FloatXyPair Position { get; }
-            public bool ShouldDraw { get; }
-
-            public State(FloatXyPair position, bool shouldDraw)
-            {
-                Position = position;
-                ShouldDraw = shouldDraw;
-            }
         }
     }
 }
