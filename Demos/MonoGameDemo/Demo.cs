@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using ExTween.MonoGame;
+using ExTween.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -84,7 +86,7 @@ namespace MonoGameDemo
                         Demo.Instance.Height / 2f,
                         0
                     )));
-            this.slideDeck.DrawPreservedSlides(this.spriteBatch);
+            this.slideDeck.DrawPreservedSlides(new SpriteBatchPainter(this.spriteBatch));
             this.spriteBatch.End();
         }
     }

@@ -1,7 +1,6 @@
 ﻿using ExTween;
-using Microsoft.Xna.Framework;
 
-namespace MonoGameDemo
+namespace ExTween.Text
 {
     public class DynamicMonospaceFont
     {
@@ -175,9 +174,9 @@ namespace MonoGameDemo
             return new TweenPattern(primaryTween, x, y, shouldDraw);
         }
 
-        public Vector2 CharacterSize(float fontSize)
+        public FloatXyPair CharacterSize(float fontSize)
         {
-            return new Vector2(fontSize / 2, fontSize);
+            return new FloatXyPair(fontSize / 2, fontSize);
         }
     }
 }

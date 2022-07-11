@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ExTween;
 using ExTween.MonoGame;
+using ExTween.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -27,7 +28,7 @@ namespace MonoGameDemo
                     Elements.Add(new SpriteFontRenderedText
                     {
                         Text = letter.ToString(),
-                        Position = new TweenableVector2(new Vector2(0, 500)),
+                        Position = new TweenableFloatXyPair(new Vector2(0, 500).ToXyPair()),
                         Scale = new TweenableFloat(1),
                         Font = this.font
                     });
@@ -49,10 +50,10 @@ namespace MonoGameDemo
                         .Add(new MultiplexTween()
                             .AddChannel(
                                 new SequenceTween()
-                                    .Add(new Tween<Vector2>(Elements[glyphIndex].Position,
-                                        new Vector2(targetX + 100, targetY - 200), duration / 2, Ease.QuadFastSlow))
-                                    .Add(new Tween<Vector2>(Elements[glyphIndex].Position,
-                                        new Vector2(targetX, targetY), duration / 2, Ease.QuadSlowFast))
+                                    .Add(new Tween<FloatXyPair>(Elements[glyphIndex].Position,
+                                        new FloatXyPair(targetX + 100, targetY - 200), duration / 2, Ease.QuadFastSlow))
+                                    .Add(new Tween<FloatXyPair>(Elements[glyphIndex].Position,
+                                        new FloatXyPair(targetX, targetY), duration / 2, Ease.QuadSlowFast))
                             )
                             .AddChannel(
                                 new SequenceTween()

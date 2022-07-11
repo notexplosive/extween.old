@@ -1,7 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-
-namespace MonoGameDemo
+﻿namespace ExTween.Text
 {
     public class DynamicMonospaceFontRenderedText : TweenableVisualElement
     {
@@ -29,24 +26,24 @@ namespace MonoGameDemo
             }
         }
 
-        public override Vector2 Size =>
-            new Vector2(CharSize.X * this.text.Length + this.paddingBetweenLetters * (this.text.Length - 1),
+        public override FloatXyPair Size =>
+            new FloatXyPair(CharSize.X * this.text.Length + this.paddingBetweenLetters * (this.text.Length - 1),
                 CharSize.Y);
 
-        public Vector2 CharSize => DynamicMonospaceFont.Instance.CharacterSize(this.fontSize);
+        public FloatXyPair CharSize => DynamicMonospaceFont.Instance.CharacterSize(this.fontSize);
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(Painter painter)
         {
             for (var i = 0; i < this.patterns.Length; i++)
             {
                 var pattern = this.patterns[i];
 
-                pattern.RenderOffset = new Vector2(-Size.X / 2 + (CharSize.X + this.paddingBetweenLetters) * i, 0);
+                pattern.RenderOffset = new FloatXyPair(-Size.X / 2 + (CharSize.X + this.paddingBetweenLetters) * i, 0);
                 pattern.NumberOfSegments = this.numberOfSegments;
                 pattern.FontSize = this.fontSize;
                 pattern.Thickness = this.thickness;
 
-                pattern.Draw(spriteBatch);
+                pattern.Draw(painter);
             }
         }
     }

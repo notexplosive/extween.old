@@ -1,4 +1,5 @@
 ﻿using ExTween;
+using ExTween.Text;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoGameDemo

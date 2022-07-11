@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using ExTween;
+using ExTween.Text;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -61,7 +62,7 @@ namespace MonoGameDemo
             LoadCurrentSlide();
         }
 
-        public void DrawPreservedSlides(SpriteBatch spriteBatch)
+        public void DrawPreservedSlides(Painter spriteBatch)
         {
             foreach (var slide in this.preservedSlides)
             {
@@ -111,11 +112,11 @@ namespace MonoGameDemo
 
         protected abstract void BuildTween(SequenceTween sequenceTween);
         
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Painter painter)
         {
             foreach (var glyph in Elements)
             {
-                glyph.Draw(spriteBatch);
+                glyph.Draw(painter);
             }
         }
 

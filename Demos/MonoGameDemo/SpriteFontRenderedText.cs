@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using ExTween.MonoGame;
+using ExTween.Text;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoGameDemo
@@ -7,18 +9,22 @@ namespace MonoGameDemo
     {
         public string Text { get; set; }
         public SpriteFont Font { get; set; }
-        public override Vector2 Size => Font.MeasureString(Text);
+        public override FloatXyPair Size => Font.MeasureString(Text).ToXyPair();
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(Painter painter)
         {
-            if (Font == null)
+            if (painter is SpriteBatchPainter sbp)
             {
-                Font = Demo.TitleFont;
+                var spriteBatch = sbp.SpriteBatch;
+                if (Font == null)
+                {
+                    Font = Demo.TitleFont;
+                }
+
+                var halfOfSize = Size.ToVector2() / 2;
+                spriteBatch.DrawString(Font, Text, Position.Value.ToVector2() + halfOfSize, Color.Black, Angle, halfOfSize,
+                    Scale, SpriteEffects.None, 0f);
             }
-            
-            var halfOfSize = Size / 2;
-            spriteBatch.DrawString(Font, Text, Position + halfOfSize, Color.Black, Angle, halfOfSize,
-                Scale, SpriteEffects.None, 0f);
         }
     }
 }
