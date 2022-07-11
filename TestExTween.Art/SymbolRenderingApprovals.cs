@@ -13,15 +13,28 @@ namespace TestExTween.Art
         [Fact]
         public void render_every_letter()
         {
-            var font = new MonospaceFont(20);
-            var glyph = font.GetTweenGlyphForLetter('H');
-            glyph.RenderOffset = glyph.Size / 2;
-            glyph.NumberOfSegments = 100;
+            string allLetters = string.Empty;
+            var font = new MonospaceFont(30);
 
-            var painter = new AsciiPainter(glyph.Size.ToIntXy() + new IntXyPair(1, 0));
-            glyph.Draw(painter);
+            for (int i = 32; i < 255; i++)
+            {
+                var c = (char) i;
+                if (char.IsWhiteSpace(c))
+                {
+                    continue;
+                }
 
-            Approvals.Verify(painter.RenderString());
+                allLetters += $"-- {c} --\n";
+                var glyph = font.GetTweenGlyphForLetter(c);
+                glyph.RenderOffset = glyph.Size / 2;
+                glyph.NumberOfSegments = 100;
+
+                var painter = new AsciiPainter(glyph.Size.ToIntXy() + new IntXyPair(1, 0));
+                glyph.Draw(painter);
+                allLetters += painter.RenderString() + "\n\n";
+            }
+            
+            Approvals.Verify(allLetters);
         }
     }
 }
