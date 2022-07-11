@@ -48,7 +48,7 @@
         {
             var kit = new DrawKit();
 
-            var duration = 1f;
+            const float duration = 1f;
 
             if (char.IsWhiteSpace(letter))
             {
@@ -60,13 +60,13 @@
                 kit.Tween.Add(subTween);
             }
 
-            ITween SetXY(float targetX, float targetY)
+            ITween SetXY(float x, float y)
             {
                 return new CallbackTween(
                     () =>
                     {
-                        kit.X.ForceSetValue(targetX);
-                        kit.Y.ForceSetValue(targetY);
+                        kit.X.ForceSetValue(x);
+                        kit.Y.ForceSetValue(y);
                     });
             }
 
@@ -75,18 +75,18 @@
                 return new Tween<float>(tweenable, destination, duration, Ease.Linear);
             }
 
-            ITween ArcBegin(float destinationX, float destinationY)
+            ITween ArcBegin(float x, float y)
             {
                 return new MultiplexTween()
-                    .AddChannel(new Tween<float>(kit.X, destinationX, duration, Ease.SineSlowFast))
-                    .AddChannel(new Tween<float>(kit.Y, destinationY, duration, Ease.SineFastSlow));
+                    .AddChannel(new Tween<float>(kit.X, x, duration, Ease.SineSlowFast))
+                    .AddChannel(new Tween<float>(kit.Y, y, duration, Ease.SineFastSlow));
             }
 
-            ITween ArcEnd(float destinationX, float destinationY)
+            ITween ArcEnd(float x, float y)
             {
                 return new MultiplexTween()
-                    .AddChannel(new Tween<float>(kit.X, destinationX, duration, Ease.SineFastSlow))
-                    .AddChannel(new Tween<float>(kit.Y, destinationY, duration, Ease.SineSlowFast));
+                    .AddChannel(new Tween<float>(kit.X, x, duration, Ease.SineFastSlow))
+                    .AddChannel(new Tween<float>(kit.Y, y, duration, Ease.SineSlowFast));
             }
 
             ITween Enable()
@@ -109,10 +109,10 @@
                     .AddChannel(subTween);
             }
 
-            ITween Initialize(float destinationX, float destinationY)
+            ITween Initialize(float x, float y)
             {
                 return new SequenceTween()
-                        .Add(SetXY(destinationX, destinationY))
+                        .Add(SetXY(x, y))
                         .Add(Enable())
                     ;
             }
