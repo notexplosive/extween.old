@@ -6,6 +6,11 @@ namespace ExTween.Art
     {
         public T X { get; set; }
         public T Y { get; set; }
+
+        public string ToString()
+        {
+            return $"{X}, {Y}";
+        }
     }
 
     public struct IntXyPair : IXyPair<int>
