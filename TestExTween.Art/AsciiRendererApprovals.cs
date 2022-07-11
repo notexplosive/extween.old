@@ -11,7 +11,7 @@ namespace TestExTween.Art
     public class AsciiRendererApprovals
     {
         [Fact]
-        public void AsciiBasic()
+        public void ascii_basic()
         {
             var painter = new AsciiPainter(new IntXyPair(10, 10));
             painter.DrawLine(new FloatXyPair(0, 0), new FloatXyPair(10, 10), 1, StrokeColor.Black);

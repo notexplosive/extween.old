@@ -10,11 +10,11 @@ namespace ExTween.Art
         public AsciiPainter(IntXyPair size)
         {
             this.size = size;
-            this.canvas = new char[size.X, size.Y];
+            this.canvas = new char[this.size.X, this.size.Y];
 
-            for (int y = 0; y < this.size.Y; y++)
+            for (var y = 0; y < this.size.Y; y++)
             {
-                for (int x = 0; x < this.size.X; x++)
+                for (var x = 0; x < this.size.X; x++)
                 {
                     this.canvas[x, y] = ' ';
                 }
@@ -54,9 +54,9 @@ namespace ExTween.Art
         public string RenderString()
         {
             var output = new StringBuilder();
-            for (int y = 0; y < this.size.Y; y++)
+            for (var y = 0; y < this.size.Y; y++)
             {
-                for (int x = 0; x < this.size.X; x++)
+                for (var x = 0; x < this.size.X; x++)
                 {
                     output.Append(this.canvas[x, y]);
                 }

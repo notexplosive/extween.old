@@ -24,7 +24,7 @@
 
             for (var i = 0; i < this.text.Length; i++)
             {
-                this.patterns[i] = this.font.GetPatternForLetter(this.text[i]);
+                this.patterns[i] = this.font.GetTweenGlyphForLetter(this.text[i]);
             }
         }
 

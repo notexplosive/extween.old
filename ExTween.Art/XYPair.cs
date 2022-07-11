@@ -70,6 +70,11 @@ namespace ExTween.Art
         {
             return new FloatXyPair(left.X * right, left.Y * right);
         }
+        
+        public static FloatXyPair operator /(FloatXyPair left, float right)
+        {
+            return new FloatXyPair(left.X / right, left.Y / right);
+        }
 
         public static FloatXyPair operator +(FloatXyPair left, FloatXyPair right)
         {

@@ -3,14 +3,14 @@
     public interface IFont
     {
         FloatXyPair CharacterSize(char c, float fontSize);
-        TweenGlyph GetPatternForLetter(char c);
+        TweenGlyph GetTweenGlyphForLetter(char c);
     }
 
     public class MonospaceFont : IFont
     {
         public static readonly MonospaceFont Instance = new MonospaceFont();
 
-        public TweenGlyph GetPatternForLetter(char letter)
+        public TweenGlyph GetTweenGlyphForLetter(char letter)
         {
             var x = new TweenableFloat();
             var y = new TweenableFloat();
