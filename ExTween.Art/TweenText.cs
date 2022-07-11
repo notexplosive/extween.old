@@ -1,6 +1,6 @@
 ﻿namespace ExTween.Art
 {
-    public class RenderedText : TweenableVisualElement
+    public class TweenText : TweenableVisualElement
     {
         private readonly int numberOfSegments;
         private readonly float paddingBetweenLetters;
@@ -9,7 +9,7 @@
         private readonly IFont font;
         private readonly float thickness;
 
-        public RenderedText(string text, IFont font, float thickness = 6,
+        public TweenText(string text, IFont font, float thickness = 6,
             int numberOfSegments = 0, float paddingBetweenLetters = 20)
         {
             this.text = text;

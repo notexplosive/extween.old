@@ -18,9 +18,12 @@
         
         public TweenGlyph GetTweenGlyphForLetter(char letter)
         {
+            // TODO: Bundle these into a struct
             var x = new TweenableFloat();
             var y = new TweenableFloat();
             var shouldDraw = new TweenableInt(1);
+            // 
+            
             var duration = 1f;
             var primaryTween = new SequenceTween();
 
