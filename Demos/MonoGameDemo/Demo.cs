@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using ExTween.MonoGame;
-using ExTween.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;

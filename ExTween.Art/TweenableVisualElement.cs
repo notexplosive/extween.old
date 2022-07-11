@@ -1,5 +1,5 @@
 ﻿
-namespace ExTween.Text
+namespace ExTween.Art
 {
     public abstract class TweenableVisualElement
     {

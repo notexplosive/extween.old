@@ -1,4 +1,4 @@
-﻿using ExTween.Text;
+﻿using ExTween.Art;
 using Microsoft.Xna.Framework;
 
 namespace ExTween.MonoGame

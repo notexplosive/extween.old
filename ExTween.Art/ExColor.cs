@@ -1,4 +1,4 @@
-﻿namespace ExTween.Text
+﻿namespace ExTween.Art
 {
     public class ExColor
     {

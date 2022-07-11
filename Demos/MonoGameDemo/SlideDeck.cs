@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using ExTween;
-using ExTween.Text;
+using ExTween.Art;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 

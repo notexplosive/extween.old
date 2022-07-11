@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ExTween;
+using ExTween.Art;
 using ExTween.MonoGame;
-using ExTween.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 

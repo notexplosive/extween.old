@@ -1,6 +1,4 @@
-﻿using ExTween;
-
-namespace ExTween.Text
+﻿namespace ExTween.Art
 {
     public class DynamicMonospaceFont
     {

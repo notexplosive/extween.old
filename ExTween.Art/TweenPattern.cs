@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExTween.Text
+namespace ExTween.Art
 {
     public class TweenPattern : TweenableVisualElement
     {

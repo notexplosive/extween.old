@@ -1,5 +1,5 @@
-﻿using ExTween.MonoGame;
-using ExTween.Text;
+﻿using ExTween.Art;
+using ExTween.MonoGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
