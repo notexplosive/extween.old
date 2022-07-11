@@ -2,19 +2,19 @@
 {
     public interface IFont
     {
+        float FontSize { get; }
         FloatXyPair CharacterSize(char c);
         TweenGlyph GetTweenGlyphForLetter(char c);
-        float FontSize { get; }
     }
 
     public class DrawKit
     {
         public SequenceTween Tween { get; } = new SequenceTween();
-        public TweenableFloat X{ get; } = new TweenableFloat();
-        public TweenableFloat Y{ get; } = new TweenableFloat();
-        public TweenableInt ShouldDraw{ get; } = new TweenableInt(1);
+        public TweenableFloat X { get; } = new TweenableFloat();
+        public TweenableFloat Y { get; } = new TweenableFloat();
+        public TweenableInt ShouldDraw { get; } = new TweenableInt(1);
     }
-    
+
     public class MonospaceFont : IFont
     {
         public MonospaceFont(float fontSize)
@@ -22,8 +22,8 @@
             FontSize = fontSize;
         }
 
-        public float FontSize { get; } 
-        
+        public float FontSize { get; }
+
         public TweenGlyph GetTweenGlyphForLetter(char letter)
         {
             var kit = new DrawKit();
@@ -32,7 +32,7 @@
 
             if (char.IsWhiteSpace(letter))
             {
-                return new TweenGlyph(new SequenceTween(), this, letter, kit.X, kit.Y, kit.ShouldDraw);
+                return new TweenGlyph(kit, this, letter);
             }
 
             void Keyframe(ITween subTween)
@@ -98,7 +98,7 @@
             }
 
             var tinyFont = new MonospaceFont(2);
-            
+
             var width = tinyFont.CharacterSize(letter).X;
             var height = tinyFont.CharacterSize(letter).Y;
             var top = -height / 2;
@@ -189,7 +189,7 @@
                     break;
             }
 
-            return new TweenGlyph(kit.Tween, this, letter, kit.X, kit.Y, kit.ShouldDraw);
+            return new TweenGlyph(kit, this, letter);
         }
 
         public FloatXyPair CharacterSize(char _)

@@ -4,21 +4,15 @@ namespace ExTween.Art
 {
     public class TweenGlyph : TweenableVisualElement
     {
-        private readonly TweenableInt shouldDraw;
-        private readonly ITween tween;
         private readonly IFont font;
         private readonly char letter;
-        private readonly TweenableFloat x;
-        private readonly TweenableFloat y;
+        private readonly DrawKit kit;
 
-        public TweenGlyph(ITween tween, IFont font, char letter, TweenableFloat x, TweenableFloat y, TweenableInt shouldDraw)
+        public TweenGlyph(DrawKit kit, IFont font, char letter)
         {
-            this.tween = tween;
             this.font = font;
             this.letter = letter;
-            this.x = x;
-            this.y = y;
-            this.shouldDraw = shouldDraw;
+            this.kit = kit;
         }
 
         public override FloatXyPair Size => font.CharacterSize(this.letter);
@@ -29,15 +23,15 @@ namespace ExTween.Art
 
         public State GetValuesAtPercent(float percent)
         {
-            var duration = this.tween.TotalDuration;
-            this.tween.JumpTo(duration.Get() * percent);
+            var duration = this.kit.Tween.TotalDuration;
+            this.kit.Tween.JumpTo(duration.Get() * percent);
 
-            return new State(new FloatXyPair(this.x.Value, this.y.Value), this.shouldDraw.Value == 1);
+            return new State(new FloatXyPair(this.kit.X.Value, this.kit.Y.Value), this.kit.ShouldDraw.Value == 1);
         }
 
         public override void Draw(Painter painter)
         {
-            if (this.tween is TweenCollection {ChildrenWithDurationCount: 0})
+            if (this.kit.Tween is TweenCollection {ChildrenWithDurationCount: 0})
             {
                 // Empty tween, don't bother drawing anything
                 return;
@@ -70,7 +64,7 @@ namespace ExTween.Art
 
         private int MinimumNumberOfSegments()
         {
-            if (this.tween is TweenCollection collection)
+            if (this.kit.Tween is TweenCollection collection)
             {
                 return Math.Max(NumberOfSegments, collection.ChildrenWithDurationCount);
             }
