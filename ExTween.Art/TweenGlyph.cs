@@ -6,23 +6,24 @@ namespace ExTween.Art
     {
         private readonly TweenableInt shouldDraw;
         private readonly ITween tween;
+        private readonly IFont font;
         private readonly char letter;
         private readonly TweenableFloat x;
         private readonly TweenableFloat y;
 
-        public TweenGlyph(ITween tween, char letter, TweenableFloat x, TweenableFloat y, TweenableInt shouldDraw)
+        public TweenGlyph(ITween tween, IFont font, char letter, TweenableFloat x, TweenableFloat y, TweenableInt shouldDraw)
         {
             this.tween = tween;
+            this.font = font;
             this.letter = letter;
             this.x = x;
             this.y = y;
             this.shouldDraw = shouldDraw;
         }
 
-        public override FloatXyPair Size => MonospaceFont.Instance.CharacterSize(this.letter, FontSize);
+        public override FloatXyPair Size => font.CharacterSize(this.letter);
 
         public float Thickness { get; set; }
-        public float FontSize { get; set; }
         public int NumberOfSegments { get; set; }
         public FloatXyPair RenderOffset { get; set; }
 
@@ -52,7 +53,7 @@ namespace ExTween.Art
                 var value = GetValuesAtPercent((float) i / MinimumNumberOfSegments());
 
                 var currentPoint = value.Position;
-                currentPoint *= FontSize / 2f;
+                currentPoint *= this.font.FontSize / 2f;
 
                 if (value.ShouldDraw)
                 {

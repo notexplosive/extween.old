@@ -2,7 +2,6 @@
 {
     public class RenderedText : TweenableVisualElement
     {
-        private readonly float fontSize;
         private readonly int numberOfSegments;
         private readonly float paddingBetweenLetters;
         private readonly TweenGlyph[] patterns;
@@ -10,10 +9,9 @@
         private readonly IFont font;
         private readonly float thickness;
 
-        public RenderedText(float fontSize, string text, IFont font, float thickness = 6,
+        public RenderedText(string text, IFont font, float thickness = 6,
             int numberOfSegments = 0, float paddingBetweenLetters = 20)
         {
-            this.fontSize = fontSize;
             this.text = text;
             this.font = font;
             this.thickness = thickness;
@@ -34,10 +32,10 @@
                 var width = 0f;
                 foreach (var character in this.text)
                 {
-                    width += this.font.CharacterSize(character, this.fontSize).X;
+                    width += this.font.CharacterSize(character).X;
                 }
 
-                return new FloatXyPair(width + this.paddingBetweenLetters * (this.text.Length - 1), this.font.CharacterSize('x',this.fontSize).Y);
+                return new FloatXyPair(width + this.paddingBetweenLetters * (this.text.Length - 1), this.font.CharacterSize('x').Y);
             }
         }
 
@@ -48,12 +46,11 @@
             for (var i = 0; i < this.patterns.Length; i++)
             {
                 var pattern = this.patterns[i];
-                xPosition += this.font.CharacterSize(this.text[i], this.fontSize).X;
+                xPosition += this.font.CharacterSize(this.text[i]).X;
                 xPosition += this.paddingBetweenLetters;
 
                 pattern.RenderOffset = new FloatXyPair(-Size.X / 2 + xPosition, 0);
                 pattern.NumberOfSegments = this.numberOfSegments;
-                pattern.FontSize = this.fontSize;
                 pattern.Thickness = this.thickness;
 
                 pattern.Draw(painter);

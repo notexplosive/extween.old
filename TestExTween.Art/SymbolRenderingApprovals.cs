@@ -13,9 +13,8 @@ namespace TestExTween.Art
         [Fact]
         public void render_every_letter()
         {
-            var font = new MonospaceFont();
+            var font = new MonospaceFont(20);
             var glyph = font.GetTweenGlyphForLetter('H');
-            glyph.FontSize = 20;
             glyph.RenderOffset = glyph.Size / 2;
             glyph.NumberOfSegments = 100;
 
