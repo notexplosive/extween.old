@@ -7,6 +7,14 @@
         float FontSize { get; }
     }
 
+    public class DrawKit
+    {
+        public SequenceTween Tween { get; } = new SequenceTween();
+        public TweenableFloat X{ get; } = new TweenableFloat();
+        public TweenableFloat Y{ get; } = new TweenableFloat();
+        public TweenableInt ShouldDraw{ get; } = new TweenableInt(1);
+    }
+    
     public class MonospaceFont : IFont
     {
         public MonospaceFont(float fontSize)
@@ -18,23 +26,18 @@
         
         public TweenGlyph GetTweenGlyphForLetter(char letter)
         {
-            // TODO: Bundle these into a struct
-            var x = new TweenableFloat();
-            var y = new TweenableFloat();
-            var shouldDraw = new TweenableInt(1);
-            // 
-            
+            var kit = new DrawKit();
+
             var duration = 1f;
-            var primaryTween = new SequenceTween();
 
             if (char.IsWhiteSpace(letter))
             {
-                return new TweenGlyph(new SequenceTween(), this, letter, x, y, shouldDraw);
+                return new TweenGlyph(new SequenceTween(), this, letter, kit.X, kit.Y, kit.ShouldDraw);
             }
 
             void Keyframe(ITween subTween)
             {
-                primaryTween.Add(subTween);
+                kit.Tween.Add(subTween);
             }
 
             ITween SetXY(float targetX, float targetY)
@@ -42,8 +45,8 @@
                 return new CallbackTween(
                     () =>
                     {
-                        x.ForceSetValue(targetX);
-                        y.ForceSetValue(targetY);
+                        kit.X.ForceSetValue(targetX);
+                        kit.Y.ForceSetValue(targetY);
                     });
             }
 
@@ -55,25 +58,25 @@
             ITween ArcBegin(float destinationX, float destinationY)
             {
                 return new MultiplexTween()
-                    .AddChannel(new Tween<float>(x, destinationX, duration, Ease.SineSlowFast))
-                    .AddChannel(new Tween<float>(y, destinationY, duration, Ease.SineFastSlow));
+                    .AddChannel(new Tween<float>(kit.X, destinationX, duration, Ease.SineSlowFast))
+                    .AddChannel(new Tween<float>(kit.Y, destinationY, duration, Ease.SineFastSlow));
             }
 
             ITween ArcEnd(float destinationX, float destinationY)
             {
                 return new MultiplexTween()
-                    .AddChannel(new Tween<float>(x, destinationX, duration, Ease.SineFastSlow))
-                    .AddChannel(new Tween<float>(y, destinationY, duration, Ease.SineSlowFast));
+                    .AddChannel(new Tween<float>(kit.X, destinationX, duration, Ease.SineFastSlow))
+                    .AddChannel(new Tween<float>(kit.Y, destinationY, duration, Ease.SineSlowFast));
             }
 
             ITween Enable()
             {
-                return new CallbackTween(() => { shouldDraw.ForceSetValue(1); });
+                return new CallbackTween(() => { kit.ShouldDraw.ForceSetValue(1); });
             }
 
             ITween Disable()
             {
-                return new CallbackTween(() => { shouldDraw.ForceSetValue(0); });
+                return new CallbackTween(() => { kit.ShouldDraw.ForceSetValue(0); });
             }
 
             ITween DrawPercentOf(float percent, ITween subTween)
@@ -114,16 +117,16 @@
             {
                 case 'H':
                     Keyframe(Initialize(left, top));
-                    Keyframe(AxisLine(y, bottom));
-                    Keyframe(AxisLine(y, center));
-                    Keyframe(AxisLine(x, right));
-                    Keyframe(AxisLine(y, top));
-                    Keyframe(AxisLine(y, bottom));
+                    Keyframe(AxisLine(kit.Y, bottom));
+                    Keyframe(AxisLine(kit.Y, center));
+                    Keyframe(AxisLine(kit.X, right));
+                    Keyframe(AxisLine(kit.Y, top));
+                    Keyframe(AxisLine(kit.Y, bottom));
                     break;
 
                 case 'e':
                     Keyframe(Initialize(left, eCrossHeight));
-                    Keyframe(AxisLine(x, right));
+                    Keyframe(AxisLine(kit.X, right));
                     Keyframe(ArcBegin(center, lowercaseTop));
                     Keyframe(ArcEnd(left, eCrossHeight));
                     Keyframe(ArcBegin(center, bottom));
@@ -133,7 +136,7 @@
 
                 case 'l':
                     Keyframe(Initialize(center, top));
-                    Keyframe(AxisLine(y, bottom));
+                    Keyframe(AxisLine(kit.Y, bottom));
                     break;
 
                 case 'o':
@@ -154,8 +157,8 @@
 
                 case 'r':
                     Keyframe(Initialize(left, lowercaseTop));
-                    Keyframe(AxisLine(y, bottom));
-                    Keyframe(AxisLine(y, armHeight));
+                    Keyframe(AxisLine(kit.Y, bottom));
+                    Keyframe(AxisLine(kit.Y, armHeight));
                     Keyframe(ArcBegin(center, lowercaseTop));
                     Keyframe(ArcEnd(right, armHeight));
                     break;
@@ -165,15 +168,15 @@
                     Keyframe(ArcBegin(center, lowercaseTop));
                     Keyframe(ArcEnd(left, armHeight));
                     Keyframe(ArcBegin(center, bottom));
-                    Keyframe(AxisLine(x, right));
-                    Keyframe(AxisLine(y, top));
+                    Keyframe(AxisLine(kit.X, right));
+                    Keyframe(AxisLine(kit.Y, top));
                     break;
 
                 case '!':
                     Keyframe(Initialize(center, top));
-                    Keyframe(DrawPercentOf(0.60f, AxisLine(y, bottom)));
+                    Keyframe(DrawPercentOf(0.60f, AxisLine(kit.Y, bottom)));
                     Keyframe(Enable());
-                    Keyframe(AxisLine(y, bottom * 0.90f));
+                    Keyframe(AxisLine(kit.Y, bottom * 0.90f));
                     break;
 
                 default:
@@ -186,7 +189,7 @@
                     break;
             }
 
-            return new TweenGlyph(primaryTween, this, letter, x, y, shouldDraw);
+            return new TweenGlyph(kit.Tween, this, letter, kit.X, kit.Y, kit.ShouldDraw);
         }
 
         public FloatXyPair CharacterSize(char _)
