@@ -8,16 +8,18 @@ namespace MonoGameDemo
 {
     public class TweenPattern : TweenableVisualElement
     {
+        private readonly Color[] debugRainbow;
+        private readonly TweenableInt shouldDraw;
         private readonly ITween tween;
         private readonly TweenableFloat x;
         private readonly TweenableFloat y;
-        private readonly Color[] debugRainbow;
 
-        public TweenPattern(ITween tween, TweenableFloat x, TweenableFloat y)
+        public TweenPattern(ITween tween, TweenableFloat x, TweenableFloat y, TweenableInt shouldDraw)
         {
             this.tween = tween;
             this.x = x;
             this.y = y;
+            this.shouldDraw = shouldDraw;
 
             this.debugRainbow = new[]
             {
@@ -27,19 +29,25 @@ namespace MonoGameDemo
                 Color.Yellow,
                 Color.Orange,
                 Color.Violet,
-                Color.Pink,
+                Color.Pink
             };
         }
 
-        public Vector2 GetValuesAtPercent(float percent)
+        public override Vector2 Size => DynamicMonospaceFont.Instance.CharacterSize(FontSize);
+
+        public float Thickness { get; set; }
+        public float FontSize { get; set; }
+        public int NumberOfSegments { get; set; }
+        public Vector2 RenderOffset { get; set; }
+
+        public State GetValuesAtPercent(float percent)
         {
             var duration = this.tween.TotalDuration;
             this.tween.JumpTo(duration.Get() * percent);
 
-            return new Vector2(this.x.Value, this.y.Value);
+            return new State(new Vector2(this.x.Value, this.y.Value), this.shouldDraw.Value == 1);
         }
 
-        public override Vector2 Size => DynamicMonospaceFont.Instance.CharacterSize(FontSize);
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (this.tween is TweenCollection {ChildrenWithDurationCount: 0})
@@ -47,27 +55,40 @@ namespace MonoGameDemo
                 // Empty tween, don't bother drawing anything
                 return;
             }
-            
+
             var prevPoint = new Vector2();
             var hasStarted = false;
-            
-            spriteBatch.DrawCircle(new CircleF(Position.Value + RenderOffset, 10), 10, Color.Black, 3f);
-            
-            for (int i = 0; i <= MinimumNumberOfSegments(); i++)
+
+            if (Demo.DebugMode)
             {
-                var color = this.debugRainbow[i % this.debugRainbow.Length];
+                spriteBatch.DrawCircle(new CircleF(Position.Value + RenderOffset, 10), 10, Color.Black, 3f);
+            }
 
-                var currentPoint = GetValuesAtPercent((float) i / MinimumNumberOfSegments());
-                currentPoint *= FontSize / 2f;
+            for (var i = 0; i <= MinimumNumberOfSegments(); i++)
+            {
+                var color = Color.Black;
 
-                if (hasStarted)
+                if (Demo.DebugMode)
                 {
-                    spriteBatch.DrawLine(prevPoint + RenderOffset, currentPoint + RenderOffset, color, Thickness);
+                    color = this.debugRainbow[i % this.debugRainbow.Length];
                 }
 
+                var value = GetValuesAtPercent((float) i / MinimumNumberOfSegments());
+
+                var currentPoint = value.Position;
+                currentPoint *= FontSize / 2f;
                 var radius = Thickness / 2;
-                spriteBatch.DrawCircle(new CircleF(currentPoint + RenderOffset, radius), 10, color, radius);
-                
+
+                if (value.ShouldDraw)
+                {
+                    if (hasStarted)
+                    {
+                        spriteBatch.DrawLine(prevPoint + RenderOffset, currentPoint + RenderOffset, color, Thickness);
+                    }
+
+                    spriteBatch.DrawCircle(new CircleF(currentPoint + RenderOffset, radius), 10, color, radius);
+                }
+
                 prevPoint = currentPoint;
                 hasStarted = true;
             }
@@ -75,7 +96,7 @@ namespace MonoGameDemo
 
         private int MinimumNumberOfSegments()
         {
-            if (tween is TweenCollection collection)
+            if (this.tween is TweenCollection collection)
             {
                 return Math.Max(NumberOfSegments, collection.ChildrenWithDurationCount);
             }
@@ -83,9 +104,16 @@ namespace MonoGameDemo
             return NumberOfSegments;
         }
 
-        public float Thickness { get; set; }
-        public float FontSize { get; set; }
-        public int NumberOfSegments { get; set; }
-        public Vector2 RenderOffset { get; set; }
+        public struct State
+        {
+            public Vector2 Position { get; }
+            public bool ShouldDraw { get; }
+
+            public State(Vector2 position, bool shouldDraw)
+            {
+                Position = position;
+                ShouldDraw = shouldDraw;
+            }
+        }
     }
 }

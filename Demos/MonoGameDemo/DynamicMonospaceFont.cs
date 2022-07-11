@@ -1,52 +1,85 @@
-﻿using System;
-using ExTween;
+﻿using ExTween;
 using Microsoft.Xna.Framework;
 
 namespace MonoGameDemo
 {
     public class DynamicMonospaceFont
     {
-        public static DynamicMonospaceFont Instance = new DynamicMonospaceFont();
+        public static readonly DynamicMonospaceFont Instance = new DynamicMonospaceFont();
 
         public TweenPattern GetPatternForLetter(char letter)
         {
             var x = new TweenableFloat();
             var y = new TweenableFloat();
+            var shouldDraw = new TweenableInt(1);
             var duration = 1f;
-            var tween = new SequenceTween();
+            var primaryTween = new SequenceTween();
 
             if (char.IsWhiteSpace(letter))
             {
-                return new TweenPattern(new SequenceTween(), x, y);
+                return new TweenPattern(new SequenceTween(), x, y, shouldDraw);
             }
 
-            void SetXY(float targetX, float targetY)
+            void Keyframe(ITween subTween)
             {
-                tween.Add(new CallbackTween(
+                primaryTween.Add(subTween);
+            }
+
+            ITween SetXY(float targetX, float targetY)
+            {
+                return new CallbackTween(
                     () =>
                     {
                         x.ForceSetValue(targetX);
                         y.ForceSetValue(targetY);
-                    }));
+                    });
             }
 
-            void AxisLine(Tweenable<float> tweenable, float destination)
+            ITween AxisLine(Tweenable<float> tweenable, float destination)
             {
-                tween.Add(new Tween<float>(tweenable, destination, duration, Ease.Linear));
+                return new Tween<float>(tweenable, destination, duration, Ease.Linear);
             }
 
-            void ArcBegin(float destinationX, float destinationY)
+            ITween ArcBegin(float destinationX, float destinationY)
             {
-                tween.Add(new MultiplexTween()
+                return new MultiplexTween()
                     .AddChannel(new Tween<float>(x, destinationX, duration, Ease.SineSlowFast))
-                    .AddChannel(new Tween<float>(y, destinationY, duration, Ease.SineFastSlow)));
+                    .AddChannel(new Tween<float>(y, destinationY, duration, Ease.SineFastSlow));
             }
 
-            void ArcEnd(float destinationX, float destinationY)
+            ITween ArcEnd(float destinationX, float destinationY)
             {
-                tween.Add(new MultiplexTween()
+                return new MultiplexTween()
                     .AddChannel(new Tween<float>(x, destinationX, duration, Ease.SineFastSlow))
-                    .AddChannel(new Tween<float>(y, destinationY, duration, Ease.SineSlowFast)));
+                    .AddChannel(new Tween<float>(y, destinationY, duration, Ease.SineSlowFast));
+            }
+
+            ITween Enable()
+            {
+                return new CallbackTween(() => { shouldDraw.ForceSetValue(1); });
+            }
+            
+            ITween Disable()
+            {
+                return new CallbackTween(() => { shouldDraw.ForceSetValue(0); });
+            }
+
+            ITween DrawPercentOf(float percent, ITween subTween)
+            {
+                return new MultiplexTween()
+                    .AddChannel(new SequenceTween()
+                        .Add(new WaitSecondsTween(duration * percent))
+                        .Add(Disable())
+                    )
+                    .AddChannel(subTween);
+            }
+
+            ITween Initialize(float destinationX, float destinationY)
+            {
+                return new SequenceTween()
+                    .Add(SetXY(destinationX, destinationY))
+                    .Add(Enable())
+                    ;
             }
 
             var width = CharacterSize(2).X;
@@ -66,72 +99,80 @@ namespace MonoGameDemo
             switch (letter)
             {
                 case 'H':
-                    SetXY(left, top);
-                    AxisLine(y, bottom);
-                    AxisLine(y, center);
-                    AxisLine(x, right);
-                    AxisLine(y, top);
-                    AxisLine(y, bottom);
+                    Keyframe(Initialize(left, top));
+                    Keyframe(AxisLine(y, bottom));
+                    Keyframe(AxisLine(y, center));
+                    Keyframe(AxisLine(x, right));
+                    Keyframe(AxisLine(y, top));
+                    Keyframe(AxisLine(y, bottom));
                     break;
 
                 case 'e':
-                    SetXY(left, eCrossHeight);
-                    AxisLine(x, right);
-                    ArcBegin(center, lowercaseTop);
-                    ArcEnd(left, eCrossHeight);
-                    ArcBegin(center, bottom);
-                    ArcEnd(MathF.Cos(MathF.PI / 4) * 0.5f, MathF.Sin(MathF.PI / 4) * 0.5f + 0.5f);
+                    Keyframe(Initialize(left, eCrossHeight));
+                    Keyframe(AxisLine(x, right));
+                    Keyframe(ArcBegin(center, lowercaseTop));
+                    Keyframe(ArcEnd(left, eCrossHeight));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(DrawPercentOf(0.75f, ArcEnd(right, eCrossHeight)));
+
                     break;
 
                 case 'l':
-                    SetXY(center, top);
-                    AxisLine(y, bottom);
+                    Keyframe(Initialize(center, top));
+                    Keyframe(AxisLine(y, bottom));
                     break;
 
                 case 'o':
-                    SetXY(right, eCrossHeight);
-                    ArcBegin(center, bottom);
-                    ArcEnd(left, eCrossHeight);
-                    ArcBegin(center, lowercaseTop);
-                    ArcEnd(right, eCrossHeight);
+                    Keyframe(Initialize(right, eCrossHeight));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(ArcEnd(left, eCrossHeight));
+                    Keyframe(ArcBegin(center, lowercaseTop));
+                    Keyframe(ArcEnd(right, eCrossHeight));
                     break;
 
                 case 'w':
-                    SetXY(left, lowercaseTop);
-                    ArcBegin(left / 2, bottom);
-                    ArcEnd(center, lowercaseTop);
-                    ArcBegin(right / 2, bottom);
-                    ArcEnd(right, lowercaseTop);
+                    Keyframe(Initialize(left, lowercaseTop));
+                    Keyframe(ArcBegin(left / 2, bottom));
+                    Keyframe(ArcEnd(center, lowercaseTop));
+                    Keyframe(ArcBegin(right / 2, bottom));
+                    Keyframe(ArcEnd(right, lowercaseTop));
                     break;
 
                 case 'r':
-                    SetXY(left, lowercaseTop);
-                    AxisLine(y, bottom);
-                    AxisLine(y, armHeight);
-                    ArcBegin(center, lowercaseTop);
-                    ArcEnd(right, armHeight);
+                    Keyframe(Initialize(left, lowercaseTop));
+                    Keyframe(AxisLine(y, bottom));
+                    Keyframe(AxisLine(y, armHeight));
+                    Keyframe(ArcBegin(center, lowercaseTop));
+                    Keyframe(ArcEnd(right, armHeight));
                     break;
 
                 case 'd':
-                    SetXY(right, armHeight);
-                    ArcBegin(center, lowercaseTop);
-                    ArcEnd(left, armHeight);
-                    ArcBegin(center, bottom);
-                    AxisLine(x, right);
-                    AxisLine(y, top);
+                    Keyframe(Initialize(right, armHeight));
+                    Keyframe(ArcBegin(center, lowercaseTop));
+                    Keyframe(ArcEnd(left, armHeight));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(AxisLine(x, right));
+                    Keyframe(AxisLine(y, top));
+                    break;
+
+                case '!':
+                    Keyframe(Initialize(center, top));
+                    Keyframe(DrawPercentOf(0.60f, AxisLine(y, bottom)));
+                    Keyframe(Enable());
+                    Keyframe(AxisLine(y, bottom * 0.90f));
                     break;
 
                 default:
                     // By default we draw a circle
-                    SetXY(right, center);
-                    ArcBegin(center, bottom);
-                    ArcEnd(left, center);
-                    ArcBegin(center, top);
-                    ArcEnd(right, center);
+                    Keyframe(SetXY(right, center));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(ArcEnd(left, center));
+                    Keyframe(ArcBegin(center, top));
+                    Keyframe(ArcEnd(right, center));
                     break;
             }
 
-            return new TweenPattern(tween, x, y);
+            return new TweenPattern(primaryTween, x, y, shouldDraw);
         }
 
         public Vector2 CharacterSize(float fontSize)

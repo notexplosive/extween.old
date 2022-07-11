@@ -16,7 +16,7 @@ namespace MonoGameDemo
 
         protected override void BuildTween(SequenceTween sequenceTween)
         {
-            Elements.Add(new DynamicMonospaceFontRenderedText(this.fontSize, this.text));
+            Elements.Add(new DynamicMonospaceFontRenderedText(this.fontSize, this.text, numberOfSegments: 0));
         }
     }
 }

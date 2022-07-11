@@ -71,7 +71,8 @@ namespace MonoGameDemo
         public int Width => GraphicsDevice.Viewport.Bounds.Width;
 
         public static Demo Instance { get; private set; }
-        
+        public static bool DebugMode { get; private set; }
+
         protected override void Draw(GameTime gameTime)
         {
             this.graphics.GraphicsDevice.Clear(Color.LightBlue);
