@@ -45,7 +45,7 @@ namespace ExTween.Art
 
             for (var i = 0; i <= MinimumNumberOfSegments(); i++)
             {
-                var color = ExColor.Black;
+                var color = StrokeColor.Black;
 
                 var value = GetValuesAtPercent((float) i / MinimumNumberOfSegments());
 

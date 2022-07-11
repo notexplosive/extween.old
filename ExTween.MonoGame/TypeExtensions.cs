@@ -27,9 +27,9 @@ namespace ExTween.MonoGame
             return new Vector2(xy.X, xy.Y);
         }
 
-        public static Color ToMgColor(this ExColor exColor)
+        public static Color ToMgColor(this StrokeColor strokeColor)
         {
-            if (exColor == ExColor.Black)
+            if (strokeColor == StrokeColor.Black)
             {
                 return Color.Black;
             }

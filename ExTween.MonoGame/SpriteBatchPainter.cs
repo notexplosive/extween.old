@@ -14,14 +14,14 @@ namespace ExTween.MonoGame
             this.SpriteBatch = spriteBatch;
         }
 
-        public override void DrawLine(FloatXyPair p1, FloatXyPair p2, float thickness, ExColor exColor)
+        public override void DrawLine(FloatXyPair p1, FloatXyPair p2, float thickness, StrokeColor strokeColor)
         {
-            SpriteBatch.DrawLine(p1.ToVector2(), p2.ToVector2(), exColor.ToMgColor(), thickness);
+            SpriteBatch.DrawLine(p1.ToVector2(), p2.ToVector2(), strokeColor.ToMgColor(), thickness);
         }
 
-        public override void DrawCircle(FloatXyPair center, float radius, float thickness, int numberOfSegments, ExColor exColor)
+        public override void DrawCircle(FloatXyPair center, float radius, float thickness, int numberOfSegments, StrokeColor strokeColor)
         {
-            SpriteBatch.DrawCircle(new CircleF(center.ToVector2(), radius), numberOfSegments, exColor.ToMgColor(), thickness);
+            SpriteBatch.DrawCircle(new CircleF(center.ToVector2(), radius), numberOfSegments, strokeColor.ToMgColor(), thickness);
         }
     }
 }
