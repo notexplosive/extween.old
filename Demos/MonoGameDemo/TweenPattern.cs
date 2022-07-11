@@ -39,7 +39,7 @@ namespace MonoGameDemo
             return new Vector2(this.x.Value, this.y.Value);
         }
 
-        public override Vector2 Size => new Vector2(FontSize);
+        public override Vector2 Size => DynamicMonospaceFont.Instance.CharacterSize(FontSize);
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (this.tween is TweenCollection {ChildrenWithDurationCount: 0})
@@ -51,18 +51,22 @@ namespace MonoGameDemo
             var prevPoint = new Vector2();
             var hasStarted = false;
             
+            spriteBatch.DrawCircle(new CircleF(Position.Value + RenderOffset, 10), 10, Color.Black, 3f);
+            
             for (int i = 0; i <= MinimumNumberOfSegments(); i++)
             {
+                var color = this.debugRainbow[i % this.debugRainbow.Length];
+
                 var currentPoint = GetValuesAtPercent((float) i / MinimumNumberOfSegments());
                 currentPoint *= FontSize / 2f;
 
                 if (hasStarted)
                 {
-                    spriteBatch.DrawLine(prevPoint + RenderOffset, currentPoint + RenderOffset, this.debugRainbow[i % this.debugRainbow.Length], Thickness);
+                    spriteBatch.DrawLine(prevPoint + RenderOffset, currentPoint + RenderOffset, color, Thickness);
                 }
 
                 var radius = Thickness / 2;
-                spriteBatch.DrawCircle(new CircleF(currentPoint + RenderOffset, radius), 10, this.debugRainbow[i % this.debugRainbow.Length], radius);
+                spriteBatch.DrawCircle(new CircleF(currentPoint + RenderOffset, radius), 10, color, radius);
                 
                 prevPoint = currentPoint;
                 hasStarted = true;

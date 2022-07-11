@@ -12,7 +12,7 @@ namespace MonoGameDemo
         private readonly float thickness;
 
         public DynamicMonospaceFontRenderedText(float fontSize, string text, float thickness = 6,
-            int numberOfSegments = 0)
+            int numberOfSegments = 20)
         {
             this.fontSize = fontSize;
             this.text = text;
@@ -35,7 +35,7 @@ namespace MonoGameDemo
             {
                 var pattern = this.patterns[i];
 
-                pattern.RenderOffset = new Vector2(-Size.X / 2 + this.fontSize * i, 0);
+                pattern.RenderOffset = new Vector2(-Size.X / 2 + DynamicMonospaceFont.Instance.CharacterSize(this.fontSize).X * i, 0);
                 pattern.NumberOfSegments = this.numberOfSegments;
                 pattern.FontSize = this.fontSize;
                 pattern.Thickness = this.thickness;

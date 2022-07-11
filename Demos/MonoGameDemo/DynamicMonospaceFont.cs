@@ -1,5 +1,6 @@
 ﻿using System;
 using ExTween;
+using Microsoft.Xna.Framework;
 
 namespace MonoGameDemo
 {
@@ -12,97 +13,130 @@ namespace MonoGameDemo
             var x = new TweenableFloat();
             var y = new TweenableFloat();
             var duration = 1f;
-            ITween tween = null;
+            var tween = new SequenceTween();
 
             if (char.IsWhiteSpace(letter))
             {
                 return new TweenPattern(new SequenceTween(), x, y);
             }
 
-            CallbackTween SetXY(float targetX, float targetY)
+            void SetXY(float targetX, float targetY)
             {
-                return new CallbackTween(
+                tween.Add(new CallbackTween(
                     () =>
                     {
                         x.ForceSetValue(targetX);
                         y.ForceSetValue(targetY);
-                    });
+                    }));
             }
 
-            Tween<float> AxisLine(Tweenable<float> tweenable, float destination)
+            void AxisLine(Tweenable<float> tweenable, float destination)
             {
-                return new Tween<float>(tweenable, destination, duration, Ease.Linear);
+                tween.Add(new Tween<float>(tweenable, destination, duration, Ease.Linear));
             }
 
-            MultiplexTween ArcStart(float targetX, float targetY)
+            void ArcBegin(float destinationX, float destinationY)
             {
-                return new MultiplexTween()
-                    .AddChannel(new Tween<float>(x, targetX, duration, Ease.SineSlowFast))
-                    .AddChannel(new Tween<float>(y, targetY, duration, Ease.SineFastSlow));
+                tween.Add(new MultiplexTween()
+                    .AddChannel(new Tween<float>(x, destinationX, duration, Ease.SineSlowFast))
+                    .AddChannel(new Tween<float>(y, destinationY, duration, Ease.SineFastSlow)));
             }
 
-            MultiplexTween ArcEnd(float targetX, float targetY)
+            void ArcEnd(float destinationX, float destinationY)
             {
-                return new MultiplexTween()
-                    .AddChannel(new Tween<float>(x, targetX, duration, Ease.SineFastSlow))
-                    .AddChannel(new Tween<float>(y, targetY, duration, Ease.SineSlowFast));
+                tween.Add(new MultiplexTween()
+                    .AddChannel(new Tween<float>(x, destinationX, duration, Ease.SineFastSlow))
+                    .AddChannel(new Tween<float>(y, destinationY, duration, Ease.SineSlowFast)));
             }
+
+            var width = CharacterSize(2).X;
+            var height = CharacterSize(2).Y;
+            var top = -height / 2;
+            var bottom = height / 2;
+            var left = -width / 2;
+            var right = width / 2;
+            var center = 0;
+            var lowercaseTop = 0f;
+
+            // y position that the lowercase 'r' arm juts out
+            var armHeight = lowercaseTop + 0.35f;
+            // y position of the horizontal line in lowercase 'e'
+            var eCrossHeight = lowercaseTop + 0.5f;
 
             switch (letter)
             {
                 case 'H':
-                    tween = new SequenceTween()
-                            .Add(SetXY(-0.5f, -1))
-                            .Add(AxisLine(y, 1))
-                            .Add(AxisLine(y, 0))
-                            .Add(AxisLine(x, 0.5f))
-                            .Add(AxisLine(y, -1f))
-                            .Add(AxisLine(y, 1f))
-                        ;
+                    SetXY(left, top);
+                    AxisLine(y, bottom);
+                    AxisLine(y, center);
+                    AxisLine(x, right);
+                    AxisLine(y, top);
+                    AxisLine(y, bottom);
                     break;
 
                 case 'e':
-                    tween = new SequenceTween()
-                            .Add(SetXY(-0.5f, 0.5f))
-                            .Add(AxisLine(x, 0.5f))
-                            .Add(ArcStart(0, 0))
-                            .Add(ArcEnd(-0.5f, 0.5f))
-                            .Add(ArcStart(0, 1))
-                            .Add(ArcEnd(MathF.Cos(MathF.PI / 4) * 0.5f, MathF.Sin(MathF.PI / 4) * 0.5f + 0.5f))
-                        ;
+                    SetXY(left, eCrossHeight);
+                    AxisLine(x, right);
+                    ArcBegin(center, lowercaseTop);
+                    ArcEnd(left, eCrossHeight);
+                    ArcBegin(center, bottom);
+                    ArcEnd(MathF.Cos(MathF.PI / 4) * 0.5f, MathF.Sin(MathF.PI / 4) * 0.5f + 0.5f);
                     break;
 
                 case 'l':
-                    tween = new SequenceTween()
-                            .Add(SetXY(0, -1))
-                            .Add(AxisLine(y, 1))
-                        ;
+                    SetXY(center, top);
+                    AxisLine(y, bottom);
                     break;
 
                 case 'o':
-                    tween = new SequenceTween()
-                            .Add(SetXY(0.5f, 0.5f))
-                            .Add(ArcStart(0, 1))
-                            .Add(ArcEnd(-0.5f, 0.5f))
-                            .Add(ArcStart(0f, 0f))
-                            .Add(ArcEnd(0.5f, 0.5f))
-                        ;
+                    SetXY(right, eCrossHeight);
+                    ArcBegin(center, bottom);
+                    ArcEnd(left, eCrossHeight);
+                    ArcBegin(center, lowercaseTop);
+                    ArcEnd(right, eCrossHeight);
+                    break;
+
+                case 'w':
+                    SetXY(left, lowercaseTop);
+                    ArcBegin(left / 2, bottom);
+                    ArcEnd(center, lowercaseTop);
+                    ArcBegin(right / 2, bottom);
+                    ArcEnd(right, lowercaseTop);
+                    break;
+
+                case 'r':
+                    SetXY(left, lowercaseTop);
+                    AxisLine(y, bottom);
+                    AxisLine(y, armHeight);
+                    ArcBegin(center, lowercaseTop);
+                    ArcEnd(right, armHeight);
+                    break;
+
+                case 'd':
+                    SetXY(right, armHeight);
+                    ArcBegin(center, lowercaseTop);
+                    ArcEnd(left, armHeight);
+                    ArcBegin(center, bottom);
+                    AxisLine(x, right);
+                    AxisLine(y, top);
+                    break;
+
+                default:
+                    // By default we draw a circle
+                    SetXY(right, center);
+                    ArcBegin(center, bottom);
+                    ArcEnd(left, center);
+                    ArcBegin(center, top);
+                    ArcEnd(right, center);
                     break;
             }
 
-            if (tween == null)
-            {
-                // Default letter is just a circle
-                tween = new SequenceTween()
-                        .Add(SetXY(1, 0))
-                        .Add(ArcStart(0, 1))
-                        .Add(ArcEnd(-1, 0))
-                        .Add(ArcStart(0, -1))
-                        .Add(ArcEnd(1, 0))
-                    ;
-            }
-
             return new TweenPattern(tween, x, y);
+        }
+
+        public Vector2 CharacterSize(float fontSize)
+        {
+            return new Vector2(fontSize / 2, fontSize);
         }
     }
 }
