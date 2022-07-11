@@ -30,7 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ExTween.MonoGame\ExTween.MonoGame.csproj" />
-    <ProjectReference Include="..\..\ExTween.Text\ExTween.Text.csproj" />
+    <ProjectReference Include="..\..\ExTween.Art\ExTween.Art.csproj" />
     <ProjectReference Include="..\..\ExTween\ExTween.csproj" />
   </ItemGroup>
 </Project>

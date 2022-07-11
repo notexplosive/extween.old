@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGameDemo", "Demos\MonoG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExTween.MonoGame", "ExTween.MonoGame\ExTween.MonoGame.csproj", "{AA2CFA0D-46B4-4302-ACD8-4BA88FAB7ECD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExTween.Text", "ExTween.Text\ExTween.Text.csproj", "{00532AF4-6283-4440-9A18-63C91634319E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExTween.Art", "ExTween.Art\ExTween.Art.csproj", "{00532AF4-6283-4440-9A18-63C91634319E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
