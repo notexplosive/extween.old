@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExTween.MonoGame", "ExTween
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExTween.Art", "ExTween.Art\ExTween.Art.csproj", "{00532AF4-6283-4440-9A18-63C91634319E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestExTween.Art", "TestExTween.Art\TestExTween.Art.csproj", "{C8028600-15B1-46EA-919A-59D16C429FC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{00532AF4-6283-4440-9A18-63C91634319E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00532AF4-6283-4440-9A18-63C91634319E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00532AF4-6283-4440-9A18-63C91634319E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8028600-15B1-46EA-919A-59D16C429FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8028600-15B1-46EA-919A-59D16C429FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8028600-15B1-46EA-919A-59D16C429FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8028600-15B1-46EA-919A-59D16C429FC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
