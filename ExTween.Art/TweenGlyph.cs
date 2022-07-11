@@ -2,22 +2,24 @@
 
 namespace ExTween.Art
 {
-    public class TweenPattern : TweenableVisualElement
+    public class TweenGlyph : TweenableVisualElement
     {
         private readonly TweenableInt shouldDraw;
         private readonly ITween tween;
+        private readonly char letter;
         private readonly TweenableFloat x;
         private readonly TweenableFloat y;
 
-        public TweenPattern(ITween tween, TweenableFloat x, TweenableFloat y, TweenableInt shouldDraw)
+        public TweenGlyph(ITween tween, char letter, TweenableFloat x, TweenableFloat y, TweenableInt shouldDraw)
         {
             this.tween = tween;
+            this.letter = letter;
             this.x = x;
             this.y = y;
             this.shouldDraw = shouldDraw;
         }
 
-        public override FloatXyPair Size => MonospaceFont.Instance.CharacterSize(FontSize);
+        public override FloatXyPair Size => MonospaceFont.Instance.CharacterSize(this.letter, FontSize);
 
         public float Thickness { get; set; }
         public float FontSize { get; set; }

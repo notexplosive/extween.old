@@ -1,10 +1,16 @@
 ﻿namespace ExTween.Art
 {
-    public class MonospaceFont
+    public interface IFont
+    {
+        FloatXyPair CharacterSize(char c, float fontSize);
+        TweenGlyph GetPatternForLetter(char c);
+    }
+
+    public class MonospaceFont : IFont
     {
         public static readonly MonospaceFont Instance = new MonospaceFont();
 
-        public TweenPattern GetPatternForLetter(char letter)
+        public TweenGlyph GetPatternForLetter(char letter)
         {
             var x = new TweenableFloat();
             var y = new TweenableFloat();
@@ -14,7 +20,7 @@
 
             if (char.IsWhiteSpace(letter))
             {
-                return new TweenPattern(new SequenceTween(), x, y, shouldDraw);
+                return new TweenGlyph(new SequenceTween(), letter, x, y, shouldDraw);
             }
 
             void Keyframe(ITween subTween)
@@ -55,7 +61,7 @@
             {
                 return new CallbackTween(() => { shouldDraw.ForceSetValue(1); });
             }
-            
+
             ITween Disable()
             {
                 return new CallbackTween(() => { shouldDraw.ForceSetValue(0); });
@@ -74,13 +80,13 @@
             ITween Initialize(float destinationX, float destinationY)
             {
                 return new SequenceTween()
-                    .Add(SetXY(destinationX, destinationY))
-                    .Add(Enable())
+                        .Add(SetXY(destinationX, destinationY))
+                        .Add(Enable())
                     ;
             }
 
-            var width = CharacterSize(2).X;
-            var height = CharacterSize(2).Y;
+            var width = CharacterSize(letter, 2).X;
+            var height = CharacterSize(letter, 2).Y;
             var top = -height / 2;
             var bottom = height / 2;
             var left = -width / 2;
@@ -169,10 +175,10 @@
                     break;
             }
 
-            return new TweenPattern(primaryTween, x, y, shouldDraw);
+            return new TweenGlyph(primaryTween, letter, x, y, shouldDraw);
         }
 
-        public FloatXyPair CharacterSize(float fontSize)
+        public FloatXyPair CharacterSize(char _, float fontSize)
         {
             return new FloatXyPair(fontSize / 2, fontSize);
         }
