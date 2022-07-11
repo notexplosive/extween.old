@@ -24,5 +24,22 @@ namespace ExTween
         {
             this.Items.Clear();
         }
+
+        public int ChildrenWithDurationCount
+        {
+            get
+            {
+                var i = 0;
+                foreach (var item in this.Items)
+                {
+                    if (item.TotalDuration is KnownTweenDuration known && known > 0)
+                    {
+                        i++;
+                    }
+                }
+
+                return i;
+            }
+        }
     }
 }

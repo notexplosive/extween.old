@@ -9,7 +9,7 @@ namespace MonoGameDemo
     {
         private readonly List<ICue> cues = new List<ICue>
         {
-            new FlyInTitle(Demo.TitleFont, "Tweens"),
+            new StaticText(144, "Hello world!"),
             new ClearCue(),
             new FlyInTitle(Demo.TitleFont, "Tweens"),
         };
@@ -87,7 +87,7 @@ namespace MonoGameDemo
 
         public bool IsIdle()
         {
-            return CurrentCue.IsDone();
+            return CurrentCue != null && CurrentCue.IsDone();
         }
     }
 
@@ -99,17 +99,25 @@ namespace MonoGameDemo
     public abstract class Slide : ICue
     {
         private readonly SequenceTween tween = new SequenceTween();
+        protected List<TweenableVisualElement> Elements { get; } = new List<TweenableVisualElement>();
 
         public void Setup()
         {
             this.tween.Clear();
-            this.tween.Add(new CallbackTween(OnTweenBegin));
+            Elements.Clear();
+            
             BuildTween(this.tween);
         }
 
         protected abstract void BuildTween(SequenceTween sequenceTween);
-        protected abstract void OnTweenBegin();
-        public abstract void Draw(SpriteBatch spriteBatch);
+        
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            foreach (var glyph in Elements)
+            {
+                glyph.Draw(spriteBatch);
+            }
+        }
 
         public bool IsDone()
         {
