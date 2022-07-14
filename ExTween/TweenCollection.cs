@@ -41,5 +41,10 @@ namespace ExTween
                 return i;
             }
         }
+
+        public override string ToString()
+        {
+            return $"TweenCollection[{this.Items.Count}]";
+        }
     }
 }
