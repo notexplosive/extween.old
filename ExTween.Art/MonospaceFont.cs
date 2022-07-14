@@ -14,6 +14,7 @@ namespace ExTween.Art
     {
         private readonly List<float> keyframesInSeconds = new List<float>();
         private float[] cachedPercentKeyframes = Array.Empty<float>();
+        private int cachedNumberOfSegments;
         public SequenceTween Tween { get; } = new SequenceTween();
         public TweenableFloat X { get; } = new TweenableFloat();
         public TweenableFloat Y { get; } = new TweenableFloat();
@@ -29,7 +30,7 @@ namespace ExTween.Art
 
         public float[] GetKeyframes(int numberOfSegments)
         {
-            if (numberOfSegments > this.cachedPercentKeyframes.Length)
+            if (numberOfSegments > this.cachedPercentKeyframes.Length || numberOfSegments != this.cachedNumberOfSegments)
             {
                 BakeKeyframes(numberOfSegments);
             }
@@ -58,6 +59,7 @@ namespace ExTween.Art
             allKeyframes.Sort();
 
             this.cachedPercentKeyframes = allKeyframes.ToArray();
+            this.cachedNumberOfSegments = numberOfSegments;
         }
 
         public State GetStateAtTime(float time)

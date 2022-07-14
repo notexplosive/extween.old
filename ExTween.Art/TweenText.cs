@@ -1,8 +1,10 @@
-﻿namespace ExTween.Art
+﻿using System;
+
+namespace ExTween.Art
 {
     public class TweenText : TweenableVisualElement
     {
-        private readonly int numberOfSegments;
+        public TweenableInt NumberOfSegments { get; } = new TweenableInt();
         private readonly float paddingBetweenLetters;
         private readonly TweenGlyph[] patterns;
         private readonly string text;
@@ -15,7 +17,7 @@
             this.text = text;
             this.font = font;
             this.thickness = thickness;
-            this.numberOfSegments = numberOfSegments;
+            NumberOfSegments.ForceSetValue(numberOfSegments);
             this.paddingBetweenLetters = paddingBetweenLetters;
 
             this.patterns = new TweenGlyph[this.text.Length];
@@ -50,7 +52,7 @@
                 xPosition += this.paddingBetweenLetters;
 
                 pattern.RenderOffset = new FloatXyPair(-Size.X / 2 + xPosition, 0);
-                pattern.NumberOfSegments = this.numberOfSegments;
+                pattern.NumberOfSegments = NumberOfSegments;
                 pattern.Thickness = this.thickness;
 
                 pattern.Draw(painter);

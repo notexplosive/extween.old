@@ -85,7 +85,7 @@ namespace ExTween
                 }
                 else
                 {
-                    if (itemDuration is KnownTweenDuration exactTweenDuration && adjustedTargetTime > exactTweenDuration)
+                    if (itemDuration is KnownTweenDuration exactTweenDuration && adjustedTargetTime >= exactTweenDuration)
                     {
                         adjustedTargetTime -= exactTweenDuration;
                         this.Items[i].Update(exactTweenDuration);
