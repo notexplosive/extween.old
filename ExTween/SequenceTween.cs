@@ -5,6 +5,8 @@ namespace ExTween
     public class SequenceTween : TweenCollection, ITween
     {
         private int currentItemIndex;
+        
+        public bool IsLooping { get; set; }
 
         public SequenceTween()
         {
@@ -13,9 +15,16 @@ namespace ExTween
         
         public float Update(float dt)
         {
-            if (IsDone())
+            if (IsAtEnd())
             {
-                return dt;
+                if (IsLooping)
+                {
+                    Reset();
+                }
+                else
+                {
+                    return dt;
+                }
             }
 
             var overflow = this.Items[this.currentItemIndex].Update(dt);
@@ -30,6 +39,11 @@ namespace ExTween
         }
 
         public bool IsDone()
+        {
+            return IsAtEnd() && !IsLooping;
+        }
+
+        private bool IsAtEnd()
         {
             return this.currentItemIndex >= this.Items.Count;
         }

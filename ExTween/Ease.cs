@@ -20,6 +20,11 @@ namespace ExTween
         {
             return MathF.Sin((x * MathF.PI) / 2);
         }
+
+        public static float SineSlowFastSlow(float x)
+        {
+            return -(MathF.Cos(MathF.PI * x) - 1) / 2;
+        }
         
         public static float QuadSlowFast(float x)
         {
