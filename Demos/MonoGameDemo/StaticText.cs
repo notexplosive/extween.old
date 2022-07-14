@@ -18,14 +18,12 @@ namespace MonoGameDemo
 
         protected override void BuildTween(SequenceTween sequenceTween)
         {
-            var text = new TweenText(this.text, new MonospaceFont(this.fontSize), numberOfSegments: 0);
-            Elements.Add(text);
+            var tweenText = new TweenText(this.text, new MonospaceFont(this.fontSize), numberOfSegments: 0);
+            Elements.Add(tweenText);
 
-            var resetCount = 0;
-            
             sequenceTween
-                .Add(new Tween<int>(text.NumberOfSegments, 50, 3f, Ease.Linear))
-                .Add(new Tween<int>(text.NumberOfSegments, 0, 3f, Ease.Linear))
+                .Add(new Tween<int>(tweenText.NumberOfSegments, 50, 3f, Ease.Linear))
+                .Add(new Tween<int>(tweenText.NumberOfSegments, 0, 3f, Ease.Linear))
                 ;
         }
     }
