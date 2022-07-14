@@ -1,4 +1,7 @@
-﻿namespace ExTween.Art
+﻿using System;
+using System.Collections.Generic;
+
+namespace ExTween.Art
 {
     public interface IFont
     {
@@ -9,16 +12,57 @@
 
     public class DrawKit
     {
+        private readonly List<float> keyframesInSeconds = new List<float>();
+        private float[] cachedPercentKeyframes = Array.Empty<float>();
         public SequenceTween Tween { get; } = new SequenceTween();
         public TweenableFloat X { get; } = new TweenableFloat();
         public TweenableFloat Y { get; } = new TweenableFloat();
         public TweenableInt ShouldDraw { get; } = new TweenableInt(1);
 
-        public State GetStateAtPercent(float percent)
+        public void AddKeyframe(float timeInSeconds)
         {
-            var duration = Tween.TotalDuration;
-            Tween.JumpTo(duration.Get() * percent);
+            if (!this.keyframesInSeconds.Contains(timeInSeconds))
+            {
+                this.keyframesInSeconds.Add(timeInSeconds);
+            }
+        }
 
+        public float[] GetKeyframes(int numberOfSegments)
+        {
+            if (numberOfSegments > this.cachedPercentKeyframes.Length)
+            {
+                BakeKeyframes(numberOfSegments);
+            }
+
+            return this.cachedPercentKeyframes;
+        }
+        
+        public float TweenDuration => Tween.TotalDuration.Get();
+        
+        public void BakeKeyframes(int numberOfSegments)
+        {
+            var allKeyframes = new List<float>(this.keyframesInSeconds);
+
+            var expectedTotalCount = Math.Max(this.keyframesInSeconds.Count, numberOfSegments);
+            var numberOfFramesToAdd = expectedTotalCount - this.keyframesInSeconds.Count;
+
+            for (var i = 0; i < numberOfFramesToAdd; i++)
+            {
+                float percent = (float)i / numberOfFramesToAdd;
+                allKeyframes.Add(percent * TweenDuration);
+            }
+
+            // Add a keyframe at the very end
+            allKeyframes.Add(TweenDuration);
+            
+            allKeyframes.Sort();
+
+            this.cachedPercentKeyframes = allKeyframes.ToArray();
+        }
+
+        public State GetStateAtTime(float time)
+        {
+            Tween.JumpTo(time);
             return new State(new FloatXyPair(X.Value, Y.Value), ShouldDraw.Value == 1);
         }
 
@@ -57,6 +101,7 @@
 
             void Keyframe(ITween subTween)
             {
+                kit.AddKeyframe(kit.TweenDuration);
                 kit.Tween.Add(subTween);
             }
 
@@ -101,6 +146,9 @@
 
             ITween DrawPercentOf(float percent, ITween subTween)
             {
+                // Add an extra keyframe at the end of each short channel of the multiplex
+                kit.AddKeyframe(kit.TweenDuration + duration * percent);
+                
                 return new MultiplexTween()
                     .AddChannel(new SequenceTween()
                         .Add(new WaitSecondsTween(duration * percent))
@@ -209,6 +257,7 @@
                     break;
             }
 
+            kit.BakeKeyframes(0);
             return new TweenGlyph(kit, this, letter);
         }
 

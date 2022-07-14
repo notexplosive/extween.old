@@ -35,6 +35,12 @@ namespace TestExTween.Art
             VerifyEveryChar(char.IsDigit);
         }
 
+        [Fact]
+        public void verify_lowercase_e()
+        {
+            VerifyIndividualChar('e', 50, 0);
+        }
+        
         private void VerifyEveryChar(Func<char, bool> condition)
         {
             string allLetters = string.Empty;
@@ -50,13 +56,26 @@ namespace TestExTween.Art
                     glyph.RenderOffset = glyph.Size / 2;
                     glyph.NumberOfSegments = 0;
 
-                    var painter = new AsciiPainter(glyph.Size.ToIntXy() + new IntXyPair(1, 0));
+                    var painter = new AsciiPainter(glyph.Size.ToIntXy());
                     glyph.Draw(painter);
                     allLetters += painter.RenderString() + "\n\n";
                 }
             }
             
             Approvals.Verify(allLetters);
+        }
+
+        private void VerifyIndividualChar(char c, float size, int segments)
+        {
+            var font = new MonospaceFont(size);
+            var glyph = font.GetTweenGlyphForLetter(c);
+            glyph.RenderOffset = glyph.Size / 2;
+            glyph.NumberOfSegments = segments;
+
+            var painter = new AsciiPainter(glyph.Size.ToIntXy());
+            glyph.Draw(painter);
+            
+            Approvals.Verify(painter.RenderString());
         }
     }
 }
