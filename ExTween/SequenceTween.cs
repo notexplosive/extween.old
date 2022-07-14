@@ -83,16 +83,19 @@ namespace ExTween
                         break;
                     }
                 }
-                else if (itemDuration is KnownTweenDuration exactTweenDuration && adjustedTargetTime > exactTweenDuration)
-                {
-                    adjustedTargetTime -= exactTweenDuration;
-                    this.Items[i].Update(exactTweenDuration);
-                }
                 else
                 {
-                    this.Items[i].Update(adjustedTargetTime);
-                    this.currentItemIndex = i;
-                    break;
+                    if (itemDuration is KnownTweenDuration exactTweenDuration && adjustedTargetTime > exactTweenDuration)
+                    {
+                        adjustedTargetTime -= exactTweenDuration;
+                        this.Items[i].Update(exactTweenDuration);
+                    }
+                    else
+                    {
+                        this.Items[i].Update(adjustedTargetTime);
+                        this.currentItemIndex = i;
+                        break;
+                    }
                 }
             }
         }
