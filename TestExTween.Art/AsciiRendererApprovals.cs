@@ -20,5 +20,14 @@ namespace TestExTween.Art
 
             Approvals.Verify(painter.RenderString());
         }
+
+        [Fact]
+        public void ascii_line_segment()
+        {
+            var painter = new AsciiPainter(new IntXyPair(15, 15));
+            painter.DrawLine(new FloatXyPair(3, 5), new FloatXyPair(10, 7), 1, StrokeColor.Black);
+
+            Approvals.Verify(painter.RenderStringAndRecord());
+        }
     }
 }

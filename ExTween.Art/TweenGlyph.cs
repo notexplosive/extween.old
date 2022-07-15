@@ -31,37 +31,29 @@ namespace ExTween.Art
 
             var prevPoint = new FloatXyPair();
             var hasStarted = false;
+            var previousShouldDraw = true;
 
-            for (var i = 0; i <= MinimumNumberOfSegments(); i++)
+            var keyframes = this.kit.GetKeyframes(NumberOfSegments);
+
+            for (var i = 0; i < keyframes.Length; i++)
             {
                 var color = StrokeColor.Black;
 
-                var value = this.kit.GetStateAtPercent((float) i / MinimumNumberOfSegments());
+                var currentKeyframeTime = keyframes[i];
+                var state = this.kit.GetStateAtTime(currentKeyframeTime);
 
-                var currentPoint = value.Position;
+                var currentPoint = state.Position;
                 currentPoint *= this.font.FontSize / 2f;
 
-                if (value.ShouldDraw)
+                if (previousShouldDraw && hasStarted)
                 {
-                    if (hasStarted)
-                    {
-                        painter.DrawLine(prevPoint + RenderOffset, currentPoint + RenderOffset, Thickness, color);
-                    }
+                    painter.DrawLine(prevPoint + RenderOffset, currentPoint + RenderOffset, Thickness, color);
                 }
 
+                previousShouldDraw = state.ShouldDraw;
                 prevPoint = currentPoint;
                 hasStarted = true;
             }
-        }
-
-        private int MinimumNumberOfSegments()
-        {
-            if (this.kit.Tween is TweenCollection collection)
-            {
-                return Math.Max(NumberOfSegments, collection.ChildrenWithDurationCount);
-            }
-
-            return NumberOfSegments;
         }
     }
 }

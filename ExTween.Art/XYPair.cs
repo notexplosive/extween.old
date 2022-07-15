@@ -6,11 +6,6 @@ namespace ExTween.Art
     {
         public T X { get; set; }
         public T Y { get; set; }
-
-        public string ToString()
-        {
-            return $"{X}, {Y}";
-        }
     }
 
     public struct IntXyPair : IXyPair<int>
@@ -37,6 +32,12 @@ namespace ExTween.Art
         public static IntXyPair operator -(IntXyPair left, IntXyPair right)
         {
             return new IntXyPair(left.X - right.X, left.Y - right.Y);
+        }
+        
+        
+        public override string ToString()
+        {
+            return $"{X}, {Y}";
         }
     }
 
@@ -99,6 +100,11 @@ namespace ExTween.Art
         public IntXyPair ToIntXy()
         {
             return new IntXyPair((int) X, (int) Y);
+        }
+        
+        public override string ToString()
+        {
+            return $"{X}, {Y}";
         }
     }
 

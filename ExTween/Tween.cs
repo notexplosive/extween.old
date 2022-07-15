@@ -18,8 +18,7 @@ namespace ExTween
         public void Reset();
         public void JumpTo(float time);
     }
-
-    [DebuggerDisplay("({startingValue}) -> ({targetValue}), Progress: {(int)(CurrentTime / TotalDuration * 100)}%")]
+    
     public class Tween<T> : ITween
     {
         private readonly Ease.Delegate ease;
@@ -90,6 +89,23 @@ namespace ExTween
             CurrentTime = time;
             ApplyTimeToValue();
         }
+
+        public override string ToString()
+        {
+            var result = $"({startingValue}) -> ({targetValue}), Progress: ";
+            if (TotalDuration is KnownTweenDuration)
+            {
+                result += $"{(int) (CurrentTime / TotalDuration.Get() * 100)}%";
+            }
+            else
+            {
+                result += "Unknown";
+            }
+
+            result += $" Value: {this.tweenable.Value}";
+
+            return result;
+        }
     }
     
     public interface ITweenDuration
@@ -115,10 +131,15 @@ namespace ExTween
         {
             return me.Get();
         }
+
+        public override string ToString()
+        {
+            return Value.ToString("N4");
+        }
     }
     
     
-    public class UnknownTweenDuration : ITweenDuration
+    public readonly struct UnknownTweenDuration : ITweenDuration
     {
         public float Get()
         {
