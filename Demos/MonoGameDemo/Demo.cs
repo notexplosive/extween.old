@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using ExTween.Art.MonoGame;
 using ExTween.MonoGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

@@ -29,6 +29,7 @@
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.0.1641" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ExTween.Art.MonoGame\ExTween.Art.MonoGame.csproj" />
     <ProjectReference Include="..\..\ExTween.MonoGame\ExTween.MonoGame.csproj" />
     <ProjectReference Include="..\..\ExTween.Art\ExTween.Art.csproj" />
     <ProjectReference Include="..\..\ExTween\ExTween.csproj" />

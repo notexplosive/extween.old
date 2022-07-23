@@ -1,7 +1,6 @@
-﻿using ExTween.Art;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 
-namespace ExTween.MonoGame
+namespace ExTween.Art.MonoGame
 {
     public static class TypeExtensions
     {

@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 
-namespace ExTween.MonoGame
+namespace ExTween.Art.MonoGame
 {
     public class SpriteBatchPainter : Painter
     {
