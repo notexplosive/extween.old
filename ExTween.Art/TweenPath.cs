@@ -56,13 +56,13 @@ namespace ExTween.Art
             this.cachedNumberOfSegments = numberOfSegments;
         }
 
-        public State GetPreciseStateAtTime(float time)
+        public TweenPathState GetPreciseStateAtTime(float time)
         {
             Tween.JumpTo(time);
-            return new State(new FloatXyPair(X.Value, Y.Value), ShouldDraw.Value == 1);
+            return new TweenPathState(new FloatXyPair(X.Value, Y.Value), ShouldDraw.Value == 1);
         }
 
-        public State GetApproximateStateAtTime(float time)
+        public TweenPathState GetApproximateStateAtTime(float time)
         {
             if (time > Duration)
             {
@@ -78,7 +78,7 @@ namespace ExTween.Art
             var maxAdjustedTime = this.keyframesInSeconds[keyframeIndex + 1] - this.keyframesInSeconds[keyframeIndex];
             var percent = adjustedTime / maxAdjustedTime;
 
-            return new State(FloatXyPair.Lerp(stateBefore.Position, stateAfter.Position, percent), stateBefore.ShouldDraw);
+            return new TweenPathState(FloatXyPair.Lerp(stateBefore.Position, stateAfter.Position, percent), stateBefore.ShouldDraw);
         }
 
         private int GetEarliestKeyframeFromTime(float time)
@@ -103,18 +103,6 @@ namespace ExTween.Art
 
             // Shouldn't ever hit this return
             return 0;
-        }
-
-        public readonly struct State
-        {
-            public FloatXyPair Position { get; }
-            public bool ShouldDraw { get; }
-
-            public State(FloatXyPair position, bool shouldDraw)
-            {
-                Position = position;
-                ShouldDraw = shouldDraw;
-            }
         }
     }
 }

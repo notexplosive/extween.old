@@ -6,7 +6,7 @@
     public interface ITweenRendered
     {
         public float Duration { get; }
-        public TweenPath.State GetPreciseStateAtTime(float time);
-        public TweenPath.State GetApproximateStateAtTime(float time);
+        public TweenPathState GetPreciseStateAtTime(float time);
+        public TweenPathState GetApproximateStateAtTime(float time);
     }
 }

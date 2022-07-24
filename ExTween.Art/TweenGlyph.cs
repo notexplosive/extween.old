@@ -19,19 +19,19 @@
         public int NumberOfSegments { get; set; }
         public FloatXyPair RenderOffset { get; set; }
 
-        public TweenPath.State GetPreciseStateAtTime(float time)
+        public TweenPathState GetPreciseStateAtTime(float time)
         {
             return ScaleState(this.path.GetPreciseStateAtTime(time));
         }
         
-        public TweenPath.State GetApproximateStateAtTime(float time)
+        public TweenPathState GetApproximateStateAtTime(float time)
         {
             return ScaleState(this.path.GetApproximateStateAtTime(time));
         }
 
-        private TweenPath.State ScaleState(TweenPath.State state)
+        private TweenPathState ScaleState(TweenPathState state)
         {
-            return new TweenPath.State(
+            return new TweenPathState(
                 state.Position * this.font.FontSize / 2f + RenderOffset,
                 state.ShouldDraw);
         }

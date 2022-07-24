@@ -1,12 +1,5 @@
 ﻿namespace ExTween.Art
 {
-    public interface IFont
-    {
-        float FontSize { get; }
-        FloatXyPair CharacterSize(char c);
-        TweenGlyph GetTweenGlyphForLetter(char c);
-    }
-
     public class MonospaceFont : IFont
     {
         public MonospaceFont(float fontSize)

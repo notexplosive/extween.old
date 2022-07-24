@@ -53,7 +53,7 @@ namespace ExTween.Art
             }
         }
 
-        public TweenPath.State GetPreciseStateAtTime(float time)
+        public TweenPathState GetPreciseStateAtTime(float time)
         {
             foreach (var glyph in this.glyphs)
             {
@@ -67,10 +67,10 @@ namespace ExTween.Art
                 }
             }
 
-            return new TweenPath.State();
+            return new TweenPathState();
         }
         
-        public TweenPath.State GetApproximateStateAtTime(float time)
+        public TweenPathState GetApproximateStateAtTime(float time)
         {
             foreach (var glyph in this.glyphs)
             {
@@ -84,7 +84,7 @@ namespace ExTween.Art
                 }
             }
 
-            return new TweenPath.State();
+            return new TweenPathState();
         }
 
         public override void Draw(Painter painter)
