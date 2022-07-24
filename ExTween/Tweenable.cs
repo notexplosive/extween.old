@@ -13,7 +13,7 @@ namespace ExTween
         public T Value
         {
             get => this.getter();
-            private set => this.setter(value);
+            set => this.setter(value);
         }
 
         protected Tweenable(T initializedValue)
@@ -45,6 +45,7 @@ namespace ExTween
         public abstract T Lerp(T startingValue, T targetValue, float percent);
         
         /// <summary>
+        /// TODO: deprecate this
         /// Calls the tweenable's Setter with value
         /// You probably don't want to call this. It's here to cause friction on purpose.
         /// </summary>
