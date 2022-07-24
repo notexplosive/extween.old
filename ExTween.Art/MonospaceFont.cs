@@ -136,7 +136,7 @@
             var lowercaseTop = 0f;
 
             // y position that the lowercase 'r' arm juts out
-            var armHeight = lowercaseTop + height / 2f * 0.35f;
+            var armHeight = lowercaseTop + halfHeight * 0.35f;
             // y position of the horizontal line in lowercase 'e'
             var eCrossHeight = lowercaseTop + quarterHeight;
             var lowercaseVerticalCenter = lowercaseTop + quarterHeight;
