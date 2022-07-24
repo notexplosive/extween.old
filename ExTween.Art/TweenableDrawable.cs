@@ -1,7 +1,10 @@
 ﻿
 namespace ExTween.Art
 {
-    public abstract class TweenableVisualElement
+    /// <summary>
+    /// Thing that has a Position, Angle, and Scale that is Drawable
+    /// </summary>
+    public abstract class TweenableDrawable
     {
         public TweenableFloatXyPair Position { get; set; } = new TweenableFloatXyPair();
         public TweenableFloat Angle { get; set; } = new TweenableFloat();
@@ -9,5 +12,13 @@ namespace ExTween.Art
         public abstract FloatXyPair Size { get; }
 
         public abstract void Draw(Painter painter);
+    }
+
+    /// <summary>
+    /// Thing that is rendered by a tween (eg: Glyphs)
+    /// </summary>
+    public interface ITweenRendered
+    {
+        public float Duration { get; }
     }
 }

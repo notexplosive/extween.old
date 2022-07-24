@@ -28,12 +28,7 @@ namespace ExTween.Art.MonoGame
 
         public static Color ToMgColor(this StrokeColor strokeColor)
         {
-            if (strokeColor == StrokeColor.Black)
-            {
-                return Color.Black;
-            }
-
-            return Color.Transparent;
+            return new Color(strokeColor.R, strokeColor.G, strokeColor.B, strokeColor.A);
         }
     }
 }

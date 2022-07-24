@@ -44,6 +44,20 @@ namespace ExTween.Art
             DrawAsciiLine(p1, p2, strokeColor == StrokeColor.Black ? 'x' : '.');
         }
 
+        public override void DrawFilledCircle(FloatXyPair position, float radius, int segments, StrokeColor strokeColor)
+        {
+            for (var y = 0; y < this.size.Y; y++)
+            {
+                for (var x = 0; x < this.size.X; x++)
+                {
+                    if ((position - new FloatXyPair(x, y)).Length() < radius)
+                    {
+                        DrawPixel(new IntXyPair(x, y), strokeColor == StrokeColor.Black ? 'x' : '.');
+                    }
+                }
+            }
+        }
+
         private void DrawAsciiLine(FloatXyPair start, FloatXyPair end, char pixel)
         {
             var tweenable = new TweenableFloatXyPair(start);

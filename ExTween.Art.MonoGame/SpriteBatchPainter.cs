@@ -21,5 +21,10 @@ namespace ExTween.Art.MonoGame
             SpriteBatch.DrawCircle(new CircleF(p2.ToVector2(), thickness / 2), 10, strokeColor.ToMgColor(),
                 thickness / 2);
         }
+
+        public override void DrawFilledCircle(FloatXyPair position, float radius, int segments, StrokeColor strokeColor)
+        {
+            SpriteBatch.DrawCircle(new CircleF(position.ToVector2(), radius), segments, strokeColor.ToMgColor(), radius);
+        }
     }
 }

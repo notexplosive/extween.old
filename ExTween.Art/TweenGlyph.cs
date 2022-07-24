@@ -1,29 +1,37 @@
-﻿using System;
-
-namespace ExTween.Art
+﻿namespace ExTween.Art
 {
-    public class TweenGlyph : TweenableVisualElement
+    public class TweenGlyph : TweenableDrawable, ITweenRendered
     {
         private readonly IFont font;
         private readonly char letter;
-        private readonly TweenPath kit;
+        private readonly TweenPath path;
 
-        public TweenGlyph(TweenPath kit, IFont font, char letter)
+        public TweenGlyph(TweenPath path, IFont font, char letter)
         {
             this.font = font;
             this.letter = letter;
-            this.kit = kit;
+            this.path = path;
         }
 
-        public override FloatXyPair Size => font.CharacterSize(this.letter);
+        public override FloatXyPair Size => this.font.CharacterSize(this.letter);
 
         public float Thickness { get; set; }
         public int NumberOfSegments { get; set; }
         public FloatXyPair RenderOffset { get; set; }
 
+        public TweenPath.State GetStateAtTime(float time)
+        {
+            var state = this.path.GetStateAtTime(time);
+            return new TweenPath.State(
+                state.Position * this.font.FontSize / 2f + RenderOffset,
+                state.ShouldDraw);
+        }
+
+        public float Duration => this.path.TweenDuration;
+
         public override void Draw(Painter painter)
         {
-            if (this.kit.Tween is TweenCollection {ChildrenWithDurationCount: 0})
+            if (this.path.Tween is TweenCollection {ChildrenWithDurationCount: 0})
             {
                 // Empty tween, don't bother drawing anything
                 return;
@@ -33,21 +41,19 @@ namespace ExTween.Art
             var hasStarted = false;
             var previousShouldDraw = true;
 
-            var keyframes = this.kit.GetKeyframes(NumberOfSegments);
+            var keyframes = this.path.GetKeyframes(NumberOfSegments);
 
             for (var i = 0; i < keyframes.Length; i++)
             {
                 var color = StrokeColor.Black;
 
                 var currentKeyframeTime = keyframes[i];
-                var state = this.kit.GetStateAtTime(currentKeyframeTime);
-
+                var state = GetStateAtTime(currentKeyframeTime);
                 var currentPoint = state.Position;
-                currentPoint *= this.font.FontSize / 2f;
 
                 if (previousShouldDraw && hasStarted)
                 {
-                    painter.DrawLine(prevPoint + RenderOffset, currentPoint + RenderOffset, Thickness, color);
+                    painter.DrawLine(prevPoint, currentPoint, Thickness, color);
                 }
 
                 previousShouldDraw = state.ShouldDraw;

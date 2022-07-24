@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ExTween;
 using ExTween.Art;
 using Microsoft.Xna.Framework.Audio;
@@ -100,12 +101,14 @@ namespace MonoGameDemo
     public abstract class Slide : ICue
     {
         private readonly SequenceTween tween = new SequenceTween();
-        protected List<TweenableVisualElement> Elements { get; } = new List<TweenableVisualElement>();
+        protected List<TweenableDrawable> Elements { get; } = new List<TweenableDrawable>();
+        protected List<Action> UpdateFunctions { get; } = new List<Action>();
 
         public void Setup()
         {
             this.tween.Clear();
             Elements.Clear();
+            UpdateFunctions.Clear();
             
             BuildTween(this.tween);
         }
@@ -114,6 +117,11 @@ namespace MonoGameDemo
         
         public void Draw(Painter painter)
         {
+            foreach (var updateFunction in UpdateFunctions)
+            {
+                updateFunction();
+            }
+            
             foreach (var glyph in Elements)
             {
                 glyph.Draw(painter);

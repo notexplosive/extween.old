@@ -1,12 +1,11 @@
-﻿using System;
-
+﻿
 namespace ExTween.Art
 {
-    public class TweenText : TweenableVisualElement
+    public class TweenText : TweenableDrawable, ITweenRendered
     {
-        public TweenableInt NumberOfSegments { get; } = new TweenableInt();
+        public TweenableInt NumberOfSegmentsPerCharacter { get; } = new TweenableInt();
         private readonly float paddingBetweenLetters;
-        private readonly TweenGlyph[] patterns;
+        private readonly TweenGlyph[] glyphs;
         private readonly string text;
         private readonly IFont font;
         private readonly float thickness;
@@ -17,14 +16,14 @@ namespace ExTween.Art
             this.text = text;
             this.font = font;
             this.thickness = thickness;
-            NumberOfSegments.ForceSetValue(numberOfSegments);
+            NumberOfSegmentsPerCharacter.Value = numberOfSegments;
             this.paddingBetweenLetters = paddingBetweenLetters;
 
-            this.patterns = new TweenGlyph[this.text.Length];
+            this.glyphs = new TweenGlyph[this.text.Length];
 
             for (var i = 0; i < this.text.Length; i++)
             {
-                this.patterns[i] = this.font.GetTweenGlyphForLetter(this.text[i]);
+                this.glyphs[i] = this.font.GetTweenGlyphForLetter(this.text[i]);
             }
         }
 
@@ -41,18 +40,48 @@ namespace ExTween.Art
             }
         }
 
+        public float Duration
+        {
+            get
+            {
+                var total = 0f;
+                foreach (var pattern in this.glyphs)
+                {
+                    total += pattern.Duration;
+                }
+                return total;
+            }
+        }
+
+        public TweenPath.State StateAtTime(float time)
+        {
+            foreach (var glyph in this.glyphs)
+            {
+                if (time > glyph.Duration)
+                {
+                    time -= glyph.Duration;
+                }
+                else
+                {
+                    return glyph.GetStateAtTime(time);
+                }
+            }
+
+            return new TweenPath.State();
+        }
+
         public override void Draw(Painter painter)
         {
             var xPosition = 0f;
 
-            for (var i = 0; i < this.patterns.Length; i++)
+            for (var i = 0; i < this.glyphs.Length; i++)
             {
-                var pattern = this.patterns[i];
+                var pattern = this.glyphs[i];
                 xPosition += this.font.CharacterSize(this.text[i]).X;
                 xPosition += this.paddingBetweenLetters;
 
                 pattern.RenderOffset = new FloatXyPair(-Size.X / 2 + xPosition, 0);
-                pattern.NumberOfSegments = NumberOfSegments;
+                pattern.NumberOfSegments = NumberOfSegmentsPerCharacter;
                 pattern.Thickness = this.thickness;
 
                 pattern.Draw(painter);

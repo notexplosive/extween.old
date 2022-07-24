@@ -68,6 +68,12 @@ namespace ExTween.Art
             X = x;
             Y = y;
         }
+        
+        public FloatXyPair(float xy)
+        {
+            X = xy;
+            Y = xy;
+        }
 
         public float X { get; set; }
         public float Y { get; set; }
