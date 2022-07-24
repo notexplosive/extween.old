@@ -97,7 +97,7 @@ namespace ExTween.Art
                 xPosition += this.font.CharacterSize(this.text[i]).X;
                 xPosition += this.paddingBetweenLetters;
 
-                pattern.RenderOffset = new FloatXyPair(-Size.X / 2 + xPosition, 0);
+                pattern.RenderOffset = new FloatXyPair(-Size.X / 2 + xPosition, 0) + Position;
                 pattern.NumberOfSegments = NumberOfSegmentsPerCharacter;
                 pattern.Thickness = this.thickness;
 

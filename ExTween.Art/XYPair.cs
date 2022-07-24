@@ -62,6 +62,31 @@ namespace ExTween.Art
 
     public struct FloatXyPair : IXyPair<float>
     {
+        public bool Equals(FloatXyPair other)
+        {
+            return X.Equals(other.X) && Y.Equals(other.Y);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is FloatXyPair other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(X, Y);
+        }
+
+        public static bool operator ==(FloatXyPair left, FloatXyPair right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(FloatXyPair left, FloatXyPair right)
+        {
+            return !left.Equals(right);
+        }
+
         public FloatXyPair(float x, float y)
         {
             X = x;

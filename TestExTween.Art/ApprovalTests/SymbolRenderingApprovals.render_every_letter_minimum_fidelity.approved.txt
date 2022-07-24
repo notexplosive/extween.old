@@ -883,104 +883,104 @@ xxxxxxxxxxxxxxxx
 
 
 -- a --
-       x        
-      x x       
-      x x       
-     x   x      
-     x   x      
-    x     x     
-    x     x     
-   x       x    
-   x       x    
-  x         x   
-  x         x   
- x           x  
- x           x  
-x             x 
-x             x 
-x             xx
-x             x 
- x           x  
- x           x  
-  x         x   
-  x         x   
-   x       x    
-   x       x    
-    x     x     
-    x     x     
-     x   x      
-     x   x      
-      x x       
-      x x       
-       x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+      xxx      x
+      x x      x
+    xx   xx    x
+    x     x    x
+  xx       xx  x
+  x         x  x
+xx           xxx
+x              x
+xx           xxx
+  x         x  x
+  xx       xx  x
+    x     x    x
+    xx   xx    x
+      x x      x
+      x x      x
+       x       x
 
 
 -- b --
-       x        
-      x x       
-      x x       
-     x   x      
-     x   x      
-    x     x     
-    x     x     
-   x       x    
-   x       x    
-  x         x   
-  x         x   
- x           x  
- x           x  
-x             x 
-x             x 
-x             xx
-x             x 
- x           x  
- x           x  
-  x         x   
-  x         x   
-   x       x    
-   x       x    
-    x     x     
-    x     x     
-     x   x      
-     x   x      
-      x x       
-      x x       
-       x        
-       x        
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x     xxx       
+x     x x       
+x   xx   xx     
+x   x     x     
+x xx       xx   
+x x         x   
+xx           xx 
+x              x
+xx           xx 
+x x         x   
+x xx       xx   
+x   x     x     
+x   xx   xx     
+x     x x       
+x     x x       
+x      x        
 
 
 -- c --
-       x        
-      x x       
-      x x       
-     x   x      
-     x   x      
-    x     x     
-    x     x     
-   x       x    
-   x       x    
-  x         x   
-  x         x   
- x           x  
- x           x  
-x             x 
-x             x 
-x             xx
-x             x 
- x           x  
- x           x  
-  x         x   
-  x         x   
-   x       x    
-   x       x    
-    x     x     
-    x     x     
-     x   x      
-     x   x      
-      x x       
-      x x       
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+      xxxx      
+      x   xx    
+    xx      x   
+    x           
+  xx            
+  x             
+xx              
+x               
+xx              
+  x             
+  xx            
+    x           
+    xx      x   
+      x   xx    
+      x xx      
        x        
 
 

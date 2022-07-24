@@ -80,14 +80,26 @@
                 path.AddKeyframe(path.Duration + startSeconds);
                 path.AddKeyframe(path.Duration + endSeconds);
 
-                return new MultiplexTween()
+                var result = new SequenceTween();
+
+                if (startPercent > 0)
+                {
+                    result.Add(Disable());
+                }
+
+                result.Add(new MultiplexTween()
                     .AddChannel(new SequenceTween()
-                        .Add(Enable())
                         .Add(new WaitSecondsTween(startSeconds))
+                        .Add(Enable())
                         .Add(new WaitSecondsTween(endSeconds - startSeconds))
                         .Add(Disable())
                     )
-                    .AddChannel(subTween);
+                    .AddChannel(subTween)
+                );
+
+                result.Add(Enable());
+
+                return result;
             }
 
             ITween WarpTo(float x, float y)
@@ -96,12 +108,15 @@
                 return Enable();
             }
 
-            ITween Initialize(float x, float y)
+            ITween Initialize(float x, float y, bool startEnabled = true)
             {
-                return new SequenceTween()
+                var result = new SequenceTween()
                         .Add(SetXY(x, y))
-                        .Add(Enable())
                     ;
+
+                result.Add(startEnabled ? Enable() : Disable());
+
+                return result;
             }
 
             var tinyFont = new MonospaceFont(2);
@@ -121,6 +136,16 @@
             var armHeight = lowercaseTop + 0.35f;
             // y position of the horizontal line in lowercase 'e'
             var eCrossHeight = lowercaseTop + 0.5f;
+            var lowercaseVerticalCenter = lowercaseTop + quarterHeight;
+
+            void LowercaseCircleMacro()
+            {
+                Keyframe(WarpTo(left, center + quarterHeight));
+                Keyframe(ArcBegin(center, lowercaseTop));
+                Keyframe(ArcEnd(right, center + quarterHeight));
+                Keyframe(ArcBegin(center, bottom));
+                Keyframe(ArcEnd(left, center + quarterHeight));
+            }
 
             switch (letter)
             {
@@ -325,12 +350,32 @@
                     Keyframe(WarpTo(center, center));
                     Keyframe(AxisLine(path.Y, bottom));
                     break;
-                
+
                 case 'Z':
                     Keyframe(Initialize(left, top));
                     Keyframe(AxisLine(path.X, right));
                     Keyframe(LineTo(left, bottom));
                     Keyframe(AxisLine(path.X, right));
+                    break;
+
+                case 'a':
+                    Keyframe(Initialize(right, lowercaseTop));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    LowercaseCircleMacro();
+                    break;
+                
+                case 'b':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    LowercaseCircleMacro();
+                    break;
+                
+                case 'c':
+                    Keyframe(Initialize(right, lowercaseVerticalCenter, false));
+                    Keyframe(DrawPercentOf(ArcBegin(center, lowercaseTop), 0.5f, 1f));
+                    Keyframe(ArcEnd(left, lowercaseVerticalCenter));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(DrawPercentOf(ArcEnd(right, lowercaseVerticalCenter), 0f, 0.5f));
                     break;
 
                 case 'e':
@@ -340,7 +385,6 @@
                     Keyframe(ArcEnd(left, eCrossHeight));
                     Keyframe(ArcBegin(center, bottom));
                     Keyframe(DrawPercentOf(ArcEnd(right, eCrossHeight), 0f, 0.75f));
-
                     break;
 
                 case 'l':
@@ -400,7 +444,7 @@
 
             // Add final keyframe
             path.AddKeyframe(path.Duration);
-            
+
             path.X.Value = 0;
             path.Y.Value = 0;
             path.BakeKeyframes(0);

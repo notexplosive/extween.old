@@ -60,7 +60,7 @@
                 var state = GetPreciseStateAtTime(currentKeyframeTime);
                 var currentPoint = state.Position;
 
-                if (previousShouldDraw && hasStarted)
+                if (previousShouldDraw && hasStarted && prevPoint != currentPoint)
                 {
                     painter.DrawLine(prevPoint, currentPoint, Thickness, color);
                 }
