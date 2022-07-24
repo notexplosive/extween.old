@@ -72,15 +72,19 @@
                 return new CallbackTween(() => { path.ShouldDraw.ForceSetValue(0); });
             }
 
-            ITween DrawPercentOf(float percent, ITween subTween)
+            ITween DrawPercentOf(ITween subTween, float startPercent, float endPercent)
             {
                 // Add a keyframe at the end of the shorter tween
-                var subTweenDuration = subTween.TotalDuration.Get() * percent;
-                path.AddKeyframe(path.Duration + subTweenDuration);
+                var startSeconds = subTween.TotalDuration.Get() * startPercent;
+                var endSeconds = subTween.TotalDuration.Get() * endPercent;
+                path.AddKeyframe(path.Duration + startSeconds);
+                path.AddKeyframe(path.Duration + endSeconds);
 
                 return new MultiplexTween()
                     .AddChannel(new SequenceTween()
-                        .Add(new WaitSecondsTween(subTweenDuration))
+                        .Add(Enable())
+                        .Add(new WaitSecondsTween(startSeconds))
+                        .Add(new WaitSecondsTween(endSeconds - startSeconds))
                         .Add(Disable())
                     )
                     .AddChannel(subTween);
@@ -88,7 +92,7 @@
 
             ITween WarpTo(float x, float y)
             {
-                Keyframe(DrawPercentOf(0f, LineTo(x, y)));
+                Keyframe(DrawPercentOf(LineTo(x, y), 0f, 0f));
                 return Enable();
             }
 
@@ -156,8 +160,7 @@
                     Keyframe(AxisLine(path.X, left));
                     Keyframe(AxisLine(path.Y, bottom));
                     Keyframe(AxisLine(path.X, right));
-                    Keyframe(AxisLine(path.X, left));
-                    Keyframe(AxisLine(path.Y, center));
+                    Keyframe(WarpTo(left, center));
                     Keyframe(AxisLine(path.X, center + quarterWidth));
                     break;
 
@@ -165,7 +168,7 @@
                     Keyframe(Initialize(right, top));
                     Keyframe(AxisLine(path.X, left));
                     Keyframe(AxisLine(path.Y, bottom));
-                    Keyframe(AxisLine(path.Y, center));
+                    Keyframe(WarpTo(left, center));
                     Keyframe(AxisLine(path.X, center + quarterWidth));
                     break;
 
@@ -181,28 +184,27 @@
                 case 'H':
                     Keyframe(Initialize(left, top));
                     Keyframe(AxisLine(path.Y, bottom));
-                    Keyframe(AxisLine(path.Y, center));
-                    Keyframe(AxisLine(path.X, right));
-                    Keyframe(AxisLine(path.Y, top));
+                    Keyframe(WarpTo(right, top));
                     Keyframe(AxisLine(path.Y, bottom));
+                    Keyframe(WarpTo(left, center));
+                    Keyframe(AxisLine(path.X, right));
                     break;
 
                 case 'I':
                     Keyframe(Initialize(left, top));
                     Keyframe(AxisLine(path.X, right));
-                    Keyframe(AxisLine(path.X, center));
+                    Keyframe(WarpTo(center, top));
                     Keyframe(AxisLine(path.Y, bottom));
+                    Keyframe(WarpTo(left, bottom));
                     Keyframe(AxisLine(path.X, right));
-                    Keyframe(AxisLine(path.X, left));
                     break;
 
                 case 'J':
                     Keyframe(Initialize(left, top));
                     Keyframe(AxisLine(path.X, right));
-                    Keyframe(AxisLine(path.X, center));
-                    Keyframe(ArcEnd(center + quarterWidth, bottom - quarterHeight));
+                    Keyframe(AxisLine(path.Y, center + quarterHeight));
                     Keyframe(ArcBegin(center, bottom));
-                    Keyframe(ArcEnd(left, bottom - quarterHeight));
+                    Keyframe(ArcEnd(left, center + quarterHeight));
                     break;
 
                 case 'K':
@@ -210,7 +212,7 @@
                     Keyframe(AxisLine(path.Y, bottom));
                     Keyframe(AxisLine(path.Y, center));
                     Keyframe(ArcEnd(right, top));
-                    Keyframe(ArcBegin(left, center)); // todo: this is a sloppy way to teleport back to where we were
+                    Keyframe(WarpTo(left, center));
                     Keyframe(ArcEnd(right, bottom));
                     break;
 
@@ -256,8 +258,8 @@
                     Keyframe(ArcEnd(left, center));
                     Keyframe(ArcBegin(center, top));
                     Keyframe(ArcEnd(right, center));
-                    Keyframe(ArcEnd(center, center)); // todo: wish this skipped to this position
-                    Keyframe(ArcBegin(right, bottom));
+                    Keyframe(WarpTo(center, center + quarterHeight));
+                    Keyframe(ArcEnd(right, bottom));
                     break;
 
                 case 'R':
@@ -309,9 +311,11 @@
 
                 case 'X':
                     Keyframe(Initialize(left, top));
-                    Keyframe(LineTo(right, bottom));
+                    Keyframe(ArcBegin(center, center));
+                    Keyframe(ArcEnd(right, bottom));
                     Keyframe(WarpTo(right, top));
-                    Keyframe(LineTo(left, bottom));
+                    Keyframe(ArcBegin(center, center));
+                    Keyframe(ArcEnd(left, bottom));
                     break;
 
                 case 'Y':
@@ -335,7 +339,7 @@
                     Keyframe(ArcBegin(center, lowercaseTop));
                     Keyframe(ArcEnd(left, eCrossHeight));
                     Keyframe(ArcBegin(center, bottom));
-                    Keyframe(DrawPercentOf(0.75f, ArcEnd(right, eCrossHeight)));
+                    Keyframe(DrawPercentOf(ArcEnd(right, eCrossHeight), 0f, 0.75f));
 
                     break;
 
@@ -379,7 +383,7 @@
 
                 case '!':
                     Keyframe(Initialize(center, top));
-                    Keyframe(DrawPercentOf(0.60f, AxisLine(path.Y, bottom)));
+                    Keyframe(DrawPercentOf(AxisLine(path.Y, bottom), 0f, 0.60f));
                     Keyframe(Enable());
                     Keyframe(AxisLine(path.Y, bottom * 0.90f));
                     break;
