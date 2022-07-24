@@ -19,8 +19,8 @@ namespace MonoGameDemo
 
         protected override void BuildTween(SequenceTween sequenceTween)
         {
-            var capitalText = new TweenText(this.text, new MonospaceFont(this.fontSize), numberOfSegments: 0);
-            var lowerText = new TweenText(this.text.ToLower(), new MonospaceFont(this.fontSize), numberOfSegments: 0);
+            var capitalText = new TweenGlyphString(this.text, new MonospaceFont(this.fontSize), numberOfSegments: 0);
+            var lowerText = new TweenGlyphString(this.text.ToLower(), new MonospaceFont(this.fontSize), numberOfSegments: 0);
             var circlePrimitive = new CirclePrimitive(5)
             {
                 Color = StrokeColor.Red

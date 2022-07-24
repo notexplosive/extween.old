@@ -1,7 +1,7 @@
 ﻿
 namespace ExTween.Art
 {
-    public class TweenText : TweenableDrawable, ITweenRendered
+    public class TweenGlyphString : TweenableDrawable, ITweenRendered
     {
         public TweenableInt NumberOfSegmentsPerCharacter { get; } = new TweenableInt();
         private readonly float paddingBetweenLetters;
@@ -10,7 +10,7 @@ namespace ExTween.Art
         private readonly IFont font;
         private readonly float thickness;
 
-        public TweenText(string text, IFont font, float thickness = 6,
+        public TweenGlyphString(string text, IFont font, float thickness = 6,
             int numberOfSegments = 0, float paddingBetweenLetters = 20)
         {
             this.text = text;
