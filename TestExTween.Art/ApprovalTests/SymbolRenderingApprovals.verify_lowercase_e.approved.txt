@@ -40,12 +40,12 @@ xx
   x                       
   xx                      
     x                     
-    x                  xx 
-     xx              xx   
-      x             x     
-       xx          x      
-         x       xx       
-         xx    xx         
-           x  x           
-           x x            
+    x                     
+     xx                   
+      x                   
+       xx                 
+         x          xx    
+         xx      xxx      
+           x   xx         
+           x xx           
             x             
