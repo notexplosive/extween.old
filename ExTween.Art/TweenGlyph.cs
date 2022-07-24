@@ -6,9 +6,9 @@ namespace ExTween.Art
     {
         private readonly IFont font;
         private readonly char letter;
-        private readonly DrawKit kit;
+        private readonly TweenPath kit;
 
-        public TweenGlyph(DrawKit kit, IFont font, char letter)
+        public TweenGlyph(TweenPath kit, IFont font, char letter)
         {
             this.font = font;
             this.letter = letter;
