@@ -19,15 +19,24 @@
         public int NumberOfSegments { get; set; }
         public FloatXyPair RenderOffset { get; set; }
 
-        public TweenPath.State GetStateAtTime(float time)
+        public TweenPath.State GetPreciseStateAtTime(float time)
         {
-            var state = this.path.GetStateAtTime(time);
+            return ScaleState(this.path.GetPreciseStateAtTime(time));
+        }
+        
+        public TweenPath.State GetApproximateStateAtTime(float time)
+        {
+            return ScaleState(this.path.GetApproximateStateAtTime(time));
+        }
+
+        private TweenPath.State ScaleState(TweenPath.State state)
+        {
             return new TweenPath.State(
                 state.Position * this.font.FontSize / 2f + RenderOffset,
                 state.ShouldDraw);
         }
 
-        public float Duration => this.path.TweenDuration;
+        public float Duration => this.path.Duration;
 
         public override void Draw(Painter painter)
         {
@@ -48,7 +57,7 @@
                 var color = StrokeColor.Black;
 
                 var currentKeyframeTime = keyframes[i];
-                var state = GetStateAtTime(currentKeyframeTime);
+                var state = GetPreciseStateAtTime(currentKeyframeTime);
                 var currentPoint = state.Position;
 
                 if (previousShouldDraw && hasStarted)

@@ -29,7 +29,7 @@ namespace MonoGameDemo
             
             UpdateFunctions.Add(() =>
             {
-                var state = tweenText.StateAtTime(this.brushPositionTime);
+                var state = tweenText.GetPreciseStateAtTime(this.brushPositionTime);
                 circlePrimitive.Position.Value = state.Position;
                 circlePrimitive.Radius.Value = state.ShouldDraw ? 5f : 2f;
             });

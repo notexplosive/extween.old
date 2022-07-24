@@ -33,8 +33,7 @@ namespace ExTween.Art
         {
             return new IntXyPair(left.X - right.X, left.Y - right.Y);
         }
-        
-        
+
         public override string ToString()
         {
             return $"{X}, {Y}";
@@ -68,7 +67,7 @@ namespace ExTween.Art
             X = x;
             Y = y;
         }
-        
+
         public FloatXyPair(float xy)
         {
             X = xy;
@@ -82,7 +81,7 @@ namespace ExTween.Art
         {
             return new FloatXyPair(left.X * right, left.Y * right);
         }
-        
+
         public static FloatXyPair operator /(FloatXyPair left, float right)
         {
             return new FloatXyPair(left.X / right, left.Y / right);
@@ -107,10 +106,15 @@ namespace ExTween.Art
         {
             return new IntXyPair((int) X, (int) Y);
         }
-        
+
         public override string ToString()
         {
             return $"{X}, {Y}";
+        }
+
+        public static FloatXyPair Lerp(FloatXyPair start, FloatXyPair end, float percent)
+        {
+            return start + (end - start) * percent;
         }
     }
 
@@ -130,7 +134,7 @@ namespace ExTween.Art
 
         public override FloatXyPair Lerp(FloatXyPair startingValue, FloatXyPair targetValue, float percent)
         {
-            return startingValue + (targetValue - startingValue) * percent;
+            return FloatXyPair.Lerp(startingValue, targetValue, percent);
         }
     }
 }

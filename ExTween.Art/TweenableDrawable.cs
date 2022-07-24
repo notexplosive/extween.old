@@ -13,12 +13,4 @@ namespace ExTween.Art
 
         public abstract void Draw(Painter painter);
     }
-
-    /// <summary>
-    /// Thing that is rendered by a tween (eg: Glyphs)
-    /// </summary>
-    public interface ITweenRendered
-    {
-        public float Duration { get; }
-    }
 }

@@ -53,7 +53,7 @@ namespace ExTween.Art
             }
         }
 
-        public TweenPath.State StateAtTime(float time)
+        public TweenPath.State GetPreciseStateAtTime(float time)
         {
             foreach (var glyph in this.glyphs)
             {
@@ -63,7 +63,24 @@ namespace ExTween.Art
                 }
                 else
                 {
-                    return glyph.GetStateAtTime(time);
+                    return glyph.GetPreciseStateAtTime(time);
+                }
+            }
+
+            return new TweenPath.State();
+        }
+        
+        public TweenPath.State GetApproximateStateAtTime(float time)
+        {
+            foreach (var glyph in this.glyphs)
+            {
+                if (time > glyph.Duration)
+                {
+                    time -= glyph.Duration;
+                }
+                else
+                {
+                    return glyph.GetApproximateStateAtTime(time);
                 }
             }
 

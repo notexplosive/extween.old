@@ -29,7 +29,7 @@
 
             void Keyframe(ITween subTween)
             {
-                path.AddKeyframe(path.TweenDuration);
+                path.AddKeyframe(path.Duration);
                 path.Tween.Add(subTween);
             }
 
@@ -83,7 +83,7 @@
             {
                 // Add a keyframe at the end of the shorter tween
                 var subTweenDuration = subTween.TotalDuration.Get() * percent;
-                path.AddKeyframe(path.TweenDuration + subTweenDuration);
+                path.AddKeyframe(path.Duration + subTweenDuration);
 
                 return new MultiplexTween()
                     .AddChannel(new SequenceTween()
@@ -402,7 +402,7 @@
             }
 
             // Add final keyframe
-            path.AddKeyframe(path.TweenDuration);
+            path.AddKeyframe(path.Duration);
             
             path.X.Value = 0;
             path.Y.Value = 0;
