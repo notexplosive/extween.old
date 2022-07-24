@@ -123,11 +123,11 @@
 
             var width = tinyFont.CharacterSize(letter).X;
             var height = tinyFont.CharacterSize(letter).Y;
-            var quarterWidth = width / 4;
-            var quarterHeight = height / 4;
-            var sixteenthHeight = height / 16;
-            var halfHeight = height / 2f;
-            var halfWidth = width / 2f;
+            var halfHeight = height / 2;
+            var halfWidth = width / 2;
+            var quarterWidth = halfWidth / 2;
+            var quarterHeight = halfHeight / 2;
+            var sixteenthHeight = quarterHeight / 4;
             var center = 0;
             var top = center - halfHeight;
             var bottom = center + halfHeight;
@@ -588,6 +588,7 @@
 
         public FloatXyPair CharacterSize(char _)
         {
+            // monospaced fonts always return the same character size
             return new FloatXyPair(FontSize / 2, FontSize);
         }
     }
