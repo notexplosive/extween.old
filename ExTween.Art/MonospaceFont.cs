@@ -13,12 +13,14 @@ namespace ExTween.Art
     public class DrawKit
     {
         private readonly List<float> keyframesInSeconds = new List<float>();
-        private float[] cachedPercentKeyframes = Array.Empty<float>();
         private int cachedNumberOfSegments;
+        private float[] cachedPercentKeyframes = Array.Empty<float>();
         public SequenceTween Tween { get; } = new SequenceTween();
         public TweenableFloat X { get; } = new TweenableFloat();
         public TweenableFloat Y { get; } = new TweenableFloat();
         public TweenableInt ShouldDraw { get; } = new TweenableInt(1);
+
+        public float TweenDuration => Tween.TotalDuration.Get();
 
         public void AddKeyframe(float timeInSeconds)
         {
@@ -30,16 +32,15 @@ namespace ExTween.Art
 
         public float[] GetKeyframes(int numberOfSegments)
         {
-            if (numberOfSegments > this.cachedPercentKeyframes.Length || numberOfSegments != this.cachedNumberOfSegments)
+            if (numberOfSegments > this.cachedPercentKeyframes.Length ||
+                numberOfSegments != this.cachedNumberOfSegments)
             {
                 BakeKeyframes(numberOfSegments);
             }
 
             return this.cachedPercentKeyframes;
         }
-        
-        public float TweenDuration => Tween.TotalDuration.Get();
-        
+
         public void BakeKeyframes(int numberOfSegments)
         {
             var allKeyframes = new List<float>(this.keyframesInSeconds);
@@ -49,13 +50,13 @@ namespace ExTween.Art
 
             for (var i = 0; i < numberOfFramesToAdd; i++)
             {
-                float percent = (float)i / numberOfFramesToAdd;
+                var percent = (float) i / numberOfFramesToAdd;
                 allKeyframes.Add(percent * TweenDuration);
             }
 
             // Add a keyframe at the very end
             allKeyframes.Add(TweenDuration);
-            
+
             allKeyframes.Sort();
 
             this.cachedPercentKeyframes = allKeyframes.ToArray();
@@ -136,6 +137,13 @@ namespace ExTween.Art
                     .AddChannel(new Tween<float>(kit.Y, y, duration, Ease.SineSlowFast));
             }
 
+            ITween LineTo(float x, float y)
+            {
+                return new MultiplexTween()
+                    .AddChannel(new Tween<float>(kit.X, x, duration, Ease.Linear))
+                    .AddChannel(new Tween<float>(kit.Y, y, duration, Ease.Linear));
+            }
+
             ITween Enable()
             {
                 return new CallbackTween(() => { kit.ShouldDraw.ForceSetValue(1); });
@@ -148,12 +156,13 @@ namespace ExTween.Art
 
             ITween DrawPercentOf(float percent, ITween subTween)
             {
-                // Add an extra keyframe at the end of each short channel of the multiplex
-                kit.AddKeyframe(kit.TweenDuration + duration * percent);
-                
+                // Add a keyframe at the end of the shorter tween
+                var subTweenDuration = subTween.TotalDuration.Get() * percent;
+                kit.AddKeyframe(kit.TweenDuration + subTweenDuration);
+
                 return new MultiplexTween()
                     .AddChannel(new SequenceTween()
-                        .Add(new WaitSecondsTween(duration * percent))
+                        .Add(new WaitSecondsTween(subTweenDuration))
                         .Add(Disable())
                     )
                     .AddChannel(subTween);
@@ -171,6 +180,8 @@ namespace ExTween.Art
 
             var width = tinyFont.CharacterSize(letter).X;
             var height = tinyFont.CharacterSize(letter).Y;
+            var quarterWidth = width / 4;
+            var quarterHeight = height / 4;
             var top = -height / 2;
             var bottom = height / 2;
             var left = -width / 2;
@@ -185,6 +196,64 @@ namespace ExTween.Art
 
             switch (letter)
             {
+                case 'A':
+                    Keyframe(Initialize(left, bottom));
+                    Keyframe(ArcBegin(center, top));
+                    Keyframe(ArcEnd(right, bottom));
+                    // todo: figure out how to render the cross-bar
+                    break;
+
+                case 'B':
+                    Keyframe(Initialize(left, bottom));
+                    Keyframe(AxisLine(kit.Y, top));
+                    Keyframe(ArcEnd(center + quarterWidth, center - quarterHeight));
+                    Keyframe(ArcBegin(left, center));
+                    Keyframe(ArcEnd(right, center + quarterHeight));
+                    Keyframe(ArcBegin(left, bottom));
+                    break;
+
+                case 'C':
+                    Keyframe(Initialize(right, center - quarterHeight));
+                    Keyframe(ArcBegin(center, top));
+                    Keyframe(ArcEnd(left, center));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(ArcEnd(right, center + quarterHeight));
+                    break;
+
+                case 'D':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(AxisLine(kit.Y, bottom));
+                    Keyframe(ArcEnd(right, center));
+                    Keyframe(ArcBegin(left, top));
+                    break;
+
+                case 'E':
+                    Keyframe(Initialize(right, top));
+                    Keyframe(AxisLine(kit.X, left));
+                    Keyframe(AxisLine(kit.Y, bottom));
+                    Keyframe(AxisLine(kit.X, right));
+                    Keyframe(AxisLine(kit.X, left));
+                    Keyframe(AxisLine(kit.Y, center));
+                    Keyframe(AxisLine(kit.X, center + quarterWidth));
+                    break;
+
+                case 'F':
+                    Keyframe(Initialize(right, top));
+                    Keyframe(AxisLine(kit.X, left));
+                    Keyframe(AxisLine(kit.Y, bottom));
+                    Keyframe(AxisLine(kit.Y, center));
+                    Keyframe(AxisLine(kit.X, center + quarterWidth));
+                    break;
+
+                case 'G':
+                    Keyframe(Initialize(right, center - quarterHeight));
+                    Keyframe(ArcBegin(center, top));
+                    Keyframe(ArcEnd(left, center));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(ArcEnd(right, center));
+                    Keyframe(AxisLine(kit.X, center));
+                    break;
+
                 case 'H':
                     Keyframe(Initialize(left, top));
                     Keyframe(AxisLine(kit.Y, bottom));
@@ -192,6 +261,150 @@ namespace ExTween.Art
                     Keyframe(AxisLine(kit.X, right));
                     Keyframe(AxisLine(kit.Y, top));
                     Keyframe(AxisLine(kit.Y, bottom));
+                    break;
+
+                case 'I':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(AxisLine(kit.X, right));
+                    Keyframe(AxisLine(kit.X, center));
+                    Keyframe(AxisLine(kit.Y, bottom));
+                    Keyframe(AxisLine(kit.X, right));
+                    Keyframe(AxisLine(kit.X, left));
+                    break;
+
+                case 'J':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(AxisLine(kit.X, right));
+                    Keyframe(AxisLine(kit.X, center));
+                    Keyframe(ArcEnd(center + quarterWidth, bottom - quarterHeight));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(ArcEnd(left, bottom - quarterHeight));
+                    break;
+
+                case 'K':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(AxisLine(kit.Y, bottom));
+                    Keyframe(AxisLine(kit.Y, center));
+                    Keyframe(ArcEnd(right, top));
+                    Keyframe(ArcBegin(left, center)); // todo: this is a sloppy way to teleport back to where we were
+                    Keyframe(ArcEnd(right, bottom));
+                    break;
+
+                case 'L':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(AxisLine(kit.Y, bottom));
+                    Keyframe(AxisLine(kit.X, right));
+                    break;
+
+                case 'M':
+                    Keyframe(Initialize(left, bottom));
+                    Keyframe(AxisLine(kit.Y, top));
+                    Keyframe(ArcEnd(center, center));
+                    Keyframe(ArcBegin(right, top));
+                    Keyframe(AxisLine(kit.Y, bottom));
+                    break;
+
+                case 'N':
+                    Keyframe(Initialize(left, bottom));
+                    Keyframe(AxisLine(kit.Y, top));
+                    Keyframe(ArcEnd(right, bottom));
+                    Keyframe(AxisLine(kit.Y, top));
+                    break;
+
+                case 'O':
+                    Keyframe(Initialize(right, center));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(ArcEnd(left, center));
+                    Keyframe(ArcBegin(center, top));
+                    Keyframe(ArcEnd(right, center));
+                    break;
+
+                case 'P':
+                    Keyframe(Initialize(left, bottom));
+                    Keyframe(AxisLine(kit.Y, top));
+                    Keyframe(ArcEnd(right, center - quarterHeight));
+                    Keyframe(ArcBegin(left, center));
+                    break;
+
+                case 'Q':
+                    Keyframe(Initialize(right, center));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(ArcEnd(left, center));
+                    Keyframe(ArcBegin(center, top));
+                    Keyframe(ArcEnd(right, center));
+                    Keyframe(ArcEnd(center, center)); // todo: wish this skipped to this position
+                    Keyframe(ArcBegin(right, bottom));
+                    break;
+
+                case 'R':
+                    Keyframe(Initialize(left, bottom));
+                    Keyframe(AxisLine(kit.Y, top));
+                    Keyframe(ArcEnd(right, center - quarterHeight));
+                    Keyframe(ArcBegin(left, center));
+                    Keyframe(ArcEnd(right, bottom));
+                    break;
+
+                case 'S':
+                    Keyframe(Initialize(right, center - quarterHeight));
+                    Keyframe(ArcBegin(center, top));
+                    Keyframe(ArcEnd(left, center - quarterHeight));
+                    Keyframe(ArcBegin(center, center));
+                    Keyframe(ArcEnd(right, center + quarterHeight));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(ArcEnd(left, center + quarterHeight));
+                    break;
+
+                case 'T':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(AxisLine(kit.X, right));
+                    Keyframe(AxisLine(kit.X, center));
+                    Keyframe(AxisLine(kit.Y, bottom));
+                    break;
+
+                case 'U':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(AxisLine(kit.Y, center));
+                    Keyframe(ArcBegin(center, bottom));
+                    Keyframe(ArcEnd(right, center));
+                    Keyframe(AxisLine(kit.Y, top));
+                    break;
+
+                case 'V':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(LineTo(center, bottom));
+                    Keyframe(LineTo(right, top));
+                    break;
+
+                case 'W':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(ArcBegin(center - quarterWidth, bottom));
+                    Keyframe(ArcEnd(center, center));
+                    Keyframe(ArcBegin(center + quarterWidth, bottom));
+                    Keyframe(ArcEnd(right, top));
+                    break;
+
+                case 'X':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(LineTo(right, bottom));
+                    Keyframe(LineTo(center, center)); // todo: wish I could warp
+                    Keyframe(LineTo(left, bottom));
+                    Keyframe(LineTo(right, top));
+                    break;
+
+                case 'Y':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(ArcBegin(center, center));
+                    Keyframe(ArcEnd(right, top));
+                    Keyframe(DrawPercentOf(0f, ArcBegin(center, center)));
+                    Keyframe(Enable());
+                    Keyframe(AxisLine(kit.Y, bottom));
+                    break;
+                
+                case 'Z':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(AxisLine(kit.X, right));
+                    Keyframe(LineTo(left, bottom));
+                    Keyframe(AxisLine(kit.X, right));
                     break;
 
                 case 'e':
@@ -259,6 +472,8 @@ namespace ExTween.Art
                     break;
             }
 
+            kit.X.Value = 0;
+            kit.Y.Value = 0;
             kit.BakeKeyframes(0);
             return new TweenGlyph(kit, this, letter);
         }
