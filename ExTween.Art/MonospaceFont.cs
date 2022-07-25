@@ -828,8 +828,6 @@
                     break;
             }
             
-            path.X.Value = 0;
-            path.Y.Value = 0;
             return new TweenGlyph(path, this, letter);
         }
 
