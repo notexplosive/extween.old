@@ -1,24 +1,24 @@
 ﻿-- $ --
+       x        
       xxx       
-      x x       
-     x   x      
-    xx   xx     
-    x     x     
-   x       x    
-  x         x   
- x           x  
- x           x  
-x             x 
-x             xx
- x           x  
- x           x  
-  x         x   
-   x       x    
-    x     x     
-    xx   xx     
-     x   x      
-      x x       
-      x x       
+    xx x xx     
+  xx   x   xx   
+xx     x     xx 
+x      x       x
+ xx    x        
+   x   x        
+    xx x        
+      xx        
+       xx       
+       x x      
+       x  xx    
+       x    x   
+       x     xx 
+xx     x     xxx
+  xx   x   xx   
+    xx x xx     
+      xxx       
+       x        
        x        
                 
                 
@@ -33,26 +33,26 @@ x             xx
 
 
 -- + --
-      xxx       
-      x x       
-     x   x      
-    xx   xx     
-    x     x     
-   x       x    
-  x         x   
- x           x  
- x           x  
-x             x 
-x             xx
- x           x  
- x           x  
-  x         x   
-   x       x    
-    x     x     
-    xx   xx     
-     x   x      
-      x x       
-      x x       
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+xxxxxxxxxxxxxxxx
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
        x        
                 
                 
@@ -67,27 +67,27 @@ x             xx
 
 
 -- < --
-      xxx       
-      x x       
-     x   x      
-    xx   xx     
-    x     x     
-   x       x    
-  x         x   
- x           x  
- x           x  
-x             x 
-x             xx
- x           x  
- x           x  
-  x         x   
-   x       x    
-    x     x     
-    xx   xx     
-     x   x      
-      x x       
-      x x       
-       x        
+              xx
+            xx  
+           x    
+         xx     
+       xx       
+      xx        
+    xx          
+   x            
+ xx             
+x               
+x               
+ xx             
+   x            
+    xx          
+      xx        
+       xx       
+         xx     
+           x    
+            xx  
+              x 
+               x
                 
                 
                 
@@ -101,27 +101,27 @@ x             xx
 
 
 -- = --
-      xxx       
-      x x       
-     x   x      
-    xx   xx     
-    x     x     
-   x       x    
-  x         x   
- x           x  
- x           x  
-x             x 
-x             xx
- x           x  
- x           x  
-  x         x   
-   x       x    
-    x     x     
-    xx   xx     
-     x   x      
-      x x       
-      x x       
-       x        
+                
+                
+                
+                
+                
+xxxxxxxxxxxxxxxx
+                
+                
+                
+                
+                
+                
+                
+                
+                
+xxxxxxxxxxxxxxxx
+                
+                
+                
+                
+                
                 
                 
                 
@@ -135,27 +135,27 @@ x             xx
 
 
 -- > --
-      xxx       
-      x x       
-     x   x      
-    xx   xx     
-    x     x     
-   x       x    
-  x         x   
- x           x  
- x           x  
-x             x 
-x             xx
- x           x  
- x           x  
-  x         x   
-   x       x    
-    x     x     
-    xx   xx     
-     x   x      
-      x x       
-      x x       
-       x        
+x               
+ xx             
+   x            
+    xx          
+      xx        
+       xx       
+         xx     
+           x    
+            xx  
+              x 
+              xx
+            xx  
+           x    
+         xx     
+       xx       
+      xx        
+    xx          
+   x            
+ xx             
+x               
+x               
                 
                 
                 
@@ -172,24 +172,24 @@ x             xx
       xxx       
       x x       
      x   x      
-    xx   xx     
+    x     x     
     x     x     
    x       x    
-  x         x   
- x           x  
- x           x  
-x             x 
-x             xx
- x           x  
- x           x  
-  x         x   
-   x       x    
-    x     x     
-    xx   xx     
-     x   x      
-      x x       
-      x x       
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 
@@ -203,27 +203,27 @@ x             xx
 
 
 -- ` --
-      xxx       
-      x x       
-     x   x      
-    xx   xx     
-    x     x     
-   x       x    
-  x         x   
- x           x  
- x           x  
-x             x 
-x             xx
- x           x  
- x           x  
-  x         x   
-   x       x    
-    x     x     
-    xx   xx     
-     x   x      
-      x x       
-      x x       
+   xx           
+    x           
+     x          
+      x         
+      x         
        x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 
@@ -237,26 +237,26 @@ x             xx
 
 
 -- | --
-      xxx       
-      x x       
-     x   x      
-    xx   xx     
-    x     x     
-   x       x    
-  x         x   
- x           x  
- x           x  
-x             x 
-x             xx
- x           x  
- x           x  
-  x         x   
-   x       x    
-    x     x     
-    xx   xx     
-     x   x      
-      x x       
-      x x       
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
        x        
                 
                 
@@ -271,27 +271,27 @@ x             xx
 
 
 -- ~ --
-      xxx       
-      x x       
-     x   x      
-    xx   xx     
-    x     x     
-   x       x    
-  x         x   
- x           x  
- x           x  
-x             x 
-x             xx
- x           x  
- x           x  
-  x         x   
-   x       x    
-    x     x     
-    xx   xx     
-     x   x      
-      x x       
-      x x       
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+   x           x
+  xxxxx      xx 
+xx     xxxx x   
+x          x    
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 

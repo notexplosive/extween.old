@@ -584,6 +584,229 @@
                     Keyframe(AxisLine(path.Y, bottom * 0.90f));
                     break;
 
+                case '\"':
+                    Keyframe(Initialize(centerX - quarterWidth, top));
+                    Keyframe(AxisLine(path.Y, centerY - quarterHeight));
+                    Keyframe(WarpTo(centerX + quarterWidth, top));
+                    Keyframe(AxisLine(path.Y, centerY - quarterHeight));
+                    break;
+
+                case '#':
+                    Keyframe(Initialize(centerX - quarterWidth, top));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    Keyframe(WarpTo(centerX + quarterWidth, top));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    Keyframe(WarpTo(left, centerY + quarterHeight));
+                    Keyframe(AxisLine(path.X, right));
+                    Keyframe(WarpTo(left, centerY - quarterHeight));
+                    Keyframe(AxisLine(path.X, right));
+                    break;
+
+                case '$':
+                    Keyframe(Initialize(right, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, top + sixteenthHeight));
+                    Keyframe(ArcEnd(left, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, centerY));
+                    Keyframe(ArcEnd(right, centerY + quarterHeight));
+                    Keyframe(ArcBegin(centerX, bottom - sixteenthHeight));
+                    Keyframe(ArcEnd(left, centerY + quarterHeight));
+                    Keyframe(WarpTo(centerX, top));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    break;
+
+                case '%':
+                    Keyframe(Initialize(right, top));
+                    Keyframe(LineTo(left, bottom));
+                    // todo: rest of percent sign
+                    break;
+
+                case '&':
+                    Keyframe(Initialize(centerX + quarterWidth, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, top));
+                    Keyframe(ArcEnd(left, centerY - quarterHeight));
+                    Keyframe(LineTo(right, bottom));
+                    Keyframe(WarpTo(centerX, centerY));
+                    Keyframe(ArcEnd(left, bottom - quarterHeight));
+                    Keyframe(ArcBegin(centerX, bottom));
+                    Keyframe(ArcEnd(right, centerY + quarterHeight));
+                    break;
+
+                case '\'':
+                    Keyframe(Initialize(centerX, top));
+                    Keyframe(AxisLine(path.Y, centerY - quarterHeight));
+                    break;
+
+                case '(':
+                    Keyframe(Initialize(centerX, top));
+                    Keyframe(ArcEnd(left, centerY));
+                    Keyframe(ArcBegin(centerX, bottom));
+                    break;
+
+                case ')':
+                    Keyframe(Initialize(centerX, top));
+                    Keyframe(ArcEnd(right, centerY));
+                    Keyframe(ArcBegin(centerX, bottom));
+                    break;
+
+                case '*':
+                    Keyframe(Initialize(centerX, top));
+                    Keyframe(LineTo(centerX, bottom));
+                    Keyframe(WarpTo(centerX, centerY));
+                    Keyframe(LineTo(left, centerY - quarterHeight));
+                    Keyframe(WarpTo(centerX, centerY));
+                    Keyframe(LineTo(right, centerY - quarterHeight));
+                    Keyframe(WarpTo(centerX, centerY));
+                    Keyframe(LineTo(left, centerY + quarterHeight));
+                    Keyframe(WarpTo(centerX, centerY));
+                    Keyframe(LineTo(right, centerY + quarterHeight));
+                    break;
+
+                case '+':
+                    Keyframe(Initialize(centerX, top));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    Keyframe(WarpTo(left, centerY));
+                    Keyframe(AxisLine(path.X, right));
+                    break;
+
+                case ',':
+                    Keyframe(Initialize(centerX, bottom));
+                    Keyframe(ArcBegin(centerX - quarterWidth, lowercaseBottom));
+                    break;
+
+                case '-':
+                    Keyframe(Initialize(left, centerY));
+                    Keyframe(AxisLine(path.X, right));
+                    break;
+
+                case '.':
+                    Keyframe(Initialize(centerX, bottom));
+                    Keyframe(LineTo(centerX, bottom - sixteenthHeight));
+                    break;
+
+                case '/':
+                    Keyframe(Initialize(right, top));
+                    Keyframe(LineTo(left, bottom));
+                    break;
+
+                case ':':
+                    Keyframe(Initialize(centerX, centerY - quarterHeight));
+                    Keyframe(LineTo(centerX, centerY - quarterHeight - sixteenthHeight));
+                    Keyframe(WarpTo(centerX, bottom));
+                    Keyframe(LineTo(centerX, bottom - sixteenthHeight));
+                    break;
+
+                case ';':
+                    Keyframe(Initialize(centerX, centerY - quarterHeight));
+                    Keyframe(LineTo(centerX, centerY - quarterHeight - sixteenthHeight));
+                    Keyframe(WarpTo(centerX, bottom));
+                    Keyframe(ArcBegin(centerX - quarterWidth, lowercaseBottom));
+                    break;
+
+                case '<':
+                    Keyframe(Initialize(right, top));
+                    Keyframe(LineTo(left, centerY));
+                    Keyframe(LineTo(right, bottom));
+                    break;
+
+                case '=':
+                    Keyframe(Initialize(left, centerY - quarterHeight));
+                    Keyframe(AxisLine(path.X, right));
+                    Keyframe(WarpTo(left, centerY + quarterHeight));
+                    Keyframe(AxisLine(path.X, right));
+                    break;
+
+                case '>':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(LineTo(right, centerY));
+                    Keyframe(LineTo(left, bottom));
+                    break;
+
+                case '?':
+                    Keyframe(Initialize(left, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, top));
+                    Keyframe(ArcEnd(right, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX + quarterWidth, centerY));
+                    Keyframe(ArcEnd(centerX, centerY + sixteenthHeight * 2));
+                    Keyframe(WarpTo(centerX, bottom));
+                    Keyframe(LineTo(centerX, bottom - sixteenthHeight));
+                    break;
+
+                case '@':
+                    Keyframe(Initialize(right, centerY));
+                    Keyframe(ArcBegin(centerX + quarterWidth, centerY - quarterHeight));
+                    Keyframe(ArcEnd(centerX, centerY));
+                    Keyframe(ArcBegin(centerX + quarterWidth, centerY + quarterHeight));
+                    Keyframe(ArcEnd(right, centerY));
+                    Keyframe(ArcBegin(centerX, top));
+                    Keyframe(ArcEnd(left, centerY));
+                    Keyframe(ArcBegin(left, centerY + quarterHeight));
+                    Keyframe(ArcBegin(centerX, bottom));
+                    break;
+
+                case '[':
+                    Keyframe(Initialize(centerX, top));
+                    Keyframe(AxisLine(path.X, left));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    Keyframe(AxisLine(path.X, centerX));
+                    break;
+
+                case '\\':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(LineTo(right, bottom));
+                    break;
+
+                case ']':
+                    Keyframe(Initialize(centerX, top));
+                    Keyframe(AxisLine(path.X, right));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    Keyframe(AxisLine(path.X, centerX));
+                    break;
+
+                case '^':
+                    Keyframe(Initialize(centerX - quarterWidth, centerY - quarterHeight));
+                    Keyframe(LineTo(centerX, top));
+                    Keyframe(LineTo(centerX + quarterWidth, centerY - quarterHeight));
+                    break;
+                
+                case '`':
+                    Keyframe(Initialize(centerX - quarterWidth, top));
+                    Keyframe(LineTo(centerX, centerY - quarterHeight));
+                    break;
+
+                case '_':
+                    Keyframe(Initialize(left, bottom));
+                    Keyframe(AxisLine(path.X, right));
+                    break;
+                
+                case '{':
+                    Keyframe(Initialize(centerX, top));
+                    Keyframe(ArcEnd(centerX - quarterWidth, centerY - quarterHeight));
+                    Keyframe(ArcBegin(left, centerY));
+                    Keyframe(ArcEnd(centerX - quarterWidth, centerY + quarterHeight));
+                    Keyframe(ArcBegin(centerX, bottom));
+                    break;
+                
+                case '|':
+                    Keyframe(Initialize(centerX, top));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    break;
+                
+                case '}':
+                    Keyframe(Initialize(centerX, top));
+                    Keyframe(ArcEnd(centerX + quarterWidth, centerY - quarterHeight));
+                    Keyframe(ArcBegin(right, centerY));
+                    Keyframe(ArcEnd(centerX + quarterWidth, centerY + quarterHeight));
+                    Keyframe(ArcBegin(centerX, bottom));
+                    break;
+                
+                case '~':
+                    Keyframe(Initialize(left, centerY + sixteenthHeight));
+                    Keyframe(ArcBegin(centerX - quarterWidth, centerY - sixteenthHeight));
+                    Keyframe(ArcEnd(centerX, centerY));
+                    Keyframe(ArcBegin(centerX + quarterWidth, centerY + sixteenthHeight));
+                    Keyframe(ArcEnd(right, centerY - sixteenthHeight));
+                    break;
+
                 default:
                     // By default we draw a circle
                     Keyframe(SetXY(right, centerY));
