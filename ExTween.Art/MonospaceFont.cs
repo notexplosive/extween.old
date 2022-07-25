@@ -827,12 +827,9 @@
                     builder.KeyframeArcB(right, centerY);
                     break;
             }
-
-            // Add final builder.keyframe            path.Addbuilder.Keyframepath.Duration;
-
+            
             path.X.Value = 0;
             path.Y.Value = 0;
-            path.BuildKeyframeCache(0);
             return new TweenGlyph(path, this, letter);
         }
 

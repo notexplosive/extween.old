@@ -34,7 +34,8 @@ namespace ExTween.Art
         public float[] GetKeyframes(int numberOfSegments)
         {
             if (numberOfSegments > this.cachedPercentKeyframes.Length ||
-                numberOfSegments != this.cachedNumberOfSegments)
+                numberOfSegments != this.cachedNumberOfSegments ||
+                this.cachedPercentKeyframes.Length == 0)
             {
                 BuildKeyframeCache(numberOfSegments);
             }
@@ -216,7 +217,7 @@ namespace ExTween.Art
             {
                 Keyframe(ArcB(x, y));
             }
-            
+
             public void KeyframeArcAPartial(float x, float y, float startPercent, float endPercent)
             {
                 KeyframeDrawPercentOf(ArcA(x, y), startPercent, endPercent);
