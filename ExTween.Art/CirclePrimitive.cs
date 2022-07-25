@@ -1,6 +1,6 @@
 ﻿namespace ExTween.Art
 {
-    public class CirclePrimitive : Drawable
+    public class CirclePrimitive : Transformable, IEasyDrawable, IHasSize
     {
         public TweenableFloat Radius { get; set; } = new TweenableFloat(1);
         public TweenableInt Segments { get; } = new TweenableInt(3);
@@ -11,8 +11,8 @@
             Radius.Value = radius;
         }
         
-        public override FloatXyPair Size => new FloatXyPair(Radius * 2);
-        public override void Draw(Painter painter)
+        public FloatXyPair Size => new FloatXyPair(Radius * 2);
+        public void Draw(Painter painter)
         {
             painter.DrawFilledCircle(Position, Radius, Segments, Color);
         }

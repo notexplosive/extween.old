@@ -6,13 +6,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoGameDemo
 {
-    public class SpriteFontRenderedText : Drawable
+    public class SpriteFontRenderedText : Transformable, ISlideElement
     {
         public string Text { get; set; }
         public SpriteFont Font { get; set; }
-        public override FloatXyPair Size => Font.MeasureString(Text).ToXyPair();
+        public FloatXyPair Size => Font.MeasureString(Text).ToXyPair();
 
-        public override void Draw(Painter painter)
+        public void Draw(Painter painter)
         {
             if (painter is SpriteBatchPainter sbp)
             {

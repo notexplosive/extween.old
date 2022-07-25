@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using ExTween;
+﻿using ExTween;
 using ExTween.Art;
 using ExTween.Art.MonoGame;
-using ExTween.MonoGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -18,21 +16,22 @@ namespace MonoGameDemo
             this.font = font;
             this.message = message;
         }
-        
+
         protected override void BuildTween(SequenceTween tween)
         {
             var totalStringSize = this.font.MeasureString(this.message);
-            
+
             {
                 foreach (var letter in this.message)
                 {
-                    Elements.Add(new SpriteFontRenderedText
+                    var text = new SpriteFontRenderedText
                     {
                         Text = letter.ToString(),
-                        Position = new TweenableFloatXyPair(new Vector2(0, 500).ToXyPair()),
-                        Scale = new TweenableFloat(1),
                         Font = this.font
-                    });
+                    };
+                    text.Scale.Value = new TweenableFloat(1);
+                    text.Position.Value = new TweenableFloatXyPair(new Vector2(0, 500).ToXyPair());
+                    Elements.Add(text);
                 }
             }
 

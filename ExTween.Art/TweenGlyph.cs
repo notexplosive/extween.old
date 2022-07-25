@@ -1,6 +1,6 @@
 ﻿namespace ExTween.Art
 {
-    public class TweenGlyph : Drawable, ITweenPath
+    public class TweenGlyph : ITweenPath, IHasSize
     {
         private readonly IFont font;
         private readonly char letter;
@@ -13,7 +13,7 @@
             this.path = path;
         }
 
-        public override FloatXyPair Size => this.font.CharacterSize(this.letter);
+        public FloatXyPair Size => this.font.CharacterSize(this.letter);
 
         public float Thickness { get; set; }
         public int NumberOfSegments { get; set; }
@@ -33,7 +33,7 @@
 
         public float Duration => this.path.Duration;
 
-        public override void Draw(Painter painter)
+        public void Draw(Painter painter)
         {
             if (this.path.Tween is TweenCollection {ChildrenWithDurationCount: 0})
             {

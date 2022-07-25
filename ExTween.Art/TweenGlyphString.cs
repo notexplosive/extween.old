@@ -1,7 +1,7 @@
 ﻿
 namespace ExTween.Art
 {
-    public class TweenGlyphString : Drawable, ITweenPath
+    public class TweenGlyphString : Transformable, ITweenPath, ISlideElement
     {
         public TweenableInt NumberOfSegmentsPerCharacter { get; } = new TweenableInt();
         public TweenableFloat PaddingBetweenLetters { get; } = new TweenableFloat();
@@ -27,7 +27,7 @@ namespace ExTween.Art
             }
         }
 
-        public override FloatXyPair Size {
+        public FloatXyPair Size {
             get
             {
                 var width = 0f;
@@ -70,7 +70,7 @@ namespace ExTween.Art
             return new TweenPathState();
         }
         
-        public override void Draw(Painter painter)
+        public void Draw(Painter painter)
         {
             var xPosition = 0f;
 
