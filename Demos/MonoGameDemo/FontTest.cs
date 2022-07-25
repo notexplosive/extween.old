@@ -18,8 +18,8 @@ namespace MonoGameDemo
 
         protected override void BuildTween(SequenceTween sequenceTween)
         {
-            var text = new TweenGlyphString(this.text, font, numberOfSegments: 50, thickness: 3f);
-            Elements.Add(text);
+            var textElement = new TweenGlyphString(this.text, font, numberOfSegments: 50, thickness: 3f);
+            Elements.Add(textElement);
         }
     }
     
