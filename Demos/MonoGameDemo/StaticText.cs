@@ -10,23 +10,36 @@ namespace MonoGameDemo
         private readonly float fontSize;
         private readonly string text;
         private readonly TweenableFloat brushPositionTime = new TweenableFloat();
+        private readonly string allSymbols;
 
         public StaticText(float fontSize, string text)
         {
             this.fontSize = fontSize;
             this.text = text;
+            
+            this.allSymbols = string.Empty;
+
+            for (char i = char.MinValue; i < 128; i++)
+            {
+                if (char.IsPunctuation(i) || char.IsSymbol(i))
+                {
+                    this.allSymbols += i;
+                } 
+            }
         }
 
         protected override void BuildTween(SequenceTween sequenceTween)
         {
             var capitalText = new TweenGlyphString(this.text, new MonospaceFont(this.fontSize), numberOfSegments: 0);
             var lowerText = new TweenGlyphString(this.text.ToLower(), new MonospaceFont(this.fontSize), numberOfSegments: 0);
+            var symbolsText = new TweenGlyphString(this.allSymbols, new MonospaceFont(this.fontSize), numberOfSegments: 0);
             var circlePrimitive = new CirclePrimitive(5)
             {
                 Color = StrokeColor.Red
             };
             Elements.Add(capitalText);
             Elements.Add(lowerText);
+            Elements.Add(symbolsText);
             Elements.Add(circlePrimitive);
 
             capitalText.Position.Value = new FloatXyPair(0, -100);
@@ -40,22 +53,13 @@ namespace MonoGameDemo
             });
 
             sequenceTween.IsLooping = true;
-
             sequenceTween
-                .Add(new CallbackTween(() => { this.brushPositionTime.Value = 0f; }))
-                .Add(new Tween<int>(lowerText.NumberOfSegmentsPerCharacter, 20, 4f, Ease.SineSlowFastSlow))
-                .Add(new Tween<float>(this.brushPositionTime, lowerText.Duration, 15f, Ease.Linear))
-                .Add(new Tween<int>(lowerText.NumberOfSegmentsPerCharacter, 0, 4f, Ease.SineSlowFastSlow))
-                .Add(new CallbackTween(() => { this.brushPositionTime.Value = 0f; }))
-                .Add(new Tween<float>(this.brushPositionTime, lowerText.Duration, 15f, Ease.Linear))
-                    
-                    
-                .Add(new CallbackTween(() => { this.brushPositionTime.Value = 0f; }))
-                .Add(new Tween<int>(capitalText.NumberOfSegmentsPerCharacter, 20, 4f, Ease.SineSlowFastSlow))
-                .Add(new Tween<float>(this.brushPositionTime, capitalText.Duration, 15f, Ease.Linear))
-                .Add(new Tween<int>(capitalText.NumberOfSegmentsPerCharacter, 0, 4f, Ease.SineSlowFastSlow))
-                .Add(new CallbackTween(() => { this.brushPositionTime.Value = 0f; }))
-                .Add(new Tween<float>(this.brushPositionTime, capitalText.Duration, 15f, Ease.Linear))
+                .Add(new Tween<int>(lowerText.NumberOfSegmentsPerCharacter, 40, 2f, Ease.Linear))
+                .Add(new Tween<int>(capitalText.NumberOfSegmentsPerCharacter, 40, 2f, Ease.Linear))
+                .Add(new WaitSecondsTween(2))
+                .Add(new Tween<int>(lowerText.NumberOfSegmentsPerCharacter, 0, 2f, Ease.Linear))
+                .Add(new Tween<int>(capitalText.NumberOfSegmentsPerCharacter, 0, 2f, Ease.Linear))
+                .Add(new WaitSecondsTween(2))
                 ;
         }
     }

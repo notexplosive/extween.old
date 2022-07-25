@@ -1,137 +1,137 @@
 ﻿-- A --
        x        
-       x        
-      x x       
       x x       
       x x       
       x x       
      x   x      
      x   x      
      x   x      
-     x   x      
-    x     x     
     x     x     
     x     x     
     x     x     
    x       x    
    x       x    
-   x       x    
-   x       x    
-  x         x   
   x         x   
   x         x   
   x         x   
  x           x  
  x           x  
  x           x  
- x           x  
-x             x 
-x             x 
 x             x 
 x             x 
 x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- B --
-x               
-xxx             
-x  xx           
-x   xx          
-x     xx        
-x       x       
-x        xx     
-x          x    
-x        xx     
-x       x       
-x     xx        
-x   xx          
-x  xx           
-xxx             
-x               
 xx              
-x xx            
-x   xx          
-x     xx        
-x       xx      
-x         xx    
-x           xx  
-x             xx
-x           xx  
-x         xx    
-x       xx      
-x     xx        
-x   xx          
-x xx            
+x xxx           
+x    xx         
+x     xxx       
+x        xx     
+x        xxx    
+x     xxx       
+x    xx         
+x xxx           
 xx              
+xxx             
+x  xxx          
+x     xxx       
+x        xxx    
+x           xxx 
+x           xxxx
+x        xxx    
+x     xxx       
+x  xxx          
+xxx             
 x               
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- C --
-       xx       
-      x x       
-      x  xx     
-     x    x     
-     x     xx   
-    x       x   
+      xxx       
+      x  x      
+     x    xx    
+    xx      x   
     x        xx 
    x           x
-   x            
-  x             
   x             
  x              
  x              
 x               
 x               
-x               
-x               
  x              
  x              
-  x             
   x             
    x            
-   x           x
-    x        xx 
-    x       x   
+    x         xx
+    xx      xx  
      x     xx   
-     x    x     
       x  xx     
-      x x       
-       xx       
+      x xx      
        x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- D --
 x               
-xx              
-x x             
+xxx             
 x  x            
-x   x           
-x    x          
-x     x         
-x      x        
-x       x       
-x        x      
-x         x     
+x   xx          
+x     xx        
+x      xx       
+x        xx     
 x          x    
-x           x   
-x            x  
+x           xx  
 x             x 
 x             xx
-x            x  
-x           x   
+x           xx  
 x          x    
-x         x     
-x        x      
-x       x       
-x      x        
-x     x         
-x    x          
-x   x           
+x        xx     
+x      xx       
+x     xx        
+x   xx          
 x  x            
-x x             
-xx              
+xxx             
 x               
 x               
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- E --
@@ -145,11 +145,6 @@ x
 x               
 x               
 x               
-x               
-x               
-x               
-x               
-x               
 xxxxxxxxxxxx    
 x               
 x               
@@ -160,12 +155,17 @@ x
 x               
 x               
 x               
-x               
-x               
-x               
-x               
-x               
 xxxxxxxxxxxxxxxx
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- F --
@@ -179,11 +179,6 @@ x
 x               
 x               
 x               
-x               
-x               
-x               
-x               
-x               
 xxxxxxxxxxxx    
 x               
 x               
@@ -195,53 +190,53 @@ x
 x               
 x               
 x               
-x               
-x               
-x               
-x               
-x               
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- G --
-       xx       
-      x x       
-      x  xx     
-     x    x     
-     x     xx   
-    x       x   
+      xxx       
+      x  x      
+     x    xx    
+    xx      x   
     x        xx 
    x           x
-   x            
-  x             
   x             
  x              
  x              
-x               
 x               
 x      xxxxxxxxx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- H --
-x              x
-x              x
-x              x
-x              x
-x              x
 x              x
 x              x
 x              x
@@ -263,11 +258,16 @@ x              x
 x              x
 x              x
 x              x
-x              x
-x              x
-x              x
-x              x
-x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- I --
@@ -291,17 +291,17 @@ xxxxxxxxxxxxxxxx
        x        
        x        
        x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
 xxxxxxxxxxxxxxxx
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- J --
@@ -320,56 +320,56 @@ xxxxxxxxxxxxxxxx
                x
                x
                x
-               x
-               x
-               x
-               x
-               x
-               x
-               x
-x              x
-xx           xx 
-  x         x   
-  xx       xx   
-    x     x     
+x             xx
+ xx         xx  
+   x       xx   
     xx   xx     
-      x x       
-      x x       
+      x xx      
        x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- K --
 x             xx
-x            x  
-x           x   
+x           xx  
 x          x    
-x         x     
-x        x      
-x       x       
-x      x        
-x     x         
-x    x          
-x   x           
+x        xx     
+x      xx       
+x     xx        
+x   xx          
 x  x            
-x x             
-xx              
+xxx             
 x               
 x               
-xx              
-x x             
+xxx             
 x  x            
-x   x           
-x    x          
-x     x         
-x      x        
-x       x       
-x        x      
-x         x     
+x   xx          
+x     xx        
+x      xx       
+x        xx     
 x          x    
-x           x   
-x            x  
+x           xx  
 x             x 
 x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- L --
@@ -393,36 +393,31 @@ x
 x               
 x               
 x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
 xxxxxxxxxxxxxxxx
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- M --
 x             xx
-x             xx
 xx           x x
 xx           x x
 x x         x  x
-x x         x  x
-x  x       x   x
 x  x       x   x
 x   x     x    x
-x   x     x    x
-x    x   x     x
+x   xx   xx    x
 x    x   x     x
 x     x x      x
 x     x x      x
 x      x       x
-x      x       x
 x              x
 x              x
 x              x
@@ -433,97 +428,97 @@ x              x
 x              x
 x              x
 x              x
-x              x
-x              x
-x              x
-x              x
-x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- N --
 x              x
-x              x
 xx             x
 xx             x
 x x            x
-x x            x
-x  x           x
 x  x           x
 x   x          x
 x   x          x
 x    x         x
-x    x         x
-x     x        x
 x     x        x
 x      x       x
 x      x       x
 x       x      x
-x       x      x
-x        x     x
 x        x     x
 x         x    x
 x         x    x
 x          x   x
-x          x   x
-x           x  x
 x           x  x
 x            x x
 x            x x
-x             xx
 x             xx
 x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- O --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- P --
-xx              
-x xx            
-x   xx          
-x     xx        
-x       xx      
-x         xx    
-x           xx  
-x             xx
-x           xx  
-x         xx    
-x       xx      
-x     xx        
-x   xx          
-x xx            
-xx              
+xxx             
+x  xxx          
+x     xxx       
+x        xxx    
+x           xxx 
+x           xxxx
+x        xxx    
+x     xxx       
+x  xxx          
+xxx             
 x               
 x               
 x               
@@ -535,113 +530,118 @@ x
 x               
 x               
 x               
-x               
-x               
-x               
-x               
-x               
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Q --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
-  x         x   
   x         x   
    x       x    
-   x   x   x    
-    x   x x     
-    x    xx     
-     x   xx     
-     x   x x    
+    x  xx x     
+    xx   xx     
+     x   xxx    
       x x   x   
-      x x    x  
-       x      x 
+      x x    xx 
        x       x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- R --
-xx              
-x xx            
-x   xx          
-x     xx        
-x       xx      
-x         xx    
-x           xx  
-x             xx
-x           xx  
-x         xx    
-x       xx      
-x     xx        
-x   xx          
-x xx            
-xx              
+xxx             
+x  xxx          
+x     xxx       
+x        xxx    
+x           xxx 
+x           xxxx
+x        xxx    
+x     xxx       
+x  xxx          
+xxx             
 x               
-xx              
-x x             
+xxx             
 x  x            
-x   x           
-x    x          
-x     x         
-x      x        
-x       x       
-x        x      
-x         x     
+x   xx          
+x     xx        
+x      xx       
+x        xx     
 x          x    
-x           x   
-x            x  
+x           xx  
 x             x 
 x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- S --
       xxx       
-      x x       
-    xx   xx     
-    x     x     
-  xx       xx   
-  x         x   
+     xx  x      
+   xx     xx    
+  xx        x   
 xx           xx 
 x              x
-xx              
-  x             
-  xx            
-    x           
+ xx             
+   x            
     xx          
       x         
-      x         
        xx       
-        x       
-         xx     
-          x     
-           xx   
+         x      
+          xx    
             x   
              xx 
-x              x
-xx           xx 
-  x         x   
-  xx       xx   
-    x     x     
+x             xx
+ xx         xx  
+   x       xx   
     xx   xx     
-      x x       
-      x x       
+      x xx      
        x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- T --
@@ -666,16 +666,16 @@ xxxxxxxxxxxxxxxx
        x        
        x        
        x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- U --
@@ -689,61 +689,61 @@ x              x
 x              x
 x              x
 x              x
-x              x
-x              x
-x              x
-x              x
-x              x
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- V --
 x             xx
 x             x 
-x             x 
-x             x 
- x           x  
  x           x  
  x           x  
  x           x  
   x         x   
   x         x   
   x         x   
-  x         x   
    x       x    
    x       x    
-   x       x    
-   x       x    
-    x     x     
-    x     x     
+   xx     xx    
     x     x     
     x     x     
      x   x      
      x   x      
      x   x      
-     x   x      
-      x x       
       x x       
       x x       
       x x       
        x        
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- W --
@@ -752,80 +752,76 @@ x             x
 x             x 
 x             x 
 x             x 
-x             x 
-x             x 
-x             x 
- x           x  
- x           x  
  x           x  
  x           x  
  x           x  
  x           x  
  x           x  
  x     x     x  
-  x    x    x   
   x   x x   x   
   x   x x   x   
   x   x x   x   
-  x   x x   x   
-  x  x   x  x   
   x  x   x  x   
   x  x   x  x   
    x x   x x    
    xx     xx    
    xx     xx    
    xx     xx    
-   xx     xx    
    x       x    
-   x       x    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- X --
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
-       x        
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Y --
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
@@ -840,46 +836,50 @@ x             x
        x        
        x        
        x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Z --
 xxxxxxxxxxxxxxxx
-              x 
              x  
              x  
             x   
-            x   
-           x    
-           x    
+           xx   
           x     
           x     
          x      
-         x      
-        x       
-        x       
+        xx      
        x        
        x        
       x         
-      x         
-     x          
-     x          
+     xx         
     x           
     x           
    x            
-   x            
-  x             
-  x             
+  xx            
  x              
  x              
-x               
 x               
 xxxxxxxxxxxxxxxx
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- a --
@@ -893,239 +893,30 @@ xxxxxxxxxxxxxxxx
                 
                 
                 
-                
-                
-                
-                
-                
       xxx      x
-      x x      x
-    xx   xx    x
-    x     x    x
-  xx       xx  x
-  x         x  x
+     xx  x     x
+   xx     xx   x
+  xx        x  x
 xx           xxx
-x              x
-xx           xxx
-  x         x  x
-  xx       xx  x
-    x     x    x
+x             xx
+ xx         xx x
+   x       xx  x
     xx   xx    x
-      x x      x
-      x x      x
+      x xx     x
        x       x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- b --
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x     xxx       
-x     x x       
-x   xx   xx     
-x   x     x     
-x xx       xx   
-x x         x   
-xx           xx 
-x              x
-xx           xx 
-x x         x   
-x xx       xx   
-x   x     x     
-x   xx   xx     
-x     x x       
-x     x x       
-x      x        
-
-
--- c --
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-      xxxx      
-      x   xx    
-    xx      x   
-    x           
-  xx            
-  x             
-xx              
-x               
-xx              
-  x             
-  xx            
-    x           
-    xx      x   
-      x   xx    
-      x xx      
-       x        
-
-
--- d --
-               x
-               x
-               x
-               x
-               x
-               x
-               x
-               x
-               x
-               x
-               x
-               x
-               x
-               x
-               x
-      xxx      x
-      x x      x
-    xx   xx    x
-    x     x    x
-  xx       xx  x
-  x         x  x
-xx           xxx
-x              x
-xx           xxx
-  x         x  x
-  xx       xx  x
-    x     x    x
-    xx   xx    x
-      x x      x
-      x x      x
-       x       x
-
-
--- e --
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-      xxx       
-      x x       
-    xx   xx     
-    x     x     
-  xx       xx   
-  x         x   
-xx           xx 
-xxxxxxxxxxxxxxxx
-xx              
-  x             
-  xx            
-    x           
-    xx      x   
-      x   xx    
-      x xx      
-       x        
-
-
--- f --
-          xx    
-          x x   
-          x x   
-         x  x   
-         x   x  
-        x    xx 
-       x      x 
-       x       x
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-   xxxxxxxxx    
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-
-
--- g --
-                
-                
-                
-                
-                
-                
-                
-       x       x
-      x x      x
-     x   x     x
-    x     x    x
-   x       x   x
-  x         x  x
- x           x x
-x             xx
-x             xx
- x           x x
-  x         x  x
-   x       x   x
-    x     x    x
-     x   x     x
-      x x      x
-       x       x
-               x
-               x
-               x
-xxx            x
-   xxxx        x
-       xxxx    x
-           xxxxx
-               x
-
-
--- h --
-x               
-x               
-x               
-x               
-x               
 x               
 x               
 x               
@@ -1141,6 +932,209 @@ x    xx  x
 x  xx     xx    
 x xx        x   
 xx           xx 
+x             xx
+xxx         xx  
+x  x       xx   
+x   xx   xx     
+x     x xx      
+x      x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+
+-- c --
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+      xxxxxx    
+     xx    xx   
+   xx           
+  xx            
+xx              
+x               
+ xx             
+   x            
+    xx     xx   
+      x xxxx    
+       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+
+-- d --
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+      xxx      x
+     xx  x     x
+   xx     xx   x
+  xx        x  x
+xx           xxx
+x             xx
+ xx         xx x
+   x       xx  x
+    xx   xx    x
+      x xx     x
+       x       x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+
+-- e --
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+      xxx       
+     xx  x      
+   xx     xx    
+  xx        x   
+xx           xx 
+xxxxxxxxxxxxxxxx
+ xx             
+   x            
+    xx     xx   
+      x xxxx    
+       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+
+-- f --
+          xx    
+          x x   
+         x  xx  
+        x    x  
+        x     x 
+       x       x
+       x        
+       x        
+       x        
+       x        
+   xxxxxxxxx    
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+
+-- g --
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+      xxx      x
+     xx  x     x
+   xx     xx   x
+  xx        x  x
+xx           xxx
+x             xx
+ xx         xx x
+   x       xx  x
+    xx   xx    x
+      x xx     x
+       x       x
+               x
+               x
+               x
+               x
+x             xx
+ xx         xx  
+   x       xx   
+    xx   xx     
+      x xx      
+       x        
+
+
+-- h --
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x               
+x    xxxxx      
+x  xxx    xx    
+xxx         xx  
+x             xx
 x              x
 x              x
 x              x
@@ -1148,31 +1142,25 @@ x              x
 x              x
 x              x
 x              x
-x              x
-x              x
-x              x
-x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- i --
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
        x        
        x        
-                
+       x        
+       x        
+       x        
+       x        
                 
                 
                 
@@ -1186,39 +1174,51 @@ x              x
        x        
        x        
        x        
+       x        
+       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- j --
-           x    
-           x    
+               x
+               x
+               x
+               x
+               x
+               x
                 
                 
                 
                 
-                
-           x    
-           x    
-           x    
-           x    
-           x    
-           x    
-           x    
-           x    
-           x    
-           x    
-           x    
-           x    
-           x    
-           x    
-           x    
-   x       x    
-    x     x     
-    x     x     
-     x   xx     
-     x   x      
-      x x       
-      x x       
-       x        
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+               x
+x             xx
+ xx         xx  
+   x       xx   
+    xx   xx     
+      x xx      
        x        
 
 
@@ -1226,34 +1226,34 @@ x              x
 x               
 x               
 x               
-x               
-x               
 x            x  
-x           xx  
-x         xx    
-x        x      
-x       x       
-x     xx        
-x   xx          
-x  xx           
-xxx             
-x               
-x               
+x          xx   
+x        xx     
+x     xxx       
+x    xx         
+x xxx           
 xx              
-x x             
+x               
+xxx             
 x  x            
-x   x           
-x    x          
-x     x         
-x      x        
-x       x       
-x        x      
-x         x     
+x   xx          
+x     xx        
+x      xx       
+x        xx     
 x          x    
-x           x   
-x            x  
+x           xx  
 x             x 
 x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- l --
@@ -1278,16 +1278,16 @@ x              x
        x        
        x        
        x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- m --
@@ -1301,16 +1301,9 @@ x              x
                 
                 
                 
-                
-                
-                
-                
-                
 x  xx     xx    
-x x x     x x   
-x x  x   x  x   
-xx   xx xx   x  
-x     x x     x 
+xxx  x   xx xx  
+xx    x x    xx 
 x      x       x
 x              x
 x              x
@@ -1319,9 +1312,16 @@ x              x
 x              x
 x              x
 x              x
-x              x
-x              x
-x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- n --
@@ -1330,6 +1330,69 @@ x              x
                 
                 
                 
+                
+                
+                
+                
+                
+x    xxxxx      
+x  xxx    xx    
+xxx         xx  
+x             xx
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+
+-- o --
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+      xxx       
+     xx  x      
+   xx     xx    
+  xx        x   
+xx           xx 
+x             xx
+ xx         xx  
+   x       xx   
+    xx   xx     
+      x xx      
+       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+
+-- p --
                 
                 
                 
@@ -1345,77 +1408,14 @@ x    xx  x
 x  xx     xx    
 x xx        x   
 xx           xx 
-x              x
-x              x
-x              x
-x              x
-x              x
-x              x
-x              x
-x              x
-x              x
-x              x
-x              x
-
-
--- o --
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-      xxx       
-      x x       
-    xx   xx     
-    x     x     
-  xx       xx   
-  x         x   
-xx           xx 
-x              x
-xx           xx 
-  x         x   
-  xx       xx   
-    x     x     
-    xx   xx     
-      x x       
-      x x       
-       x        
-
-
--- p --
-                
-                
-                
-                
-                
-                
-                
-x      x        
-x     x x       
-x    x   x      
-x   x     x     
-x  x       x    
-x x         x   
-xx           x  
-x             x 
 x             xx
-xx           x  
-x x         x   
-x  x       x    
-x   x     x     
-x    x   x      
-x     x x       
+xxx         xx  
+x  x       xx   
+x   xx   xx     
+x     x xx      
 x      x        
+x               
+x               
 x               
 x               
 x               
@@ -1434,22 +1434,22 @@ x
                 
                 
                 
-       x       x
-      x x      x
-     x   x     x
-    x     x    x
-   x       x   x
-  x         x  x
- x           x x
+                
+                
+                
+      xxx      x
+     xx  x     x
+   xx     xx   x
+  xx        x  x
+xx           xxx
 x             xx
-x             xx
- x           x x
-  x         x  x
-   x       x   x
-    x     x    x
-     x   x     x
-      x x      x
+ xx         xx x
+   x       xx  x
+    xx   xx    x
+      x xx     x
        x       x
+               x
+               x
                x
                x
                x
@@ -1471,27 +1471,27 @@ x             xx
                 
                 
                 
+x    xxxxx      
+x  xxx    xx    
+xxx         xx  
+x             xx
+x               
+x               
+x               
+x               
+x               
+x               
+x               
                 
                 
                 
                 
                 
-x     xxx       
-x    xx  x      
-x  xx     xx    
-x xx        x   
-xx           xx 
-x              x
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
-x               
+                
+                
+                
+                
+                
 
 
 -- s --
@@ -1505,35 +1505,30 @@ x
                 
                 
                 
-                
-                
-                
-                
-                
-     xxxxx      
-    xx    x     
+    xxxxxxx     
  xxx       xxx  
 x             xx
-xx              
-  xxx           
-     x          
-      xxx       
-         xx     
-          xx    
-            xxx 
+ xxx            
+    xxx         
+       xxxx     
+           xxx  
 x             xx
  xxx       xxx  
-    xx    x     
-     xx xx      
+    xxx xxx     
        x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- t --
-       x        
-       x        
-       x        
-       x        
-       x        
        x        
        x        
        x        
@@ -1555,11 +1550,16 @@ x             xx
        x        
        x        
        x        
-       x        
-       x        
-       x        
-       x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- u --
@@ -1573,27 +1573,27 @@ x             xx
                 
                 
                 
-                
-                
-                
-                
-                
 x              x
 x              x
 x              x
 x              x
 x              x
-x              x
-x              x
-x              x
-xx           xx 
-  x         x   
-  xx       xx   
-    x     x     
+x             xx
+ xx         xx  
+   x       xx   
     xx   xx     
-      x x       
-      x x       
+      x xx      
        x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- v --
@@ -1607,27 +1607,27 @@ xx           xx
                 
                 
                 
-                
-                
-                
-                
-                
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- w --
@@ -1641,27 +1641,27 @@ x             x
                 
                 
                 
-                
-                
-                
-                
-                
 x      x      xx
-x      x      x 
-x     x x     x 
 x     x x     x 
  x    x x    x  
  x    x x    x  
  x   x   x   x  
- x   x   x   x  
   x  x   x  x   
   x  x   x  x   
-  x x     x x   
   x x     x x   
    xx     xx    
    xx     xx    
    x       x    
-   x       x    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- x --
@@ -1675,60 +1675,60 @@ x     x x     x
                 
                 
                 
-                
-                
-                
-                
-                
 x             xx
- x           x  
-  x         x   
-   x       x    
-    x     x     
-     x   x      
-      x x       
-       x        
-      x x       
-     x   x      
-    x     x     
-   x       x    
-  x         x   
- x           x  
-x             x 
+ xx         xx  
+   x       xx   
+    xx   xx     
+      x xx      
+      xxx       
+     xx  x      
+   xx     xx    
+  xx        x   
+xx           xx 
 x              x
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- y --
-       x        
-      x x       
-      x x       
-     x   x      
-     x   x      
-    x     x     
-    x     x     
-   x       x    
-   x       x    
-  x         x   
-  x         x   
- x           x  
- x           x  
-x             x 
-x             x 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+x              x
+x              x
+x              x
+x              x
+x              x
 x             xx
-x             x 
- x           x  
- x           x  
-  x         x   
-  x         x   
-   x       x    
-   x       x    
-    x     x     
-    x     x     
-     x   x      
-     x   x      
-      x x       
-      x x       
-       x        
+ xx         xx x
+   x       xx  x
+    xx   xx    x
+      x xx     x
+       x       x
+               x
+               x
+               x
+               x
+x             xx
+ xx         xx  
+   x       xx   
+    xx   xx     
+      x xx      
        x        
 
 
@@ -1743,2202 +1743,2202 @@ x             x
                 
                 
                 
-                
-                
-                
-                
-                
 xxxxxxxxxxxxxxxx
-             x  
-            x   
+            xx  
            x    
-          x     
-         x      
-        x       
-       x        
-      x         
-     x          
-    x           
+         xx     
+       xx       
+      xx        
+    xx          
    x            
-  x             
- x              
+ xx             
 x               
 xxxxxxxxxxxxxxxx
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ª --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- µ --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- º --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- À --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Á --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Â --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ã --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ä --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Å --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Æ --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ç --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- È --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- É --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ê --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ë --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ì --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Í --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Î --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ï --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ð --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ñ --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ò --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ó --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ô --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Õ --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ö --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ø --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ù --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ú --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Û --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ü --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Ý --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- Þ --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ß --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- à --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- á --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- â --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ã --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ä --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- å --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- æ --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ç --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- è --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- é --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ê --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ë --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ì --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- í --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- î --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ï --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ð --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ñ --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ò --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ó --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ô --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- õ --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ö --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ø --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ù --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ú --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- û --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ü --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- ý --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
 -- þ --
-       x        
-      x x       
+      xxx       
       x x       
      x   x      
-     x   x      
-    x     x     
+    xx   xx     
     x     x     
    x       x    
-   x       x    
-  x         x   
   x         x   
  x           x  
  x           x  
-x             x 
 x             x 
 x             xx
-x             x 
  x           x  
  x           x  
   x         x   
-  x         x   
-   x       x    
    x       x    
     x     x     
-    x     x     
-     x   x      
+    xx   xx     
      x   x      
       x x       
       x x       
        x        
-       x        
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 
