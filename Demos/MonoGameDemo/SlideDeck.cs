@@ -11,6 +11,7 @@ namespace MonoGameDemo
     {
         private readonly List<ICue> cues = new List<ICue>
         {
+            new StaticText(75, "NotExplosive.net"),
             new FontTest(75),
             new ClearCue(),
             new FlyInTitle(Demo.TitleFont, "Tweens"),

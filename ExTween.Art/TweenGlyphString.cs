@@ -4,20 +4,20 @@ namespace ExTween.Art
     public class TweenGlyphString : TweenableDrawable, ITweenRendered
     {
         public TweenableInt NumberOfSegmentsPerCharacter { get; } = new TweenableInt();
-        private readonly float paddingBetweenLetters;
+        public TweenableFloat PaddingBetweenLetters { get; } = new TweenableFloat();
+        public TweenableFloat Thickness { get; } = new TweenableFloat();
         private readonly TweenGlyph[] glyphs;
         private readonly string text;
         private readonly IFont font;
-        private readonly float thickness;
 
         public TweenGlyphString(string text, IFont font, float thickness = 6,
             int numberOfSegments = 0, float paddingBetweenLetters = 20)
         {
             this.text = text;
             this.font = font;
-            this.thickness = thickness;
+            Thickness.Value = thickness;
             NumberOfSegmentsPerCharacter.Value = numberOfSegments;
-            this.paddingBetweenLetters = paddingBetweenLetters;
+            PaddingBetweenLetters.Value = paddingBetweenLetters;
 
             this.glyphs = new TweenGlyph[this.text.Length];
 
@@ -36,7 +36,7 @@ namespace ExTween.Art
                     width += this.font.CharacterSize(character).X;
                 }
 
-                return new FloatXyPair(width + this.paddingBetweenLetters * (this.text.Length - 1), this.font.CharacterSize('x').Y);
+                return new FloatXyPair(width + PaddingBetweenLetters * (this.text.Length - 1), this.font.CharacterSize('x').Y);
             }
         }
 
@@ -95,11 +95,11 @@ namespace ExTween.Art
             {
                 var pattern = this.glyphs[i];
                 xPosition += this.font.CharacterSize(this.text[i]).X;
-                xPosition += this.paddingBetweenLetters;
+                xPosition += PaddingBetweenLetters;
 
                 pattern.RenderOffset = new FloatXyPair(-Size.X / 2 + xPosition, 0) + Position;
                 pattern.NumberOfSegments = NumberOfSegmentsPerCharacter;
-                pattern.Thickness = this.thickness;
+                pattern.Thickness = Thickness;
 
                 pattern.Draw(painter);
             }

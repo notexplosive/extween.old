@@ -5,6 +5,24 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoGameDemo
 {
+    public class StaticText : Slide
+    {
+        private readonly string text;
+        private readonly MonospaceFont font;
+
+        public StaticText(float fontSize, string text)
+        {
+            this.font = new MonospaceFont(fontSize);
+            this.text = text;
+        }
+
+        protected override void BuildTween(SequenceTween sequenceTween)
+        {
+            var text = new TweenGlyphString(this.text, font, numberOfSegments: 50, thickness: 3f);
+            Elements.Add(text);
+        }
+    }
+    
     public class FontTest : Slide
     {
         private readonly float fontSize;
