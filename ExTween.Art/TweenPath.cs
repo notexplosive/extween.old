@@ -31,6 +31,11 @@ namespace ExTween.Art
             }
         }
 
+        private void ClearKeyframeCache()
+        {
+            this.cachedPercentKeyframes = Array.Empty<float>();
+        }
+
         public float[] GetKeyframes(int numberOfSegments)
         {
             if (numberOfSegments > this.cachedPercentKeyframes.Length ||
@@ -43,7 +48,7 @@ namespace ExTween.Art
             return this.cachedPercentKeyframes;
         }
 
-        public void BuildKeyframeCache(int numberOfSegments)
+        private void BuildKeyframeCache(int numberOfSegments)
         {
             var allKeyframes = new List<float>(this.keyframesInSeconds);
 
@@ -99,13 +104,14 @@ namespace ExTween.Art
                 this.path = path;
             }
 
-            private void Keyframe(ITween subTween)
+            private void AddKeyframeAndSubTween(ITween subTween)
             {
                 this.path.AddKeyframe(this.path.Duration);
                 this.path.Tween.Add(subTween);
+                this.path.ClearKeyframeCache();
             }
 
-            private ITween SetXY(float x, float y)
+            private ITween SetXy(float x, float y)
             {
                 return new CallbackTween(
                     () =>
@@ -183,14 +189,14 @@ namespace ExTween.Art
 
             private ITween WarpTo(float x, float y)
             {
-                Keyframe(DrawPercentOf(LineTo(x, y), 0f, 0f));
+                AddKeyframeAndSubTween(DrawPercentOf(LineTo(x, y), 0f, 0f));
                 return Enable();
             }
 
             private ITween Initialize(float x, float y, bool startEnabled)
             {
                 var result = new SequenceTween()
-                        .Add(SetXY(x, y))
+                        .Add(SetXy(x, y))
                     ;
 
                 result.Add(startEnabled ? Enable() : Disable());
@@ -200,22 +206,22 @@ namespace ExTween.Art
 
             public void KeyframeInitialize(float x, float y, bool startEnabled = true)
             {
-                Keyframe(Initialize(x, y, startEnabled));
+                AddKeyframeAndSubTween(Initialize(x, y, startEnabled));
             }
 
             public void KeyframeAxisLine(TweenableFloat axis, float destination)
             {
-                Keyframe(AxisLine(axis, destination));
+                AddKeyframeAndSubTween(AxisLine(axis, destination));
             }
 
             public void KeyframeArcA(float x, float y)
             {
-                Keyframe(ArcA(x, y));
+                AddKeyframeAndSubTween(ArcA(x, y));
             }
 
             public void KeyframeArcB(float x, float y)
             {
-                Keyframe(ArcB(x, y));
+                AddKeyframeAndSubTween(ArcB(x, y));
             }
 
             public void KeyframeArcAPartial(float x, float y, float startPercent, float endPercent)
@@ -230,17 +236,17 @@ namespace ExTween.Art
 
             public void KeyframeWarpTo(float x, float y)
             {
-                Keyframe(WarpTo(x, y));
+                AddKeyframeAndSubTween(WarpTo(x, y));
             }
 
             public void KeyframeLineTo(float x, float y)
             {
-                Keyframe(LineTo(x, y));
+                AddKeyframeAndSubTween(LineTo(x, y));
             }
 
             private void KeyframeDrawPercentOf(ITween subTween, float startPercent, float endPercent)
             {
-                Keyframe(DrawPercentOf(subTween, startPercent, endPercent));
+                AddKeyframeAndSubTween(DrawPercentOf(subTween, startPercent, endPercent));
             }
         }
     }
