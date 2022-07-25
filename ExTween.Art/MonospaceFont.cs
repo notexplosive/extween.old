@@ -127,10 +127,13 @@
             var thirdTrueHeight = trueHeight / 3;
             var effectiveHeight = trueHeight * 2 / 3;
 
-            var halfHeight = effectiveHeight / 2;
             var halfWidth = width / 2;
             var quarterWidth = halfWidth / 2;
+            var eightWidth = quarterWidth / 2;
+            
+            var halfHeight = effectiveHeight / 2;
             var quarterHeight = halfHeight / 2;
+            var eightHeight = quarterHeight / 2;
             var sixteenthHeight = quarterHeight / 4;
 
             var centerX = 0;
@@ -161,9 +164,12 @@
             {
                 case 'A':
                     Keyframe(Initialize(left, bottom));
+                    Keyframe(AxisLine(path.Y, centerY));
                     Keyframe(ArcA(centerX, top));
-                    Keyframe(ArcB(right, bottom));
-                    // todo: figure out how to render the cross-bar
+                    Keyframe(ArcB(right, centerY));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    Keyframe(WarpTo(left, centerY));
+                    Keyframe(AxisLine(path.X, right));
                     break;
 
                 case 'B':
@@ -617,7 +623,21 @@
                 case '%':
                     Keyframe(Initialize(right, top));
                     Keyframe(LineTo(left, bottom));
-                    // todo: rest of percent sign
+                    
+                    Keyframe(WarpTo(centerX - quarterWidth, top));
+                    Keyframe(ArcB(left, centerY - quarterHeight));
+                    Keyframe(ArcA(centerX - quarterWidth, centerY));
+                    Keyframe(ArcB(centerX, centerY - quarterHeight));
+                    Keyframe(ArcA(centerX - quarterWidth, top));
+                    
+                    
+                    Keyframe(WarpTo(centerX + quarterWidth, centerY));
+                    Keyframe(ArcB(right, centerY + quarterHeight));
+                    Keyframe(ArcA(centerX + quarterWidth, bottom));
+                    Keyframe(ArcB(centerX, centerY + quarterHeight));
+                    Keyframe(ArcA(centerX + quarterWidth, centerY));
+                    
+                    
                     break;
 
                 case '&':
@@ -851,12 +871,11 @@
                 case '5':
                     Keyframe(Initialize(right, top));
                     Keyframe(AxisLine(path.X, left));
-                    Keyframe(AxisLine(path.Y, armHeight));
-                    Keyframe(ArcA(centerX, armHeight - sixteenthHeight * 2));
-                    Keyframe(ArcB(right, armHeight));
-                    Keyframe(ArcA(centerX + quarterWidth, bottom));
-                    Keyframe(ArcB(centerX, bottom));
-                    Keyframe(ArcB(left, centerY + quarterHeight + sixteenthHeight * 2));
+                    Keyframe(AxisLine(path.Y, centerY - sixteenthHeight));
+                    Keyframe(AxisLine(path.X, centerX + quarterWidth));
+                    Keyframe(ArcB(right, centerY + quarterHeight));
+                    Keyframe(ArcA(centerX, bottom));
+                    Keyframe(ArcB(left, centerY + quarterHeight));
                     break;
                 
                 case '6':

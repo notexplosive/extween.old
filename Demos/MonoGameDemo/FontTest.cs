@@ -12,10 +12,10 @@ namespace MonoGameDemo
         private readonly string allSymbols;
         private readonly string allNumbers;
 
-        public FontTest(float fontSize, string text)
+        public FontTest(float fontSize)
         {
             this.fontSize = fontSize;
-            this.text = text;
+            this.text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             
             this.allSymbols = string.Empty;
 

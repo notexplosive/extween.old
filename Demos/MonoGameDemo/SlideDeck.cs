@@ -11,7 +11,7 @@ namespace MonoGameDemo
     {
         private readonly List<ICue> cues = new List<ICue>
         {
-            new FontTest(50, "ABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+            new FontTest(75),
             new ClearCue(),
             new FlyInTitle(Demo.TitleFont, "Tweens"),
         };
