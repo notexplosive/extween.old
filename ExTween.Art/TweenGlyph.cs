@@ -1,6 +1,6 @@
 ﻿namespace ExTween.Art
 {
-    public class TweenGlyph : TweenableDrawable, ITweenRendered
+    public class TweenGlyph : Drawable, ITweenRendered
     {
         private readonly IFont font;
         private readonly char letter;

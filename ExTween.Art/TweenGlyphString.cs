@@ -1,7 +1,7 @@
 ﻿
 namespace ExTween.Art
 {
-    public class TweenGlyphString : TweenableDrawable, ITweenRendered
+    public class TweenGlyphString : Drawable, ITweenRendered
     {
         public TweenableInt NumberOfSegmentsPerCharacter { get; } = new TweenableInt();
         public TweenableFloat PaddingBetweenLetters { get; } = new TweenableFloat();

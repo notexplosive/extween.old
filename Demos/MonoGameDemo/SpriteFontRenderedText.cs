@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoGameDemo
 {
-    public class SpriteFontRenderedText : TweenableDrawable
+    public class SpriteFontRenderedText : Drawable
     {
         public string Text { get; set; }
         public SpriteFont Font { get; set; }

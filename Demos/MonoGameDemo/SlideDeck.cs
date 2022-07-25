@@ -102,7 +102,7 @@ namespace MonoGameDemo
     public abstract class Slide : ICue
     {
         private readonly SequenceTween tween = new SequenceTween();
-        protected List<TweenableDrawable> Elements { get; } = new List<TweenableDrawable>();
+        protected List<Drawable> Elements { get; } = new List<Drawable>();
         protected List<Action> UpdateFunctions { get; } = new List<Action>();
 
         public void Setup()

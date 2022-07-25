@@ -1,6 +1,6 @@
 ﻿namespace ExTween.Art
 {
-    public class CirclePrimitive : TweenableDrawable
+    public class CirclePrimitive : Drawable
     {
         public TweenableFloat Radius { get; set; } = new TweenableFloat(1);
         public TweenableInt Segments { get; } = new TweenableInt(3);
