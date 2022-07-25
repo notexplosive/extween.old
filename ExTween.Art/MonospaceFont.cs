@@ -31,8 +31,8 @@
                 return new CallbackTween(
                     () =>
                     {
-                        path.X.ForceSetValue(x);
-                        path.Y.ForceSetValue(y);
+                        path.X.Value = x;
+                        path.Y.Value = y;
                     });
             }
 
@@ -64,12 +64,12 @@
 
             ITween Enable()
             {
-                return new CallbackTween(() => { path.ShouldDraw.ForceSetValue(1); });
+                return new CallbackTween(() => { path.ShouldDraw.Value = 1; });
             }
 
             ITween Disable()
             {
-                return new CallbackTween(() => { path.ShouldDraw.ForceSetValue(0); });
+                return new CallbackTween(() => { path.ShouldDraw.Value = 0; });
             }
 
             ITween DrawPercentOf(ITween subTween, float startPercent, float endPercent)

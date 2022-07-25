@@ -113,7 +113,7 @@ namespace TestExTween
             var tweenable = new TweenableInt();
 
             var tween = new SequenceTween()
-                .Add(new CallbackTween(() => { tweenable.ForceSetValue(0); }))
+                .Add(new CallbackTween(() => { tweenable.Value = 0; }))
                 .Add(new Tween<int>(tweenable, 100, 1, Ease.Linear))
                 .Add(new Tween<int>(tweenable, -100, 1, Ease.Linear));
 
@@ -178,7 +178,7 @@ namespace TestExTween
 
             var tween = new SequenceTween()
                     // You need a callback at the start that sets everything to their starting values
-                    .Add(new CallbackTween(() => { tweenable.ForceSetValue(0); }))
+                    .Add(new CallbackTween(() => { tweenable.Value = 0; }))
                     .Add(new Tween<int>(tweenable, 100, 1, Ease.Linear))
                     .Add(new Tween<int>(tweenable, 200, 1, Ease.Linear))
                     .Add(new Tween<int>(tweenable, 400, 1, Ease.Linear))

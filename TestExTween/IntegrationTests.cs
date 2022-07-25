@@ -21,8 +21,8 @@ namespace TestExTween
                     .Add(new CallbackTween(() =>
                     {
                         // We need this callback in order for the JumpTo to work
-                        tweenableX.ForceSetValue(radius);
-                        tweenableY.ForceSetValue(0);
+                        tweenableX.Value = radius;
+                        tweenableY.Value = 0;
                     }))
 
                     .Add(new MultiplexTween()

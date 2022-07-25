@@ -67,11 +67,10 @@ namespace ExTween
         {
             var percent = CurrentTime / TotalDuration.Get();
 
-            this.tweenable.ForceSetValue(
-                this.tweenable.Lerp(
-                    this.startingValue,
-                    this.targetValue,
-                    this.ease(percent)));
+            this.tweenable.Value = this.tweenable.Lerp(
+                this.startingValue,
+                this.targetValue,
+                this.ease(percent));
         }
 
         public bool IsDone()

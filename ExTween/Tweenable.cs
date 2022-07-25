@@ -43,17 +43,6 @@ namespace ExTween
         /// <param name="percent">Progress along interpolation from 0f to 1f</param>
         /// <returns>The interpolated value</returns>
         public abstract T Lerp(T startingValue, T targetValue, float percent);
-        
-        /// <summary>
-        /// TODO: deprecate this
-        /// Calls the tweenable's Setter with value
-        /// You probably don't want to call this. It's here to cause friction on purpose.
-        /// </summary>
-        /// <param name="value"></param>
-        public void ForceSetValue(T value)
-        {
-            Value = value;
-        }
 
         public override string ToString()
         {
