@@ -80,11 +80,7 @@ namespace ExTween.Art
                 xPosition += this.font.CharacterSize(this.text[i]).X;
                 xPosition += PaddingBetweenLetters;
 
-                glyph.RenderOffset = new FloatXyPair(-Size.X / 2 + xPosition, 0) + Position;
-                glyph.NumberOfSegments = NumberOfSegmentsPerCharacter;
-                glyph.Thickness = Thickness;
-
-                glyph.Draw(painter);
+                glyph.Draw(painter, new FloatXyPair(-Size.X / 2 + xPosition, 0) + Position, NumberOfSegmentsPerCharacter, Thickness);
             }
         }
     }

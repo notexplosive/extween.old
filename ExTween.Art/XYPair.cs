@@ -101,6 +101,8 @@ namespace ExTween.Art
 
         public float X { get; set; }
         public float Y { get; set; }
+        
+        public static FloatXyPair Zero => new FloatXyPair();
 
         public static FloatXyPair operator *(FloatXyPair left, float right)
         {

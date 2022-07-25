@@ -53,11 +53,8 @@ namespace TestExTween.Art
                 {
                     allLetters += $"-- {c} --\n";
                     var glyph = font.GetTweenGlyphForLetter(c);
-                    glyph.RenderOffset = glyph.Size / 2;
-                    glyph.NumberOfSegments = 0;
-
                     var painter = new AsciiPainter(glyph.Size.ToIntXy());
-                    glyph.Draw(painter);
+                    glyph.Draw(painter, glyph.Size / 2, 0, 1f);
                     allLetters += painter.RenderString() + "\n\n";
                 }
             }
@@ -69,11 +66,9 @@ namespace TestExTween.Art
         {
             var font = new MonospaceFont(size);
             var glyph = font.GetTweenGlyphForLetter(c);
-            glyph.RenderOffset = glyph.Size / 2;
-            glyph.NumberOfSegments = segments;
-
+            
             var painter = new AsciiPainter(glyph.Size.ToIntXy());
-            glyph.Draw(painter);
+            glyph.Draw(painter, glyph.Size / 2, segments, 1f);
             
             Approvals.Verify(painter.RenderString());
         }
