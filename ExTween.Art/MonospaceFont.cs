@@ -148,13 +148,13 @@
             var eCrossHeight = centerY + quarterHeight;
             var lowercaseVerticalCenter = centerY + quarterHeight;
 
-            void LowercaseCircleMacro(float verticalOffset = 0f)
+            void LowercaseCircleMacro()
             {
-                Keyframe(WarpTo(left, lowercaseTop + quarterHeight + verticalOffset));
-                Keyframe(ArcBegin(centerX, lowercaseTop + verticalOffset));
-                Keyframe(ArcEnd(right, lowercaseTop + quarterHeight + verticalOffset));
-                Keyframe(ArcBegin(centerX, bottom + verticalOffset));
-                Keyframe(ArcEnd(left, lowercaseTop + quarterHeight + verticalOffset));
+                Keyframe(WarpTo(left, lowercaseTop + quarterHeight));
+                Keyframe(ArcBegin(centerX, lowercaseTop));
+                Keyframe(ArcEnd(right, lowercaseTop + quarterHeight));
+                Keyframe(ArcBegin(centerX, bottom));
+                Keyframe(ArcEnd(left, lowercaseTop + quarterHeight));
             }
 
             switch (letter)
@@ -767,7 +767,7 @@
                     Keyframe(LineTo(centerX, top));
                     Keyframe(LineTo(centerX + quarterWidth, centerY - quarterHeight));
                     break;
-                
+
                 case '`':
                     Keyframe(Initialize(centerX - quarterWidth, top));
                     Keyframe(LineTo(centerX, centerY - quarterHeight));
@@ -777,7 +777,7 @@
                     Keyframe(Initialize(left, bottom));
                     Keyframe(AxisLine(path.X, right));
                     break;
-                
+
                 case '{':
                     Keyframe(Initialize(centerX, top));
                     Keyframe(ArcEnd(centerX - quarterWidth, centerY - quarterHeight));
@@ -785,12 +785,12 @@
                     Keyframe(ArcEnd(centerX - quarterWidth, centerY + quarterHeight));
                     Keyframe(ArcBegin(centerX, bottom));
                     break;
-                
+
                 case '|':
                     Keyframe(Initialize(centerX, top));
                     Keyframe(AxisLine(path.Y, bottom));
                     break;
-                
+
                 case '}':
                     Keyframe(Initialize(centerX, top));
                     Keyframe(ArcEnd(centerX + quarterWidth, centerY - quarterHeight));
@@ -798,13 +798,103 @@
                     Keyframe(ArcEnd(centerX + quarterWidth, centerY + quarterHeight));
                     Keyframe(ArcBegin(centerX, bottom));
                     break;
-                
+
                 case '~':
                     Keyframe(Initialize(left, centerY + sixteenthHeight));
                     Keyframe(ArcBegin(centerX - quarterWidth, centerY - sixteenthHeight));
                     Keyframe(ArcEnd(centerX, centerY));
                     Keyframe(ArcBegin(centerX + quarterWidth, centerY + sixteenthHeight));
                     Keyframe(ArcEnd(right, centerY - sixteenthHeight));
+                    break;
+
+                case '0':
+                    Keyframe(Initialize(right, centerY));
+                    Keyframe(ArcBegin(centerX, bottom));
+                    Keyframe(ArcEnd(left, centerY));
+                    Keyframe(ArcBegin(centerX, top));
+                    Keyframe(ArcEnd(right, centerY));
+                    break;
+                
+                case '1':
+                    Keyframe(Initialize(left, centerY - quarterHeight));
+                    Keyframe(ArcEnd(centerX, top));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    break;
+
+                case '2':
+                    Keyframe(Initialize(left, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, top));
+                    Keyframe(ArcEnd(right, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, centerY));
+                    Keyframe(ArcEnd(left, bottom));
+                    Keyframe(AxisLine(path.X, right));
+                    break;
+
+                case '3':
+                    Keyframe(Initialize(left, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, top));
+                    Keyframe(ArcEnd(right, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, centerY));
+                    Keyframe(ArcEnd(right, centerY + quarterHeight));
+                    Keyframe(ArcBegin(centerX, bottom));
+                    Keyframe(ArcEnd(left, centerY + quarterHeight));
+                    break;
+
+                case '4':
+                    Keyframe(Initialize(centerX + quarterWidth, top));
+                    Keyframe(LineTo(left, centerY + quarterHeight));
+                    Keyframe(AxisLine(path.X, right));
+                    Keyframe(WarpTo(right - quarterWidth, top));
+                    Keyframe(AxisLine(path.Y, bottom));
+                    break;
+                
+                case '5':
+                    Keyframe(Initialize(right, top));
+                    Keyframe(AxisLine(path.X, left));
+                    Keyframe(AxisLine(path.Y, armHeight));
+                    Keyframe(ArcBegin(centerX, armHeight - sixteenthHeight * 2));
+                    Keyframe(ArcEnd(right, armHeight));
+                    Keyframe(ArcBegin(centerX + quarterWidth, bottom));
+                    Keyframe(ArcEnd(centerX, bottom));
+                    Keyframe(ArcEnd(left, centerY + quarterHeight + sixteenthHeight * 2));
+                    break;
+                
+                case '6':
+                    Keyframe(Initialize(right, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, top));
+                    Keyframe(ArcEnd(left, centerY - quarterHeight));
+                    Keyframe(AxisLine(path.Y, lowercaseVerticalCenter));
+                    LowercaseCircleMacro();
+                    break;
+                
+                case '7':
+                    Keyframe(Initialize(left, top));
+                    Keyframe(AxisLine(path.X, right));
+                    Keyframe(LineTo(centerX, bottom));
+                    break;
+                
+                case '8':
+                    Keyframe(Initialize(centerX, centerY));
+                    Keyframe(ArcEnd(left, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, top));
+                    Keyframe(ArcEnd(right, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, centerY));
+                    Keyframe(ArcEnd(left, centerY + quarterHeight));
+                    Keyframe(ArcBegin(centerX, bottom));
+                    Keyframe(ArcEnd(right, centerY + quarterHeight));
+                    Keyframe(ArcBegin(centerX, centerY));
+                    break;
+                
+                case '9':
+                    Keyframe(Initialize(centerX, centerY));
+                    Keyframe(ArcEnd(left, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, top));
+                    Keyframe(ArcEnd(right, centerY - quarterHeight));
+                    Keyframe(ArcBegin(centerX, centerY));
+                    Keyframe(WarpTo(right, centerY - quarterHeight));
+                    Keyframe(AxisLine(path.Y, centerY + quarterHeight));
+                    Keyframe(ArcBegin(centerX, bottom));
+                    Keyframe(ArcEnd(left, centerY + quarterHeight));
                     break;
 
                 default:
