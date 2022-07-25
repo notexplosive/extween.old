@@ -23,7 +23,7 @@ namespace ExTween.Art
             return new TweenPathState(new FloatXyPair(X.Value, Y.Value), ShouldDraw.Value == 1);
         }
 
-        public void AddKeyframe(float timeInSeconds)
+        private void AddKeyframe(float timeInSeconds)
         {
             if (!this.keyframesInSeconds.Contains(timeInSeconds))
             {
@@ -36,13 +36,13 @@ namespace ExTween.Art
             if (numberOfSegments > this.cachedPercentKeyframes.Length ||
                 numberOfSegments != this.cachedNumberOfSegments)
             {
-                BakeKeyframes(numberOfSegments);
+                BuildKeyframeCache(numberOfSegments);
             }
 
             return this.cachedPercentKeyframes;
         }
 
-        public void BakeKeyframes(int numberOfSegments)
+        public void BuildKeyframeCache(int numberOfSegments)
         {
             var allKeyframes = new List<float>(this.keyframesInSeconds);
 

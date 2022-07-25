@@ -832,7 +832,7 @@
 
             path.X.Value = 0;
             path.Y.Value = 0;
-            path.BakeKeyframes(0);
+            path.BuildKeyframeCache(0);
             return new TweenGlyph(path, this, letter);
         }
 
