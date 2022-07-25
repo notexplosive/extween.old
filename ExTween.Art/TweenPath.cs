@@ -62,25 +62,6 @@ namespace ExTween.Art
             return new TweenPathState(new FloatXyPair(X.Value, Y.Value), ShouldDraw.Value == 1);
         }
 
-        public TweenPathState GetApproximateStateAtTime(float time)
-        {
-            if (time > Duration)
-            {
-                return GetPreciseStateAtTime(Duration);
-            }
-            
-            var keyframeIndex = GetEarliestKeyframeFromTime(time);
-
-            var stateBefore = GetPreciseStateAtTime(this.keyframesInSeconds[keyframeIndex]);
-            var stateAfter = GetPreciseStateAtTime(this.keyframesInSeconds[keyframeIndex + 1]);
-
-            var adjustedTime = time - this.keyframesInSeconds[keyframeIndex];
-            var maxAdjustedTime = this.keyframesInSeconds[keyframeIndex + 1] - this.keyframesInSeconds[keyframeIndex];
-            var percent = adjustedTime / maxAdjustedTime;
-
-            return new TweenPathState(FloatXyPair.Lerp(stateBefore.Position, stateAfter.Position, percent), stateBefore.ShouldDraw);
-        }
-
         private int GetEarliestKeyframeFromTime(float time)
         {
             for (var i = 0; i < this.keyframesInSeconds.Count - 1; i++)

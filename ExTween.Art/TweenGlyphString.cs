@@ -70,23 +70,6 @@ namespace ExTween.Art
             return new TweenPathState();
         }
         
-        public TweenPathState GetApproximateStateAtTime(float time)
-        {
-            foreach (var glyph in this.glyphs)
-            {
-                if (time > glyph.Duration)
-                {
-                    time -= glyph.Duration;
-                }
-                else
-                {
-                    return glyph.GetApproximateStateAtTime(time);
-                }
-            }
-
-            return new TweenPathState();
-        }
-
         public override void Draw(Painter painter)
         {
             var xPosition = 0f;

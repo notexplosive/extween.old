@@ -7,6 +7,5 @@
     {
         public float Duration { get; }
         public TweenPathState GetPreciseStateAtTime(float time);
-        public TweenPathState GetApproximateStateAtTime(float time);
     }
 }

@@ -24,11 +24,6 @@
             return ScaleState(this.path.GetPreciseStateAtTime(time));
         }
         
-        public TweenPathState GetApproximateStateAtTime(float time)
-        {
-            return ScaleState(this.path.GetApproximateStateAtTime(time));
-        }
-
         private TweenPathState ScaleState(TweenPathState state)
         {
             return new TweenPathState(
