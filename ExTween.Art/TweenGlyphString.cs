@@ -1,7 +1,7 @@
 ﻿
 namespace ExTween.Art
 {
-    public class TweenGlyphString : Drawable, ITweenRendered
+    public class TweenGlyphString : Drawable, ITweenPath
     {
         public TweenableInt NumberOfSegmentsPerCharacter { get; } = new TweenableInt();
         public TweenableFloat PaddingBetweenLetters { get; } = new TweenableFloat();
@@ -76,15 +76,15 @@ namespace ExTween.Art
 
             for (var i = 0; i < this.glyphs.Length; i++)
             {
-                var pattern = this.glyphs[i];
+                var glyph = this.glyphs[i];
                 xPosition += this.font.CharacterSize(this.text[i]).X;
                 xPosition += PaddingBetweenLetters;
 
-                pattern.RenderOffset = new FloatXyPair(-Size.X / 2 + xPosition, 0) + Position;
-                pattern.NumberOfSegments = NumberOfSegmentsPerCharacter;
-                pattern.Thickness = Thickness;
+                glyph.RenderOffset = new FloatXyPair(-Size.X / 2 + xPosition, 0) + Position;
+                glyph.NumberOfSegments = NumberOfSegmentsPerCharacter;
+                glyph.Thickness = Thickness;
 
-                pattern.Draw(painter);
+                glyph.Draw(painter);
             }
         }
     }

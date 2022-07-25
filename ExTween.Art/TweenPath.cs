@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ExTween.Art
 {
-    public class TweenPath : ITweenRendered
+    public class TweenPath : ITweenPath
     {
         private readonly List<float> keyframesInSeconds = new List<float>();
         private int cachedNumberOfSegments;
