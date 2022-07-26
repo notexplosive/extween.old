@@ -17,10 +17,10 @@ namespace ExTween.Art
 
         public float Duration => Tween.TotalDuration.Get();
 
-        public TweenPathState GetPreciseStateAtTime(float time)
+        public PenState GetPreciseStateAtTime(float time)
         {
             Tween.JumpTo(time);
-            return new TweenPathState(new FloatXyPair(X.Value, Y.Value), ShouldDraw.Value == 1);
+            return new PenState(new FloatXyPair(X.Value, Y.Value), ShouldDraw.Value == 1);
         }
 
         private void AddKeyframe(float timeInSeconds)

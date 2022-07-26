@@ -11,12 +11,12 @@
         
         public float Duration => this.path.Duration;
 
-        public TweenPathState GetPreciseStateAtTime(float time)
+        public PenState GetPreciseStateAtTime(float time)
         {
             return ScaleState(this.path.GetPreciseStateAtTime(time), FloatXyPair.Zero);
         }
         
-        public TweenPathState GetPreciseStateAtTime(float time, FloatXyPair renderOffset)
+        public PenState GetPreciseStateAtTime(float time, FloatXyPair renderOffset)
         {
             return ScaleState(this.path.GetPreciseStateAtTime(time), renderOffset);
         }
@@ -55,6 +55,6 @@
         }
         
         public abstract FloatXyPair Size { get; }
-        protected abstract TweenPathState ScaleState(TweenPathState state, FloatXyPair renderOffset);
+        protected abstract PenState ScaleState(PenState state, FloatXyPair renderOffset);
     }
 }

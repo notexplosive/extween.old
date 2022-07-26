@@ -53,7 +53,7 @@ namespace ExTween.Art
             }
         }
 
-        public TweenPathState GetPreciseStateAtTime(float time)
+        public PenState GetPreciseStateAtTime(float time)
         {
             foreach (var glyph in this.glyphs)
             {
@@ -67,7 +67,7 @@ namespace ExTween.Art
                 }
             }
 
-            return new TweenPathState();
+            return new PenState();
         }
         
         public void Draw(Painter painter)

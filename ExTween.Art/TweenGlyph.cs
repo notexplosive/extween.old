@@ -13,9 +13,9 @@
 
         public override FloatXyPair Size => this.font.CharacterSize(this.letter);
 
-        protected override TweenPathState ScaleState(TweenPathState state, FloatXyPair renderOffset)
+        protected override PenState ScaleState(PenState state, FloatXyPair renderOffset)
         {
-            return new TweenPathState(state.Position * this.font.FontSize / 2f + renderOffset, state.ShouldDraw);
+            return new PenState(state.Position * this.font.FontSize / 2f + renderOffset, state.ShouldDraw);
         }
     }
 }

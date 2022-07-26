@@ -1,11 +1,11 @@
 ﻿namespace ExTween.Art
 {
     /// <summary>
-    /// Thing that is rendered by a tween (eg: Glyphs)
+    /// Tween that tracks a PenState
     /// </summary>
     public interface ITweenPath
     {
         public float Duration { get; }
-        public TweenPathState GetPreciseStateAtTime(float time);
+        public PenState GetPreciseStateAtTime(float time);
     }
 }
