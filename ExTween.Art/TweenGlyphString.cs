@@ -11,7 +11,7 @@ namespace ExTween.Art
         private readonly IFont font;
 
         public TweenGlyphString(string text, IFont font, float thickness = 6,
-            int numberOfSegments = 0, float paddingBetweenLetters = 20)
+            int numberOfSegments = 0, float paddingBetweenLetters = 0)
         {
             this.text = text;
             this.font = font;

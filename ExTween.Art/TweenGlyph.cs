@@ -15,7 +15,9 @@
 
         protected override PenState TransformState(PenState state, FloatXyPair renderOffset)
         {
-            return new PenState(state.Position * this.font.FontSize / 2f + renderOffset, state.ShouldDraw);
+            return new PenState(
+                new FloatXyPair(state.Position.X * Size.X, state.Position.Y * Size.Y) + renderOffset,
+                state.ShouldDraw);
         }
     }
 }
