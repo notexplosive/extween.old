@@ -11,14 +11,14 @@
         
         public float Duration => this.path.Duration;
 
-        public PenState GetPreciseStateAtTime(float time)
+        public PenState StateAtTime(float time)
         {
-            return ScaleState(this.path.GetPreciseStateAtTime(time), FloatXyPair.Zero);
+            return ScaleState(this.path.StateAtTime(time), FloatXyPair.Zero);
         }
         
         public PenState GetPreciseStateAtTime(float time, FloatXyPair renderOffset)
         {
-            return ScaleState(this.path.GetPreciseStateAtTime(time), renderOffset);
+            return ScaleState(this.path.StateAtTime(time), renderOffset);
         }
 
         public void Draw(Painter painter, FloatXyPair renderOffset,  int numberOfSegments, float thickness = 1f)

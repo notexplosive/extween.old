@@ -53,7 +53,7 @@ namespace ExTween.Art
             }
         }
 
-        public PenState GetPreciseStateAtTime(float time)
+        public PenState StateAtTime(float time)
         {
             foreach (var glyph in this.glyphs)
             {
@@ -63,7 +63,7 @@ namespace ExTween.Art
                 }
                 else
                 {
-                    return glyph.GetPreciseStateAtTime(time);
+                    return glyph.StateAtTime(time);
                 }
             }
 

@@ -6,6 +6,6 @@
     public interface ITweenPath
     {
         public float Duration { get; }
-        public PenState GetPreciseStateAtTime(float time);
+        public PenState StateAtTime(float time);
     }
 }

@@ -17,7 +17,7 @@ namespace ExTween.Art
 
         public float Duration => Tween.TotalDuration.Get();
 
-        public PenState GetPreciseStateAtTime(float time)
+        public PenState StateAtTime(float time)
         {
             Tween.JumpTo(time);
             return new PenState(new FloatXyPair(X.Value, Y.Value), ShouldDraw.Value == 1);
