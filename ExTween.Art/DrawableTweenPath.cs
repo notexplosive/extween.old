@@ -13,12 +13,7 @@
 
         public PenState StateAtTime(float time)
         {
-            return ScaleState(this.path.StateAtTime(time), FloatXyPair.Zero);
-        }
-        
-        public PenState StateAtTime(float time, FloatXyPair renderOffset)
-        {
-            return ScaleState(this.path.StateAtTime(time), renderOffset);
+            return TransformState(this.path.StateAtTime(time), FloatXyPair.Zero);
         }
 
         public void Draw(Painter painter, FloatXyPair renderOffset,  int numberOfSegments, float thickness = 1f)
@@ -40,21 +35,21 @@
                 var color = StrokeColor.Black;
 
                 var currentKeyframeTime = keyframes[i];
-                var state = StateAtTime(currentKeyframeTime, renderOffset);
-                var currentPoint = state.Position;
+                var stateOffsetByRenderPosition = TransformState(this.path.StateAtTime(currentKeyframeTime), renderOffset);
+                var currentPoint = stateOffsetByRenderPosition.Position;
 
                 if (previousShouldDraw && hasStarted && prevPoint != currentPoint)
                 {
                     painter.DrawLine(prevPoint, currentPoint, thickness, color);
                 }
 
-                previousShouldDraw = state.ShouldDraw;
+                previousShouldDraw = stateOffsetByRenderPosition.ShouldDraw;
                 prevPoint = currentPoint;
                 hasStarted = true;
             }
         }
         
         public abstract FloatXyPair Size { get; }
-        protected abstract PenState ScaleState(PenState state, FloatXyPair renderOffset);
+        protected abstract PenState TransformState(PenState state, FloatXyPair renderOffset);
     }
 }

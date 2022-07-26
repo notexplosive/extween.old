@@ -13,7 +13,7 @@
 
         public override FloatXyPair Size => this.font.CharacterSize(this.letter);
 
-        protected override PenState ScaleState(PenState state, FloatXyPair renderOffset)
+        protected override PenState TransformState(PenState state, FloatXyPair renderOffset)
         {
             return new PenState(state.Position * this.font.FontSize / 2f + renderOffset, state.ShouldDraw);
         }
