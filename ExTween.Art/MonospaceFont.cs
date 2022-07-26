@@ -8,8 +8,15 @@
         }
 
         public float FontSize { get; }
-
+        
+        
         public TweenGlyph GetTweenGlyphForLetter(char letter)
+        {
+            var path = GetPathForLetter(letter);
+            return new TweenGlyph(path, this, letter);
+        }
+
+        public TweenPath GetPathForLetter(char letter)
         {
             var path = new TweenPath();
 
@@ -17,13 +24,11 @@
 
             if (char.IsWhiteSpace(letter))
             {
-                return new TweenGlyph(path, this, letter);
+                return new TweenPath();
             }
 
-            var tinyFont = new MonospaceFont(2);
-
-            var width = tinyFont.CharacterSize(letter).X;
-            var trueHeight = tinyFont.CharacterSize(letter).Y;
+            const float width = 1f;
+            const float trueHeight = 2f;
             var sixthTrueHeight = trueHeight / 6;
             var thirdTrueHeight = trueHeight / 3;
             var effectiveHeight = trueHeight * 2 / 3;
@@ -828,7 +833,7 @@
                     break;
             }
             
-            return new TweenGlyph(path, this, letter);
+            return path;
         }
 
         public FloatXyPair CharacterSize(char _)
