@@ -1,16 +1,30 @@
-﻿namespace ExTween.Art
+﻿using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Linq;
+
+namespace ExTween.Art
 {
     public static class Typeface
     {
+        private static readonly Dictionary<char, TweenPath> Cache = new Dictionary<char, TweenPath>(); 
+        
+        [Pure]
         public static TweenPath GetPathForLetter(char letter)
         {
+            if (Typeface.Cache.ContainsKey(letter))
+            {
+                return Typeface.Cache[letter];
+            }
+            
             var path = new TweenPath();
 
             var builder = path.Builder;
 
             if (char.IsWhiteSpace(letter))
             {
-                return new TweenPath();
+                var result = new TweenPath();
+                Typeface.Cache.Add(letter, result);
+                return result;
             }
 
             // All figures are rendered to a 1x1 virtual canvas and are stretched and scaled at draw-time
@@ -824,6 +838,8 @@
                     break;
             }
             
+            
+            Typeface.Cache.Add(letter, path);
             return path;
         }
     }
