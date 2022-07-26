@@ -16,7 +16,7 @@
             return ScaleState(this.path.StateAtTime(time), FloatXyPair.Zero);
         }
         
-        public PenState GetPreciseStateAtTime(float time, FloatXyPair renderOffset)
+        public PenState StateAtTime(float time, FloatXyPair renderOffset)
         {
             return ScaleState(this.path.StateAtTime(time), renderOffset);
         }
@@ -40,7 +40,7 @@
                 var color = StrokeColor.Black;
 
                 var currentKeyframeTime = keyframes[i];
-                var state = GetPreciseStateAtTime(currentKeyframeTime, renderOffset);
+                var state = StateAtTime(currentKeyframeTime, renderOffset);
                 var currentPoint = state.Position;
 
                 if (previousShouldDraw && hasStarted && prevPoint != currentPoint)
