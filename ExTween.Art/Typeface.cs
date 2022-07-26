@@ -17,33 +17,39 @@
             const float width = 1f;
             const float trueHeight = 1f;
             
-            var sixthTrueHeight = trueHeight / 6;
-            var thirdTrueHeight = trueHeight / 3;
-            var effectiveHeight = trueHeight * 2 / 3;
+            const float sixthTrueHeight = trueHeight / 6;
+            const float thirdTrueHeight = trueHeight / 3;
+            const float effectiveHeight = trueHeight * 2 / 3;
 
-            var halfWidth = width / 2;
-            var quarterWidth = halfWidth / 2;
-            var eightWidth = quarterWidth / 2;
+            const float halfWidth = width / 2;
+            const float quarterWidth = halfWidth / 2;
+            const float eightWidth = quarterWidth / 2;
             
-            var halfHeight = effectiveHeight / 2;
-            var quarterHeight = halfHeight / 2;
-            var eightHeight = quarterHeight / 2;
-            var sixteenthHeight = quarterHeight / 4;
+            const float halfHeight = effectiveHeight / 2;
+            const float quarterHeight = halfHeight / 2;
+            const float eightHeight = quarterHeight / 2;
+            const float sixteenthHeight = quarterHeight / 4;
 
-            var centerX = 0;
-            var centerY = -sixthTrueHeight;
-            var left = centerX - halfWidth;
-            var right = centerX + halfWidth;
-            var top = centerY - halfHeight;
-            var bottom = centerY + halfHeight;
-            var lowercaseTop = centerY; // subtracting `sixthTrueHeight` here makes it look interesting
-            var lowercaseBottom = trueHeight / 2;
-
+            const float centerX = 0;
+            const float centerY = -sixthTrueHeight;
+            const float left = centerX - halfWidth;
+            const float right = centerX + halfWidth;
+            const float top = centerY - halfHeight;
+            const float bottom = centerY + halfHeight;
+            const float lowercaseTop = centerY; // subtracting `sixthTrueHeight` here makes it look interesting
+            const float lowercaseBottom = trueHeight / 2;
+            
+            const float lowerQuarter = centerY + quarterHeight;
+            const float upperQuarter = centerY - quarterHeight;
+            const float rightQuarter = centerX + quarterWidth;
+            const float leftQuarter = centerX - quarterWidth;
+            
+            
             // y position that the lowercase 'r' arm juts out
-            var armHeight = lowercaseTop + halfHeight * 0.35f;
+            const float armHeight = lowercaseTop + halfHeight * 0.35f;
             // y position of the horizontal line in lowercase 'e'
-            var eCrossHeight = centerY + quarterHeight;
-            var lowercaseVerticalCenter = centerY + quarterHeight;
+            const float eCrossHeight = lowerQuarter;
+            const float lowercaseVerticalCenter = lowerQuarter;
 
             void LowercaseCircleMacro()
             {
@@ -53,7 +59,7 @@
                 builder.KeyframeArcA(centerX, bottom);
                 builder.KeyframeArcB(left, lowercaseTop + quarterHeight);
             }
-
+            
             switch (letter)
             {
                 case 'A':
@@ -69,18 +75,18 @@
                 case 'B':
                     builder.KeyframeInitialize(left, bottom);
                     builder.KeyframeAxisLine(path.Y, top);
-                    builder.KeyframeArcB(centerX + quarterWidth, centerY - quarterHeight);
+                    builder.KeyframeArcB(rightQuarter, upperQuarter);
                     builder.KeyframeArcA(left, centerY);
-                    builder.KeyframeArcB(right, centerY + quarterHeight);
+                    builder.KeyframeArcB(right, lowerQuarter);
                     builder.KeyframeArcA(left, bottom);
                     break;
 
                 case 'C':
-                    builder.KeyframeInitialize(right, centerY - quarterHeight);
+                    builder.KeyframeInitialize(right, upperQuarter);
                     builder.KeyframeArcA(centerX, top);
                     builder.KeyframeArcB(left, centerY);
                     builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(right, centerY + quarterHeight);
+                    builder.KeyframeArcB(right, lowerQuarter);
                     break;
 
                 case 'D':
@@ -96,7 +102,7 @@
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeAxisLine(path.X, right);
                     builder.KeyframeWarpTo(left, centerY);
-                    builder.KeyframeAxisLine(path.X, centerX + quarterWidth);
+                    builder.KeyframeAxisLine(path.X, rightQuarter);
                     break;
 
                 case 'F':
@@ -104,11 +110,11 @@
                     builder.KeyframeAxisLine(path.X, left);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeWarpTo(left, centerY);
-                    builder.KeyframeAxisLine(path.X, centerX + quarterWidth);
+                    builder.KeyframeAxisLine(path.X, rightQuarter);
                     break;
 
                 case 'G':
-                    builder.KeyframeInitialize(right, centerY - quarterHeight);
+                    builder.KeyframeInitialize(right, upperQuarter);
                     builder.KeyframeArcA(centerX, top);
                     builder.KeyframeArcB(left, centerY);
                     builder.KeyframeArcA(centerX, bottom);
@@ -137,9 +143,9 @@
                 case 'J':
                     builder.KeyframeInitialize(left, top);
                     builder.KeyframeAxisLine(path.X, right);
-                    builder.KeyframeAxisLine(path.Y, centerY + quarterHeight);
+                    builder.KeyframeAxisLine(path.Y, lowerQuarter);
                     builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, centerY + quarterHeight);
+                    builder.KeyframeArcB(left, lowerQuarter);
                     break;
 
                 case 'K':
@@ -183,7 +189,7 @@
                 case 'P':
                     builder.KeyframeInitialize(left, bottom);
                     builder.KeyframeAxisLine(path.Y, top);
-                    builder.KeyframeArcB(right, centerY - quarterHeight);
+                    builder.KeyframeArcB(right, upperQuarter);
                     builder.KeyframeArcA(left, centerY);
                     break;
 
@@ -193,26 +199,26 @@
                     builder.KeyframeArcB(left, centerY);
                     builder.KeyframeArcA(centerX, top);
                     builder.KeyframeArcB(right, centerY);
-                    builder.KeyframeWarpTo(centerX, centerY + quarterHeight);
+                    builder.KeyframeWarpTo(centerX, lowerQuarter);
                     builder.KeyframeArcB(right, bottom);
                     break;
 
                 case 'R':
                     builder.KeyframeInitialize(left, bottom);
                     builder.KeyframeAxisLine(path.Y, top);
-                    builder.KeyframeArcB(right, centerY - quarterHeight);
+                    builder.KeyframeArcB(right, upperQuarter);
                     builder.KeyframeArcA(left, centerY);
                     builder.KeyframeArcB(right, bottom);
                     break;
 
                 case 'S':
-                    builder.KeyframeInitialize(right, centerY - quarterHeight);
+                    builder.KeyframeInitialize(right, upperQuarter);
                     builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(left, centerY - quarterHeight);
+                    builder.KeyframeArcB(left, upperQuarter);
                     builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(right, centerY + quarterHeight);
+                    builder.KeyframeArcB(right, lowerQuarter);
                     builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, centerY + quarterHeight);
+                    builder.KeyframeArcB(left, lowerQuarter);
                     break;
 
                 case 'T':
@@ -238,9 +244,9 @@
 
                 case 'W':
                     builder.KeyframeInitialize(left, top);
-                    builder.KeyframeArcA(centerX - quarterWidth, bottom);
+                    builder.KeyframeArcA(leftQuarter, bottom);
                     builder.KeyframeArcB(centerX, centerY);
-                    builder.KeyframeArcA(centerX + quarterWidth, bottom);
+                    builder.KeyframeArcA(rightQuarter, bottom);
                     builder.KeyframeArcB(right, top);
                     break;
 
@@ -308,16 +314,16 @@
                     break;
 
                 case 'f':
-                    builder.KeyframeInitialize(right, centerY - quarterHeight);
-                    builder.KeyframeArcA(centerX + quarterWidth, top);
-                    builder.KeyframeArcB(centerX, centerY - quarterHeight);
+                    builder.KeyframeInitialize(right, upperQuarter);
+                    builder.KeyframeArcA(rightQuarter, top);
+                    builder.KeyframeArcB(centerX, upperQuarter);
                     builder.KeyframeAxisLine(path.Y, bottom);
-                    builder.KeyframeWarpTo(centerX - quarterWidth, centerY);
-                    builder.KeyframeAxisLine(path.X, centerX + quarterWidth);
+                    builder.KeyframeWarpTo(leftQuarter, centerY);
+                    builder.KeyframeAxisLine(path.X, rightQuarter);
                     break;
 
                 case 'g':
-                    builder.KeyframeInitialize(right, centerY - quarterHeight);
+                    builder.KeyframeInitialize(right, upperQuarter);
                     LowercaseCircleMacro();
                     builder.KeyframeWarpTo(right, lowercaseTop);
                     builder.KeyframeAxisLine(path.Y, lowercaseBottom - quarterHeight);
@@ -368,9 +374,9 @@
                     builder.KeyframeInitialize(left, lowercaseTop);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeWarpTo(left, armHeight);
-                    builder.KeyframeArcA(centerX - quarterWidth, lowercaseTop);
+                    builder.KeyframeArcA(leftQuarter, lowercaseTop);
                     builder.KeyframeArcB(centerX, armHeight);
-                    builder.KeyframeArcA(centerX + quarterWidth, lowercaseTop);
+                    builder.KeyframeArcA(rightQuarter, lowercaseTop);
                     builder.KeyframeArcB(right, armHeight);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     break;
@@ -412,20 +418,20 @@
                     break;
 
                 case 's':
-                    builder.KeyframeInitialize(right, lowercaseVerticalCenter - quarterHeight / 2);
+                    builder.KeyframeInitialize(right, lowercaseVerticalCenter - eightHeight);
                     builder.KeyframeArcA(centerX, lowercaseTop);
-                    builder.KeyframeArcB(left, lowercaseVerticalCenter - quarterHeight / 2);
+                    builder.KeyframeArcB(left, lowercaseVerticalCenter - eightHeight);
                     builder.KeyframeArcA(centerX, lowercaseVerticalCenter);
-                    builder.KeyframeArcB(right, lowercaseVerticalCenter + quarterHeight / 2);
+                    builder.KeyframeArcB(right, lowercaseVerticalCenter + eightHeight);
                     builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, lowercaseVerticalCenter + quarterHeight / 2);
+                    builder.KeyframeArcB(left, lowercaseVerticalCenter + eightHeight);
                     break;
 
                 case 't':
                     builder.KeyframeInitialize(centerX, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
-                    builder.KeyframeWarpTo(centerX - quarterWidth, centerY);
-                    builder.KeyframeAxisLine(path.X, centerX + quarterWidth);
+                    builder.KeyframeWarpTo(leftQuarter, centerY);
+                    builder.KeyframeAxisLine(path.X, rightQuarter);
                     break;
 
                 case 'u':
@@ -479,38 +485,38 @@
 
                 case '!':
                     builder.KeyframeInitialize(centerX, top);
-                    builder.KeyframeAxisLine(path.Y, centerY + sixteenthHeight * 2);
+                    builder.KeyframeAxisLine(path.Y, centerY + eightHeight);
                     // builder.KeyframeEnable();
                     builder.KeyframeWarpTo(centerX, bottom);
                     builder.KeyframeAxisLine(path.Y, bottom - sixteenthHeight);
                     break;
 
                 case '\"':
-                    builder.KeyframeInitialize(centerX - quarterWidth, top);
-                    builder.KeyframeAxisLine(path.Y, centerY - quarterHeight);
-                    builder.KeyframeWarpTo(centerX + quarterWidth, top);
-                    builder.KeyframeAxisLine(path.Y, centerY - quarterHeight);
+                    builder.KeyframeInitialize(leftQuarter, top);
+                    builder.KeyframeAxisLine(path.Y, upperQuarter);
+                    builder.KeyframeWarpTo(rightQuarter, top);
+                    builder.KeyframeAxisLine(path.Y, upperQuarter);
                     break;
 
                 case '#':
-                    builder.KeyframeInitialize(centerX - quarterWidth, top);
+                    builder.KeyframeInitialize(leftQuarter, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
-                    builder.KeyframeWarpTo(centerX + quarterWidth, top);
+                    builder.KeyframeWarpTo(rightQuarter, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
-                    builder.KeyframeWarpTo(left, centerY + quarterHeight);
+                    builder.KeyframeWarpTo(left, lowerQuarter);
                     builder.KeyframeAxisLine(path.X, right);
-                    builder.KeyframeWarpTo(left, centerY - quarterHeight);
+                    builder.KeyframeWarpTo(left, upperQuarter);
                     builder.KeyframeAxisLine(path.X, right);
                     break;
 
                 case '$':
-                    builder.KeyframeInitialize(right, centerY - quarterHeight);
+                    builder.KeyframeInitialize(right, upperQuarter);
                     builder.KeyframeArcA(centerX, top + sixteenthHeight);
-                    builder.KeyframeArcB(left, centerY - quarterHeight);
+                    builder.KeyframeArcB(left, upperQuarter);
                     builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(right, centerY + quarterHeight);
+                    builder.KeyframeArcB(right, lowerQuarter);
                     builder.KeyframeArcA(centerX, bottom - sixteenthHeight);
-                    builder.KeyframeArcB(left, centerY + quarterHeight);
+                    builder.KeyframeArcB(left, lowerQuarter);
                     builder.KeyframeWarpTo(centerX, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     break;
@@ -518,37 +524,34 @@
                 case '%':
                     builder.KeyframeInitialize(right, top);
                     builder.KeyframeLineTo(left, bottom);
-                    
-                    builder.KeyframeWarpTo(centerX - quarterWidth, top);
-                    builder.KeyframeArcB(left, centerY - quarterHeight);
-                    builder.KeyframeArcA(centerX - quarterWidth, centerY);
-                    builder.KeyframeArcB(centerX, centerY - quarterHeight);
-                    builder.KeyframeArcA(centerX - quarterWidth, top);
-                    
-                    
-                    builder.KeyframeWarpTo(centerX + quarterWidth, centerY);
-                    builder.KeyframeArcB(right, centerY + quarterHeight);
-                    builder.KeyframeArcA(centerX + quarterWidth, bottom);
-                    builder.KeyframeArcB(centerX, centerY + quarterHeight);
-                    builder.KeyframeArcA(centerX + quarterWidth, centerY);
+                    builder.KeyframeWarpTo(leftQuarter, top);
+                    builder.KeyframeArcB(left, upperQuarter);
+                    builder.KeyframeArcA(leftQuarter, centerY);
+                    builder.KeyframeArcB(centerX, upperQuarter);
+                    builder.KeyframeArcA(leftQuarter, top);
+                    builder.KeyframeWarpTo(rightQuarter, centerY);
+                    builder.KeyframeArcB(right, lowerQuarter);
+                    builder.KeyframeArcA(rightQuarter, bottom);
+                    builder.KeyframeArcB(centerX, lowerQuarter);
+                    builder.KeyframeArcA(rightQuarter, centerY);
                     
                     
                     break;
 
                 case '&':
-                    builder.KeyframeInitialize(centerX + quarterWidth, centerY - quarterHeight);
+                    builder.KeyframeInitialize(rightQuarter, upperQuarter);
                     builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(left, centerY - quarterHeight);
+                    builder.KeyframeArcB(left, upperQuarter);
                     builder.KeyframeLineTo(right, bottom);
                     builder.KeyframeWarpTo(centerX, centerY);
                     builder.KeyframeArcB(left, bottom - quarterHeight);
                     builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(right, centerY + quarterHeight);
+                    builder.KeyframeArcB(right, lowerQuarter);
                     break;
 
                 case '\'':
                     builder.KeyframeInitialize(centerX, top);
-                    builder.KeyframeAxisLine(path.Y, centerY - quarterHeight);
+                    builder.KeyframeAxisLine(path.Y, upperQuarter);
                     break;
 
                 case '(':
@@ -567,13 +570,13 @@
                     builder.KeyframeInitialize(centerX, top);
                     builder.KeyframeLineTo(centerX, bottom);
                     builder.KeyframeWarpTo(centerX, centerY);
-                    builder.KeyframeLineTo(left, centerY - quarterHeight);
+                    builder.KeyframeLineTo(left, upperQuarter);
                     builder.KeyframeWarpTo(centerX, centerY);
-                    builder.KeyframeLineTo(right, centerY - quarterHeight);
+                    builder.KeyframeLineTo(right, upperQuarter);
                     builder.KeyframeWarpTo(centerX, centerY);
-                    builder.KeyframeLineTo(left, centerY + quarterHeight);
+                    builder.KeyframeLineTo(left, lowerQuarter);
                     builder.KeyframeWarpTo(centerX, centerY);
-                    builder.KeyframeLineTo(right, centerY + quarterHeight);
+                    builder.KeyframeLineTo(right, lowerQuarter);
                     break;
 
                 case '+':
@@ -585,7 +588,7 @@
 
                 case ',':
                     builder.KeyframeInitialize(centerX, bottom);
-                    builder.KeyframeArcA(centerX - quarterWidth, lowercaseBottom);
+                    builder.KeyframeArcA(leftQuarter, lowercaseBottom);
                     break;
 
                 case '-':
@@ -604,17 +607,17 @@
                     break;
 
                 case ':':
-                    builder.KeyframeInitialize(centerX, centerY - quarterHeight);
-                    builder.KeyframeLineTo(centerX, centerY - quarterHeight - sixteenthHeight);
+                    builder.KeyframeInitialize(centerX, upperQuarter);
+                    builder.KeyframeLineTo(centerX, upperQuarter - sixteenthHeight);
                     builder.KeyframeWarpTo(centerX, bottom);
                     builder.KeyframeLineTo(centerX, bottom - sixteenthHeight);
                     break;
 
                 case ';':
-                    builder.KeyframeInitialize(centerX, centerY - quarterHeight);
-                    builder.KeyframeLineTo(centerX, centerY - quarterHeight - sixteenthHeight);
+                    builder.KeyframeInitialize(centerX, upperQuarter);
+                    builder.KeyframeLineTo(centerX, upperQuarter - sixteenthHeight);
                     builder.KeyframeWarpTo(centerX, bottom);
-                    builder.KeyframeArcA(centerX - quarterWidth, lowercaseBottom);
+                    builder.KeyframeArcA(leftQuarter, lowercaseBottom);
                     break;
 
                 case '<':
@@ -624,9 +627,9 @@
                     break;
 
                 case '=':
-                    builder.KeyframeInitialize(left, centerY - quarterHeight);
+                    builder.KeyframeInitialize(left, upperQuarter);
                     builder.KeyframeAxisLine(path.X, right);
-                    builder.KeyframeWarpTo(left, centerY + quarterHeight);
+                    builder.KeyframeWarpTo(left, lowerQuarter);
                     builder.KeyframeAxisLine(path.X, right);
                     break;
 
@@ -637,24 +640,24 @@
                     break;
 
                 case '?':
-                    builder.KeyframeInitialize(left, centerY - quarterHeight);
+                    builder.KeyframeInitialize(left, upperQuarter);
                     builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, centerY - quarterHeight);
-                    builder.KeyframeArcA(centerX + quarterWidth, centerY);
-                    builder.KeyframeArcB(centerX, centerY + sixteenthHeight * 2);
+                    builder.KeyframeArcB(right, upperQuarter);
+                    builder.KeyframeArcA(rightQuarter, centerY);
+                    builder.KeyframeArcB(centerX, centerY + eightHeight);
                     builder.KeyframeWarpTo(centerX, bottom);
                     builder.KeyframeLineTo(centerX, bottom - sixteenthHeight);
                     break;
 
                 case '@':
                     builder.KeyframeInitialize(right, centerY);
-                    builder.KeyframeArcA(centerX + quarterWidth, centerY - quarterHeight);
+                    builder.KeyframeArcA(rightQuarter, upperQuarter);
                     builder.KeyframeArcB(centerX, centerY);
-                    builder.KeyframeArcA(centerX + quarterWidth, centerY + quarterHeight);
+                    builder.KeyframeArcA(rightQuarter, lowerQuarter);
                     builder.KeyframeArcB(right, centerY);
                     builder.KeyframeArcA(centerX, top);
                     builder.KeyframeArcB(left, centerY);
-                    builder.KeyframeArcA(left, centerY + quarterHeight);
+                    builder.KeyframeArcA(left, lowerQuarter);
                     builder.KeyframeArcA(centerX, bottom);
                     break;
 
@@ -678,14 +681,14 @@
                     break;
 
                 case '^':
-                    builder.KeyframeInitialize(centerX - quarterWidth, centerY - quarterHeight);
+                    builder.KeyframeInitialize(leftQuarter, upperQuarter);
                     builder.KeyframeLineTo(centerX, top);
-                    builder.KeyframeLineTo(centerX + quarterWidth, centerY - quarterHeight);
+                    builder.KeyframeLineTo(rightQuarter, upperQuarter);
                     break;
 
                 case '`':
-                    builder.KeyframeInitialize(centerX - quarterWidth, top);
-                    builder.KeyframeLineTo(centerX, centerY - quarterHeight);
+                    builder.KeyframeInitialize(leftQuarter, top);
+                    builder.KeyframeLineTo(centerX, upperQuarter);
                     break;
 
                 case '_':
@@ -695,9 +698,9 @@
 
                 case '{':
                     builder.KeyframeInitialize(centerX, top);
-                    builder.KeyframeArcB(centerX - quarterWidth, centerY - quarterHeight);
+                    builder.KeyframeArcB(leftQuarter, upperQuarter);
                     builder.KeyframeArcA(left, centerY);
-                    builder.KeyframeArcB(centerX - quarterWidth, centerY + quarterHeight);
+                    builder.KeyframeArcB(leftQuarter, lowerQuarter);
                     builder.KeyframeArcA(centerX, bottom);
                     break;
 
@@ -708,17 +711,17 @@
 
                 case '}':
                     builder.KeyframeInitialize(centerX, top);
-                    builder.KeyframeArcB(centerX + quarterWidth, centerY - quarterHeight);
+                    builder.KeyframeArcB(rightQuarter, upperQuarter);
                     builder.KeyframeArcA(right, centerY);
-                    builder.KeyframeArcB(centerX + quarterWidth, centerY + quarterHeight);
+                    builder.KeyframeArcB(rightQuarter, lowerQuarter);
                     builder.KeyframeArcA(centerX, bottom);
                     break;
 
                 case '~':
                     builder.KeyframeInitialize(left, centerY + sixteenthHeight);
-                    builder.KeyframeArcA(centerX - quarterWidth, centerY - sixteenthHeight);
+                    builder.KeyframeArcA(leftQuarter, centerY - sixteenthHeight);
                     builder.KeyframeArcB(centerX, centerY);
-                    builder.KeyframeArcA(centerX + quarterWidth, centerY + sixteenthHeight);
+                    builder.KeyframeArcA(rightQuarter, centerY + sixteenthHeight);
                     builder.KeyframeArcB(right, centerY - sixteenthHeight);
                     break;
 
@@ -731,33 +734,33 @@
                     break;
                 
                 case '1':
-                    builder.KeyframeInitialize(left, centerY - quarterHeight);
+                    builder.KeyframeInitialize(left, upperQuarter);
                     builder.KeyframeArcB(centerX, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     break;
 
                 case '2':
-                    builder.KeyframeInitialize(left, centerY - quarterHeight);
+                    builder.KeyframeInitialize(left, upperQuarter);
                     builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, centerY - quarterHeight);
+                    builder.KeyframeArcB(right, upperQuarter);
                     builder.KeyframeArcA(centerX, centerY);
                     builder.KeyframeArcB(left, bottom);
                     builder.KeyframeAxisLine(path.X, right);
                     break;
 
                 case '3':
-                    builder.KeyframeInitialize(left, centerY - quarterHeight);
+                    builder.KeyframeInitialize(left, upperQuarter);
                     builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, centerY - quarterHeight);
+                    builder.KeyframeArcB(right, upperQuarter);
                     builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(right, centerY + quarterHeight);
+                    builder.KeyframeArcB(right, lowerQuarter);
                     builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, centerY + quarterHeight);
+                    builder.KeyframeArcB(left, lowerQuarter);
                     break;
 
                 case '4':
-                    builder.KeyframeInitialize(centerX + quarterWidth, top);
-                    builder.KeyframeLineTo(left, centerY + quarterHeight);
+                    builder.KeyframeInitialize(rightQuarter, top);
+                    builder.KeyframeLineTo(left, lowerQuarter);
                     builder.KeyframeAxisLine(path.X, right);
                     builder.KeyframeWarpTo(right - quarterWidth, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
@@ -767,16 +770,16 @@
                     builder.KeyframeInitialize(right, top);
                     builder.KeyframeAxisLine(path.X, left);
                     builder.KeyframeAxisLine(path.Y, centerY - sixteenthHeight);
-                    builder.KeyframeAxisLine(path.X, centerX + quarterWidth);
-                    builder.KeyframeArcB(right, centerY + quarterHeight);
+                    builder.KeyframeAxisLine(path.X, rightQuarter);
+                    builder.KeyframeArcB(right, lowerQuarter);
                     builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, centerY + quarterHeight);
+                    builder.KeyframeArcB(left, lowerQuarter);
                     break;
                 
                 case '6':
-                    builder.KeyframeInitialize(right, centerY - quarterHeight);
+                    builder.KeyframeInitialize(right, upperQuarter);
                     builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(left, centerY - quarterHeight);
+                    builder.KeyframeArcB(left, upperQuarter);
                     builder.KeyframeAxisLine(path.Y, lowercaseVerticalCenter);
                     LowercaseCircleMacro();
                     break;
@@ -789,26 +792,26 @@
                 
                 case '8':
                     builder.KeyframeInitialize(centerX, centerY);
-                    builder.KeyframeArcB(left, centerY - quarterHeight);
+                    builder.KeyframeArcB(left, upperQuarter);
                     builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, centerY - quarterHeight);
+                    builder.KeyframeArcB(right, upperQuarter);
                     builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(left, centerY + quarterHeight);
+                    builder.KeyframeArcB(left, lowerQuarter);
                     builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(right, centerY + quarterHeight);
+                    builder.KeyframeArcB(right, lowerQuarter);
                     builder.KeyframeArcA(centerX, centerY);
                     break;
                 
                 case '9':
                     builder.KeyframeInitialize(centerX, centerY);
-                    builder.KeyframeArcB(left, centerY - quarterHeight);
+                    builder.KeyframeArcB(left, upperQuarter);
                     builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, centerY - quarterHeight);
+                    builder.KeyframeArcB(right, upperQuarter);
                     builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeWarpTo(right, centerY - quarterHeight);
-                    builder.KeyframeAxisLine(path.Y, centerY + quarterHeight);
+                    builder.KeyframeWarpTo(right, upperQuarter);
+                    builder.KeyframeAxisLine(path.Y, lowerQuarter);
                     builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, centerY + quarterHeight);
+                    builder.KeyframeArcB(left, lowerQuarter);
                     break;
 
                 default:
