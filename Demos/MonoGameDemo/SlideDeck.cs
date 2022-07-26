@@ -9,8 +9,12 @@ namespace MonoGameDemo
     {
         private readonly List<ICue> cues = new List<ICue>
         {
-            new StaticText(45, "The quick brown fox jumped over the lazy dog."),
-            new FontTest(75),
+            new StaticText(new KernedFont(50, CharacterWidthTable.Standard), "MmmMmm... that's some good stuff right there, oh yeah!!"), // Kerning
+            new FontTest(new KernedFont(75, CharacterWidthTable.Standard)), // Display all chars with kerning data
+            new FontTest(new MonospaceFont(75)), // Display all chars basic monospace
+            new StaticText(new MonospaceFont(45), "The quick brown fox jumped over the lazy dog."), // Test a real string (1)
+            
+            
             new ClearCue(),
             new FlyInTitle(Demo.TitleFont, "Tweens"),
         };

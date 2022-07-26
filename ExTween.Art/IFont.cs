@@ -4,6 +4,10 @@
     {
         float FontSize { get; }
         FloatXyPair CharacterSize(char c);
-        TweenGlyph GetTweenGlyphForLetter(char letter);
+        public TweenGlyph GetTweenGlyphForLetter(char letter)
+        {
+            var path = Typeface.GetPathForLetter(letter);
+            return new TweenGlyph(path, this, letter);
+        }
     }
 }

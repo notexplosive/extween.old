@@ -5,34 +5,16 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoGameDemo
 {
-    public class StaticText : Slide
-    {
-        private readonly string text;
-        private readonly MonospaceFont font;
-
-        public StaticText(float fontSize, string text)
-        {
-            this.font = new MonospaceFont(fontSize);
-            this.text = text;
-        }
-
-        protected override void BuildTween(SequenceTween sequenceTween)
-        {
-            var textElement = new TweenGlyphString(this.text, font, numberOfSegments: 50, thickness: 3f);
-            Elements.Add(textElement);
-        }
-    }
-    
     public class FontTest : Slide
     {
-        private readonly float fontSize;
         private readonly string text;
         private readonly string allSymbols;
         private readonly string allNumbers;
+        private readonly IFont font;
 
-        public FontTest(float fontSize)
+        public FontTest(IFont font)
         {
-            this.fontSize = fontSize;
+            this.font = font;
             this.text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             
             this.allSymbols = string.Empty;
@@ -55,10 +37,10 @@ namespace MonoGameDemo
 
         protected override void BuildTween(SequenceTween sequenceTween)
         {
-            var capitalText = new TweenGlyphString(this.text, new MonospaceFont(this.fontSize), numberOfSegments: 0);
-            var lowerText = new TweenGlyphString(this.text.ToLower(), new MonospaceFont(this.fontSize), numberOfSegments: 0);
-            var symbolsText = new TweenGlyphString(this.allSymbols, new MonospaceFont(this.fontSize), numberOfSegments: 0);
-            var numbersText = new TweenGlyphString(this.allNumbers, new MonospaceFont(this.fontSize), numberOfSegments: 0);
+            var capitalText = new TweenGlyphString(this.text, this.font, numberOfSegments: 0);
+            var lowerText = new TweenGlyphString(this.text.ToLower(), this.font, numberOfSegments: 0);
+            var symbolsText = new TweenGlyphString(this.allSymbols, this.font, numberOfSegments: 0);
+            var numbersText = new TweenGlyphString(this.allNumbers, this.font, numberOfSegments: 0);
            
             Elements.Add(capitalText);
             Elements.Add(lowerText);

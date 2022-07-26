@@ -30,13 +30,14 @@ namespace ExTween.Art
         public FloatXyPair Size {
             get
             {
-                var width = 0f;
+                var totalWidth = 0f;
                 foreach (var character in this.text)
                 {
-                    width += this.font.CharacterSize(character).X;
+                    totalWidth += this.font.CharacterSize(character).X;
                 }
 
-                return new FloatXyPair(width + PaddingBetweenLetters * (this.text.Length - 1), this.font.CharacterSize('x').Y);
+                var characterHeight = this.font.CharacterSize('x').Y;
+                return new FloatXyPair(totalWidth + PaddingBetweenLetters * (this.text.Length - 1), characterHeight);
             }
         }
 
@@ -77,10 +78,10 @@ namespace ExTween.Art
             for (var i = 0; i < this.glyphs.Length; i++)
             {
                 var glyph = this.glyphs[i];
-                xPosition += this.font.CharacterSize(this.text[i]).X;
-                xPosition += PaddingBetweenLetters;
-
+                xPosition += this.font.CharacterSize(this.text[i]).X / 2;
                 glyph.Draw(painter, new FloatXyPair(-Size.X / 2 + xPosition, 0) + Position, NumberOfSegmentsPerCharacter, Thickness);
+                xPosition += this.font.CharacterSize(this.text[i]).X / 2;
+                xPosition += PaddingBetweenLetters;
             }
         }
     }
