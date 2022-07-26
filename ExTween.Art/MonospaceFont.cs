@@ -16,7 +16,7 @@
             return new TweenGlyph(path, this, letter);
         }
 
-        public TweenPath GetPathForLetter(char letter)
+        public static TweenPath GetPathForLetter(char letter)
         {
             var path = new TweenPath();
 
