@@ -44,7 +44,7 @@ namespace TestExTween.Art
         private void VerifyEveryChar(Func<char, bool> condition)
         {
             string allLetters = string.Empty;
-            var font = new MonospaceFont(30);
+            IFont font = new MonospaceFont(30);
 
             for (int i = 32; i < 255; i++)
             {
@@ -64,7 +64,7 @@ namespace TestExTween.Art
 
         private void VerifyIndividualChar(char c, float size, int segments)
         {
-            var font = new MonospaceFont(size);
+            IFont font = new MonospaceFont(size);
             var glyph = font.GetTweenGlyphForLetter(c);
             
             var painter = new AsciiPainter(glyph.Size.ToIntXy());
