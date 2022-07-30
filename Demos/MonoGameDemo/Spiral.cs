@@ -4,7 +4,7 @@ using ExTween.Art;
 
 namespace MonoGameDemo
 {
-    public class SpinningFlower : Slide
+    public class Spiral : Slide
     {
         protected override void BuildSlideAnimation(SequenceTween animationTween)
         {
@@ -18,20 +18,12 @@ namespace MonoGameDemo
             {
                 theta += dt;
                 figure.TweenPath.ClearKeyframes();
-                
-                
-                var builder = figure.TweenPath.Builder
-                    .KeyframeInitialize(0, 0);
 
-                for (float i = 0; i < MathF.PI * 2f; i += MathF.PI / 2)
-                {
-                    builder
+                figure.TweenPath.Builder
+                        .KeyframeInitialize(0, 0)
+                        .KeyframeArcVertical(MathF.Cos(theta), MathF.Sin(theta))
                         .KeyframeWarpTo(0, 0f)
-                        .KeyframeArcVertical(MathF.Cos(theta + i), MathF.Sin(theta + i))
-                        .KeyframeWarpTo(0, 0f)
-                        .KeyframeArcHorizontal(MathF.Cos(theta + i), MathF.Sin(theta + i))
-                        ;
-                }
+                    ;
             });
 
             // why do I need an element when I already have a figure?

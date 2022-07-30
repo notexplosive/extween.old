@@ -68,10 +68,10 @@ namespace ExTween.Art
             void LowercaseCircleMacro()
             {
                 builder.KeyframeWarpTo(left, lowercaseTop + quarterHeight);
-                builder.KeyframeArcA(centerX, lowercaseTop);
-                builder.KeyframeArcB(right, lowercaseTop + quarterHeight);
-                builder.KeyframeArcA(centerX, bottom);
-                builder.KeyframeArcB(left, lowercaseTop + quarterHeight);
+                builder.KeyframeArcVertical(centerX, lowercaseTop);
+                builder.KeyframeArcHorizontal(right, lowercaseTop + quarterHeight);
+                builder.KeyframeArcVertical(centerX, bottom);
+                builder.KeyframeArcHorizontal(left, lowercaseTop + quarterHeight);
             }
             
             switch (letter)
@@ -79,8 +79,8 @@ namespace ExTween.Art
                 case 'A':
                     builder.KeyframeInitialize(left, bottom);
                     builder.KeyframeAxisLine(path.Y, centerY);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, centerY);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(right, centerY);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeWarpTo(left, centerY);
                     builder.KeyframeAxisLine(path.X, right);
@@ -89,25 +89,25 @@ namespace ExTween.Art
                 case 'B':
                     builder.KeyframeInitialize(left, bottom);
                     builder.KeyframeAxisLine(path.Y, top);
-                    builder.KeyframeArcB(rightQuarter, upperQuarter);
-                    builder.KeyframeArcA(left, centerY);
-                    builder.KeyframeArcB(right, lowerQuarter);
-                    builder.KeyframeArcA(left, bottom);
+                    builder.KeyframeArcHorizontal(rightQuarter, upperQuarter);
+                    builder.KeyframeArcVertical(left, centerY);
+                    builder.KeyframeArcHorizontal(right, lowerQuarter);
+                    builder.KeyframeArcVertical(left, bottom);
                     break;
 
                 case 'C':
                     builder.KeyframeInitialize(right, upperQuarter);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(left, centerY);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(right, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(left, centerY);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(right, lowerQuarter);
                     break;
 
                 case 'D':
                     builder.KeyframeInitialize(left, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
-                    builder.KeyframeArcB(right, centerY);
-                    builder.KeyframeArcA(left, top);
+                    builder.KeyframeArcHorizontal(right, centerY);
+                    builder.KeyframeArcVertical(left, top);
                     break;
 
                 case 'E':
@@ -129,10 +129,10 @@ namespace ExTween.Art
 
                 case 'G':
                     builder.KeyframeInitialize(right, upperQuarter);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(left, centerY);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(right, centerY);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(left, centerY);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(right, centerY);
                     builder.KeyframeAxisLine(path.X, centerX);
                     break;
 
@@ -158,17 +158,17 @@ namespace ExTween.Art
                     builder.KeyframeInitialize(left, top);
                     builder.KeyframeAxisLine(path.X, right);
                     builder.KeyframeAxisLine(path.Y, lowerQuarter);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, lowerQuarter);
                     break;
 
                 case 'K':
                     builder.KeyframeInitialize(left, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeAxisLine(path.Y, centerY);
-                    builder.KeyframeArcB(right, top);
+                    builder.KeyframeArcHorizontal(right, top);
                     builder.KeyframeWarpTo(left, centerY);
-                    builder.KeyframeArcB(right, bottom);
+                    builder.KeyframeArcHorizontal(right, bottom);
                     break;
 
                 case 'L':
@@ -180,59 +180,59 @@ namespace ExTween.Art
                 case 'M':
                     builder.KeyframeInitialize(left, bottom);
                     builder.KeyframeAxisLine(path.Y, top);
-                    builder.KeyframeArcB(centerX, centerY);
-                    builder.KeyframeArcA(right, top);
+                    builder.KeyframeArcHorizontal(centerX, centerY);
+                    builder.KeyframeArcVertical(right, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     break;
 
                 case 'N':
                     builder.KeyframeInitialize(left, bottom);
                     builder.KeyframeAxisLine(path.Y, top);
-                    builder.KeyframeArcB(right, bottom);
+                    builder.KeyframeArcHorizontal(right, bottom);
                     builder.KeyframeAxisLine(path.Y, top);
                     break;
 
                 case 'O':
                     builder.KeyframeInitialize(right, centerY);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, centerY);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, centerY);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, centerY);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(right, centerY);
                     break;
 
                 case 'P':
                     builder.KeyframeInitialize(left, bottom);
                     builder.KeyframeAxisLine(path.Y, top);
-                    builder.KeyframeArcB(right, upperQuarter);
-                    builder.KeyframeArcA(left, centerY);
+                    builder.KeyframeArcHorizontal(right, upperQuarter);
+                    builder.KeyframeArcVertical(left, centerY);
                     break;
 
                 case 'Q':
                     builder.KeyframeInitialize(right, centerY);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, centerY);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, centerY);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, centerY);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(right, centerY);
                     builder.KeyframeWarpTo(centerX, lowerQuarter);
-                    builder.KeyframeArcB(right, bottom);
+                    builder.KeyframeArcHorizontal(right, bottom);
                     break;
 
                 case 'R':
                     builder.KeyframeInitialize(left, bottom);
                     builder.KeyframeAxisLine(path.Y, top);
-                    builder.KeyframeArcB(right, upperQuarter);
-                    builder.KeyframeArcA(left, centerY);
-                    builder.KeyframeArcB(right, bottom);
+                    builder.KeyframeArcHorizontal(right, upperQuarter);
+                    builder.KeyframeArcVertical(left, centerY);
+                    builder.KeyframeArcHorizontal(right, bottom);
                     break;
 
                 case 'S':
                     builder.KeyframeInitialize(right, upperQuarter);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(left, upperQuarter);
-                    builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(right, lowerQuarter);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(left, upperQuarter);
+                    builder.KeyframeArcVertical(centerX, centerY);
+                    builder.KeyframeArcHorizontal(right, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, lowerQuarter);
                     break;
 
                 case 'T':
@@ -245,8 +245,8 @@ namespace ExTween.Art
                 case 'U':
                     builder.KeyframeInitialize(left, top);
                     builder.KeyframeAxisLine(path.Y, centerY);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(right, centerY);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(right, centerY);
                     builder.KeyframeAxisLine(path.Y, top);
                     break;
 
@@ -258,25 +258,25 @@ namespace ExTween.Art
 
                 case 'W':
                     builder.KeyframeInitialize(left, top);
-                    builder.KeyframeArcA(leftQuarter, bottom);
-                    builder.KeyframeArcB(centerX, centerY);
-                    builder.KeyframeArcA(rightQuarter, bottom);
-                    builder.KeyframeArcB(right, top);
+                    builder.KeyframeArcVertical(leftQuarter, bottom);
+                    builder.KeyframeArcHorizontal(centerX, centerY);
+                    builder.KeyframeArcVertical(rightQuarter, bottom);
+                    builder.KeyframeArcHorizontal(right, top);
                     break;
 
                 case 'X':
                     builder.KeyframeInitialize(left, top);
-                    builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(right, bottom);
+                    builder.KeyframeArcVertical(centerX, centerY);
+                    builder.KeyframeArcHorizontal(right, bottom);
                     builder.KeyframeWarpTo(right, top);
-                    builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(left, bottom);
+                    builder.KeyframeArcVertical(centerX, centerY);
+                    builder.KeyframeArcHorizontal(left, bottom);
                     break;
 
                 case 'Y':
                     builder.KeyframeInitialize(left, top);
-                    builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(right, top);
+                    builder.KeyframeArcVertical(centerX, centerY);
+                    builder.KeyframeArcHorizontal(right, top);
                     builder.KeyframeWarpTo(centerX, centerY);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     break;
@@ -303,8 +303,8 @@ namespace ExTween.Art
                 case 'c':
                     builder.KeyframeInitialize(right, lowercaseVerticalCenter, false);
                     builder.KeyframeArcAPartial(centerX, lowercaseTop, 0.5f, 1f);
-                    builder.KeyframeArcB(left, lowercaseVerticalCenter);
-                    builder.KeyframeArcA(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, lowercaseVerticalCenter);
+                    builder.KeyframeArcVertical(centerX, bottom);
                     builder.KeyframeArcBPartial(right, lowercaseVerticalCenter, 0f, 0.5f);
                     break;
 
@@ -312,25 +312,25 @@ namespace ExTween.Art
                     builder.KeyframeInitialize(right, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeWarpTo(centerX, lowercaseTop);
-                    builder.KeyframeArcB(left, lowercaseVerticalCenter);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(right, lowercaseVerticalCenter);
-                    builder.KeyframeArcA(centerX, lowercaseTop);
+                    builder.KeyframeArcHorizontal(left, lowercaseVerticalCenter);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(right, lowercaseVerticalCenter);
+                    builder.KeyframeArcVertical(centerX, lowercaseTop);
                     break;
 
                 case 'e':
                     builder.KeyframeInitialize(left, eCrossHeight);
                     builder.KeyframeAxisLine(path.X, right);
-                    builder.KeyframeArcA(centerX, lowercaseTop);
-                    builder.KeyframeArcB(left, eCrossHeight);
-                    builder.KeyframeArcA(centerX, bottom);
+                    builder.KeyframeArcVertical(centerX, lowercaseTop);
+                    builder.KeyframeArcHorizontal(left, eCrossHeight);
+                    builder.KeyframeArcVertical(centerX, bottom);
                     builder.KeyframeArcBPartial(right, eCrossHeight, 0f, 0.5f);
                     break;
 
                 case 'f':
                     builder.KeyframeInitialize(right, upperQuarter);
-                    builder.KeyframeArcA(rightQuarter, top);
-                    builder.KeyframeArcB(centerX, upperQuarter);
+                    builder.KeyframeArcVertical(rightQuarter, top);
+                    builder.KeyframeArcHorizontal(centerX, upperQuarter);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeWarpTo(leftQuarter, centerY);
                     builder.KeyframeAxisLine(path.X, rightQuarter);
@@ -341,16 +341,16 @@ namespace ExTween.Art
                     LowercaseCircleMacro();
                     builder.KeyframeWarpTo(right, lowercaseTop);
                     builder.KeyframeAxisLine(path.Y, lowercaseBottom - quarterHeight);
-                    builder.KeyframeArcA(centerX, lowercaseBottom);
-                    builder.KeyframeArcB(left, lowercaseBottom - quarterHeight);
+                    builder.KeyframeArcVertical(centerX, lowercaseBottom);
+                    builder.KeyframeArcHorizontal(left, lowercaseBottom - quarterHeight);
                     break;
 
                 case 'h':
                     builder.KeyframeInitialize(left, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeWarpTo(left, armHeight);
-                    builder.KeyframeArcA(centerX, lowercaseTop);
-                    builder.KeyframeArcB(right, armHeight);
+                    builder.KeyframeArcVertical(centerX, lowercaseTop);
+                    builder.KeyframeArcHorizontal(right, armHeight);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     break;
 
@@ -366,8 +366,8 @@ namespace ExTween.Art
                     builder.KeyframeAxisLine(path.Y, lowercaseTop - quarterHeight);
                     builder.KeyframeWarpTo(right, lowercaseTop);
                     builder.KeyframeAxisLine(path.Y, lowercaseBottom - quarterHeight);
-                    builder.KeyframeArcA(centerX, lowercaseBottom);
-                    builder.KeyframeArcB(left, lowercaseBottom - quarterHeight);
+                    builder.KeyframeArcVertical(centerX, lowercaseBottom);
+                    builder.KeyframeArcHorizontal(left, lowercaseBottom - quarterHeight);
                     break;
 
                 case 'k':
@@ -376,7 +376,7 @@ namespace ExTween.Art
                     builder.KeyframeAxisLine(path.Y, centerY);
                     builder.KeyframeArcBPartial(right, top, 0, 0.75f);
                     builder.KeyframeWarpTo(left, centerY);
-                    builder.KeyframeArcB(right, bottom);
+                    builder.KeyframeArcHorizontal(right, bottom);
                     break;
 
                 case 'l':
@@ -388,10 +388,10 @@ namespace ExTween.Art
                     builder.KeyframeInitialize(left, lowercaseTop);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeWarpTo(left, armHeight);
-                    builder.KeyframeArcA(leftQuarter, lowercaseTop);
-                    builder.KeyframeArcB(centerX, armHeight);
-                    builder.KeyframeArcA(rightQuarter, lowercaseTop);
-                    builder.KeyframeArcB(right, armHeight);
+                    builder.KeyframeArcVertical(leftQuarter, lowercaseTop);
+                    builder.KeyframeArcHorizontal(centerX, armHeight);
+                    builder.KeyframeArcVertical(rightQuarter, lowercaseTop);
+                    builder.KeyframeArcHorizontal(right, armHeight);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     break;
 
@@ -399,8 +399,8 @@ namespace ExTween.Art
                     builder.KeyframeInitialize(left, lowercaseTop);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeWarpTo(left, armHeight);
-                    builder.KeyframeArcA(centerX, lowercaseTop);
-                    builder.KeyframeArcB(right, armHeight);
+                    builder.KeyframeArcVertical(centerX, lowercaseTop);
+                    builder.KeyframeArcHorizontal(right, armHeight);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     break;
 
@@ -427,18 +427,18 @@ namespace ExTween.Art
                     builder.KeyframeInitialize(left, lowercaseTop);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeWarpTo(left, armHeight);
-                    builder.KeyframeArcA(centerX, lowercaseTop);
-                    builder.KeyframeArcB(right, armHeight);
+                    builder.KeyframeArcVertical(centerX, lowercaseTop);
+                    builder.KeyframeArcHorizontal(right, armHeight);
                     break;
 
                 case 's':
                     builder.KeyframeInitialize(right, lowercaseVerticalCenter - eightHeight);
-                    builder.KeyframeArcA(centerX, lowercaseTop);
-                    builder.KeyframeArcB(left, lowercaseVerticalCenter - eightHeight);
-                    builder.KeyframeArcA(centerX, lowercaseVerticalCenter);
-                    builder.KeyframeArcB(right, lowercaseVerticalCenter + eightHeight);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, lowercaseVerticalCenter + eightHeight);
+                    builder.KeyframeArcVertical(centerX, lowercaseTop);
+                    builder.KeyframeArcHorizontal(left, lowercaseVerticalCenter - eightHeight);
+                    builder.KeyframeArcVertical(centerX, lowercaseVerticalCenter);
+                    builder.KeyframeArcHorizontal(right, lowercaseVerticalCenter + eightHeight);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, lowercaseVerticalCenter + eightHeight);
                     break;
 
                 case 't':
@@ -451,8 +451,8 @@ namespace ExTween.Art
                 case 'u':
                     builder.KeyframeInitialize(left, lowercaseTop);
                     builder.KeyframeAxisLine(path.Y, lowercaseVerticalCenter);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(right, lowercaseVerticalCenter);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(right, lowercaseVerticalCenter);
                     builder.KeyframeAxisLine(path.Y, lowercaseTop);
                     break;
 
@@ -464,30 +464,30 @@ namespace ExTween.Art
 
                 case 'w':
                     builder.KeyframeInitialize(left, lowercaseTop);
-                    builder.KeyframeArcA(left / 2, bottom);
-                    builder.KeyframeArcB(centerX, lowercaseTop);
-                    builder.KeyframeArcA(right / 2, bottom);
-                    builder.KeyframeArcB(right, lowercaseTop);
+                    builder.KeyframeArcVertical(left / 2, bottom);
+                    builder.KeyframeArcHorizontal(centerX, lowercaseTop);
+                    builder.KeyframeArcVertical(right / 2, bottom);
+                    builder.KeyframeArcHorizontal(right, lowercaseTop);
                     break;
 
                 case 'x':
                     builder.KeyframeInitialize(left, lowercaseTop);
-                    builder.KeyframeArcA(centerX, lowercaseVerticalCenter);
-                    builder.KeyframeArcB(right, bottom);
+                    builder.KeyframeArcVertical(centerX, lowercaseVerticalCenter);
+                    builder.KeyframeArcHorizontal(right, bottom);
                     builder.KeyframeWarpTo(right, lowercaseTop);
-                    builder.KeyframeArcA(centerX, lowercaseVerticalCenter);
-                    builder.KeyframeArcB(left, bottom);
+                    builder.KeyframeArcVertical(centerX, lowercaseVerticalCenter);
+                    builder.KeyframeArcHorizontal(left, bottom);
                     break;
 
                 case 'y':
                     builder.KeyframeInitialize(left, lowercaseTop);
                     builder.KeyframeAxisLine(path.Y, lowercaseVerticalCenter);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(right, lowercaseVerticalCenter);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(right, lowercaseVerticalCenter);
                     builder.KeyframeWarpTo(right, lowercaseTop);
                     builder.KeyframeAxisLine(path.Y, lowercaseBottom - quarterHeight);
-                    builder.KeyframeArcA(centerX, lowercaseBottom);
-                    builder.KeyframeArcB(left, lowercaseBottom - quarterHeight);
+                    builder.KeyframeArcVertical(centerX, lowercaseBottom);
+                    builder.KeyframeArcHorizontal(left, lowercaseBottom - quarterHeight);
                     break;
 
                 case 'z':
@@ -525,12 +525,12 @@ namespace ExTween.Art
 
                 case '$':
                     builder.KeyframeInitialize(right, upperQuarter);
-                    builder.KeyframeArcA(centerX, top + sixteenthHeight);
-                    builder.KeyframeArcB(left, upperQuarter);
-                    builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(right, lowerQuarter);
-                    builder.KeyframeArcA(centerX, bottom - sixteenthHeight);
-                    builder.KeyframeArcB(left, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, top + sixteenthHeight);
+                    builder.KeyframeArcHorizontal(left, upperQuarter);
+                    builder.KeyframeArcVertical(centerX, centerY);
+                    builder.KeyframeArcHorizontal(right, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, bottom - sixteenthHeight);
+                    builder.KeyframeArcHorizontal(left, lowerQuarter);
                     builder.KeyframeWarpTo(centerX, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     break;
@@ -539,28 +539,28 @@ namespace ExTween.Art
                     builder.KeyframeInitialize(right, top);
                     builder.KeyframeLineTo(left, bottom);
                     builder.KeyframeWarpTo(leftQuarter, top);
-                    builder.KeyframeArcB(left, upperQuarter);
-                    builder.KeyframeArcA(leftQuarter, centerY);
-                    builder.KeyframeArcB(centerX, upperQuarter);
-                    builder.KeyframeArcA(leftQuarter, top);
+                    builder.KeyframeArcHorizontal(left, upperQuarter);
+                    builder.KeyframeArcVertical(leftQuarter, centerY);
+                    builder.KeyframeArcHorizontal(centerX, upperQuarter);
+                    builder.KeyframeArcVertical(leftQuarter, top);
                     builder.KeyframeWarpTo(rightQuarter, centerY);
-                    builder.KeyframeArcB(right, lowerQuarter);
-                    builder.KeyframeArcA(rightQuarter, bottom);
-                    builder.KeyframeArcB(centerX, lowerQuarter);
-                    builder.KeyframeArcA(rightQuarter, centerY);
+                    builder.KeyframeArcHorizontal(right, lowerQuarter);
+                    builder.KeyframeArcVertical(rightQuarter, bottom);
+                    builder.KeyframeArcHorizontal(centerX, lowerQuarter);
+                    builder.KeyframeArcVertical(rightQuarter, centerY);
                     
                     
                     break;
 
                 case '&':
                     builder.KeyframeInitialize(rightQuarter, upperQuarter);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(left, upperQuarter);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(left, upperQuarter);
                     builder.KeyframeLineTo(right, bottom);
                     builder.KeyframeWarpTo(centerX, centerY);
-                    builder.KeyframeArcB(left, bottom - quarterHeight);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(right, lowerQuarter);
+                    builder.KeyframeArcHorizontal(left, bottom - quarterHeight);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(right, lowerQuarter);
                     break;
 
                 case '\'':
@@ -570,14 +570,14 @@ namespace ExTween.Art
 
                 case '(':
                     builder.KeyframeInitialize(centerX, top);
-                    builder.KeyframeArcB(left, centerY);
-                    builder.KeyframeArcA(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, centerY);
+                    builder.KeyframeArcVertical(centerX, bottom);
                     break;
 
                 case ')':
                     builder.KeyframeInitialize(centerX, top);
-                    builder.KeyframeArcB(right, centerY);
-                    builder.KeyframeArcA(centerX, bottom);
+                    builder.KeyframeArcHorizontal(right, centerY);
+                    builder.KeyframeArcVertical(centerX, bottom);
                     break;
 
                 case '*':
@@ -602,7 +602,7 @@ namespace ExTween.Art
 
                 case ',':
                     builder.KeyframeInitialize(centerX, bottom);
-                    builder.KeyframeArcA(leftQuarter, lowercaseBottom);
+                    builder.KeyframeArcVertical(leftQuarter, lowercaseBottom);
                     break;
 
                 case '-':
@@ -631,7 +631,7 @@ namespace ExTween.Art
                     builder.KeyframeInitialize(centerX, upperQuarter);
                     builder.KeyframeLineTo(centerX, upperQuarter - sixteenthHeight);
                     builder.KeyframeWarpTo(centerX, bottom);
-                    builder.KeyframeArcA(leftQuarter, lowercaseBottom);
+                    builder.KeyframeArcVertical(leftQuarter, lowercaseBottom);
                     break;
 
                 case '<':
@@ -655,24 +655,24 @@ namespace ExTween.Art
 
                 case '?':
                     builder.KeyframeInitialize(left, upperQuarter);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, upperQuarter);
-                    builder.KeyframeArcA(rightQuarter, centerY);
-                    builder.KeyframeArcB(centerX, centerY + eightHeight);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(right, upperQuarter);
+                    builder.KeyframeArcVertical(rightQuarter, centerY);
+                    builder.KeyframeArcHorizontal(centerX, centerY + eightHeight);
                     builder.KeyframeWarpTo(centerX, bottom);
                     builder.KeyframeLineTo(centerX, bottom - sixteenthHeight);
                     break;
 
                 case '@':
                     builder.KeyframeInitialize(right, centerY);
-                    builder.KeyframeArcA(rightQuarter, upperQuarter);
-                    builder.KeyframeArcB(centerX, centerY);
-                    builder.KeyframeArcA(rightQuarter, lowerQuarter);
-                    builder.KeyframeArcB(right, centerY);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(left, centerY);
-                    builder.KeyframeArcA(left, lowerQuarter);
-                    builder.KeyframeArcA(centerX, bottom);
+                    builder.KeyframeArcVertical(rightQuarter, upperQuarter);
+                    builder.KeyframeArcHorizontal(centerX, centerY);
+                    builder.KeyframeArcVertical(rightQuarter, lowerQuarter);
+                    builder.KeyframeArcHorizontal(right, centerY);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(left, centerY);
+                    builder.KeyframeArcVertical(left, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, bottom);
                     break;
 
                 case '[':
@@ -712,10 +712,10 @@ namespace ExTween.Art
 
                 case '{':
                     builder.KeyframeInitialize(centerX, top);
-                    builder.KeyframeArcB(leftQuarter, upperQuarter);
-                    builder.KeyframeArcA(left, centerY);
-                    builder.KeyframeArcB(leftQuarter, lowerQuarter);
-                    builder.KeyframeArcA(centerX, bottom);
+                    builder.KeyframeArcHorizontal(leftQuarter, upperQuarter);
+                    builder.KeyframeArcVertical(left, centerY);
+                    builder.KeyframeArcHorizontal(leftQuarter, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, bottom);
                     break;
 
                 case '|':
@@ -725,51 +725,51 @@ namespace ExTween.Art
 
                 case '}':
                     builder.KeyframeInitialize(centerX, top);
-                    builder.KeyframeArcB(rightQuarter, upperQuarter);
-                    builder.KeyframeArcA(right, centerY);
-                    builder.KeyframeArcB(rightQuarter, lowerQuarter);
-                    builder.KeyframeArcA(centerX, bottom);
+                    builder.KeyframeArcHorizontal(rightQuarter, upperQuarter);
+                    builder.KeyframeArcVertical(right, centerY);
+                    builder.KeyframeArcHorizontal(rightQuarter, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, bottom);
                     break;
 
                 case '~':
                     builder.KeyframeInitialize(left, centerY + sixteenthHeight);
-                    builder.KeyframeArcA(leftQuarter, centerY - sixteenthHeight);
-                    builder.KeyframeArcB(centerX, centerY);
-                    builder.KeyframeArcA(rightQuarter, centerY + sixteenthHeight);
-                    builder.KeyframeArcB(right, centerY - sixteenthHeight);
+                    builder.KeyframeArcVertical(leftQuarter, centerY - sixteenthHeight);
+                    builder.KeyframeArcHorizontal(centerX, centerY);
+                    builder.KeyframeArcVertical(rightQuarter, centerY + sixteenthHeight);
+                    builder.KeyframeArcHorizontal(right, centerY - sixteenthHeight);
                     break;
 
                 case '0':
                     builder.KeyframeInitialize(right, centerY);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, centerY);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, centerY);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, centerY);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(right, centerY);
                     break;
                 
                 case '1':
                     builder.KeyframeInitialize(left, upperQuarter);
-                    builder.KeyframeArcB(centerX, top);
+                    builder.KeyframeArcHorizontal(centerX, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     break;
 
                 case '2':
                     builder.KeyframeInitialize(left, upperQuarter);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, upperQuarter);
-                    builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(left, bottom);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(right, upperQuarter);
+                    builder.KeyframeArcVertical(centerX, centerY);
+                    builder.KeyframeArcHorizontal(left, bottom);
                     builder.KeyframeAxisLine(path.X, right);
                     break;
 
                 case '3':
                     builder.KeyframeInitialize(left, upperQuarter);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, upperQuarter);
-                    builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(right, lowerQuarter);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(right, upperQuarter);
+                    builder.KeyframeArcVertical(centerX, centerY);
+                    builder.KeyframeArcHorizontal(right, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, lowerQuarter);
                     break;
 
                 case '4':
@@ -785,15 +785,15 @@ namespace ExTween.Art
                     builder.KeyframeAxisLine(path.X, left);
                     builder.KeyframeAxisLine(path.Y, centerY - sixteenthHeight);
                     builder.KeyframeAxisLine(path.X, rightQuarter);
-                    builder.KeyframeArcB(right, lowerQuarter);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, lowerQuarter);
+                    builder.KeyframeArcHorizontal(right, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, lowerQuarter);
                     break;
                 
                 case '6':
                     builder.KeyframeInitialize(right, upperQuarter);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(left, upperQuarter);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(left, upperQuarter);
                     builder.KeyframeAxisLine(path.Y, lowercaseVerticalCenter);
                     LowercaseCircleMacro();
                     break;
@@ -806,35 +806,35 @@ namespace ExTween.Art
                 
                 case '8':
                     builder.KeyframeInitialize(centerX, centerY);
-                    builder.KeyframeArcB(left, upperQuarter);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, upperQuarter);
-                    builder.KeyframeArcA(centerX, centerY);
-                    builder.KeyframeArcB(left, lowerQuarter);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(right, lowerQuarter);
-                    builder.KeyframeArcA(centerX, centerY);
+                    builder.KeyframeArcHorizontal(left, upperQuarter);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(right, upperQuarter);
+                    builder.KeyframeArcVertical(centerX, centerY);
+                    builder.KeyframeArcHorizontal(left, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(right, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, centerY);
                     break;
                 
                 case '9':
                     builder.KeyframeInitialize(centerX, centerY);
-                    builder.KeyframeArcB(left, upperQuarter);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, upperQuarter);
-                    builder.KeyframeArcA(centerX, centerY);
+                    builder.KeyframeArcHorizontal(left, upperQuarter);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(right, upperQuarter);
+                    builder.KeyframeArcVertical(centerX, centerY);
                     builder.KeyframeWarpTo(right, upperQuarter);
                     builder.KeyframeAxisLine(path.Y, lowerQuarter);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, lowerQuarter);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, lowerQuarter);
                     break;
 
                 default:
                     // By default we draw a circle
                     builder.KeyframeInitialize(right, centerY);
-                    builder.KeyframeArcA(centerX, bottom);
-                    builder.KeyframeArcB(left, centerY);
-                    builder.KeyframeArcA(centerX, top);
-                    builder.KeyframeArcB(right, centerY);
+                    builder.KeyframeArcVertical(centerX, bottom);
+                    builder.KeyframeArcHorizontal(left, centerY);
+                    builder.KeyframeArcVertical(centerX, top);
+                    builder.KeyframeArcHorizontal(right, centerY);
                     break;
             }
             

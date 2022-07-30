@@ -223,13 +223,13 @@ namespace ExTween.Art
                 return this;
             }
 
-            public PathBuilder KeyframeArcA(float x, float y)
+            public PathBuilder KeyframeArcVertical(float x, float y)
             {
                 AddKeyframeAndSubTween(ArcA(x, y));
                 return this;
             }
 
-            public PathBuilder KeyframeArcB(float x, float y)
+            public PathBuilder KeyframeArcHorizontal(float x, float y)
             {
                 AddKeyframeAndSubTween(ArcB(x, y));
                 return this;

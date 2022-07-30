@@ -9,6 +9,7 @@ namespace MonoGameDemo
     {
         private readonly List<ICue> cues = new List<ICue>
         {
+            new Spiral(),
             new SpinningFlower(),
             new FontTest(new MonospaceFont(75)), // Display all chars basic monospace
             new StaticText(new MonospaceFont(45), "The quick brown fox jumped over the lazy dog."), // Test a real string (1)
