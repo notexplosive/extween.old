@@ -35,7 +35,7 @@ namespace MonoGameDemo
             }
         }
 
-        protected override void BuildTween(SequenceTween sequenceTween)
+        protected override void BuildSlideAnimation(SequenceTween animationTween)
         {
             var capitalText = new TweenGlyphString(this.text, this.font, numberOfSegments: 0);
             var lowerText = new TweenGlyphString(this.text.ToLower(), this.font, numberOfSegments: 0);
@@ -56,8 +56,8 @@ namespace MonoGameDemo
             {
             });
 
-            sequenceTween.IsLooping = true;
-            sequenceTween
+            animationTween.IsLooping = true;
+            animationTween
                 .Add(
                     new MultiplexTween()
                         .AddChannel(new Tween<int>(lowerText.NumberOfSegmentsPerCharacter, 40, 2f, Ease.Linear))

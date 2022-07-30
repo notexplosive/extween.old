@@ -17,10 +17,10 @@ namespace MonoGameDemo
             Elements.Clear();
             UpdateFunctions.Clear();
             
-            BuildTween(this.tween);
+            BuildSlideAnimation(this.tween);
         }
 
-        protected abstract void BuildTween(SequenceTween sequenceTween);
+        protected abstract void BuildSlideAnimation(SequenceTween animationTween);
         
         public void Draw(Painter painter)
         {
@@ -29,9 +29,9 @@ namespace MonoGameDemo
                 updateFunction();
             }
             
-            foreach (var glyph in Elements)
+            foreach (var element in Elements)
             {
-                glyph.Draw(painter);
+                element.Draw(painter);
             }
         }
 

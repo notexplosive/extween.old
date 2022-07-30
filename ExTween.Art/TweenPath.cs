@@ -36,6 +36,13 @@ namespace ExTween.Art
             this.cachedPercentKeyframes = Array.Empty<float>();
         }
 
+        public void ClearKeyframes()
+        {
+            Tween.Clear();
+            ClearKeyframeCache();
+            this.keyframesInSeconds.Clear();
+        }
+
         public float[] GetKeyframes(int numberOfSegments)
         {
             if (numberOfSegments > this.cachedPercentKeyframes.Length ||
@@ -204,49 +211,58 @@ namespace ExTween.Art
                 return result;
             }
 
-            public void KeyframeInitialize(float x, float y, bool startEnabled = true)
+            public PathBuilder KeyframeInitialize(float x, float y, bool startEnabled = true)
             {
                 AddKeyframeAndSubTween(Initialize(x, y, startEnabled));
+                return this;
             }
 
-            public void KeyframeAxisLine(TweenableFloat axis, float destination)
+            public PathBuilder KeyframeAxisLine(TweenableFloat axis, float destination)
             {
                 AddKeyframeAndSubTween(AxisLine(axis, destination));
+                return this;
             }
 
-            public void KeyframeArcA(float x, float y)
+            public PathBuilder KeyframeArcA(float x, float y)
             {
                 AddKeyframeAndSubTween(ArcA(x, y));
+                return this;
             }
 
-            public void KeyframeArcB(float x, float y)
+            public PathBuilder KeyframeArcB(float x, float y)
             {
                 AddKeyframeAndSubTween(ArcB(x, y));
+                return this;
             }
 
-            public void KeyframeArcAPartial(float x, float y, float startPercent, float endPercent)
+            public PathBuilder KeyframeArcAPartial(float x, float y, float startPercent, float endPercent)
             {
                 KeyframeDrawPercentOf(ArcA(x, y), startPercent, endPercent);
+                return this;
             }
 
-            public void KeyframeArcBPartial(float x, float y, float startPercent, float endPercent)
+            public PathBuilder KeyframeArcBPartial(float x, float y, float startPercent, float endPercent)
             {
                 KeyframeDrawPercentOf(ArcB(x, y), startPercent, endPercent);
+                return this;
             }
 
-            public void KeyframeWarpTo(float x, float y)
+            public PathBuilder KeyframeWarpTo(float x, float y)
             {
                 AddKeyframeAndSubTween(WarpTo(x, y));
+                return this;
             }
 
-            public void KeyframeLineTo(float x, float y)
+            public PathBuilder KeyframeLineTo(float x, float y)
             {
                 AddKeyframeAndSubTween(LineTo(x, y));
+                return this;
             }
 
-            private void KeyframeDrawPercentOf(ITween subTween, float startPercent, float endPercent)
+            private PathBuilder KeyframeDrawPercentOf(ITween subTween, float startPercent, float endPercent)
             {
                 AddKeyframeAndSubTween(DrawPercentOf(subTween, startPercent, endPercent));
+                return this;
             }
         }
     }

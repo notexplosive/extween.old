@@ -17,7 +17,7 @@ namespace MonoGameDemo
             this.message = message;
         }
 
-        protected override void BuildTween(SequenceTween tween)
+        protected override void BuildSlideAnimation(SequenceTween animationTween)
         {
             var totalStringSize = this.font.MeasureString(this.message);
 
@@ -36,7 +36,7 @@ namespace MonoGameDemo
             }
 
             var multiplex = new MultiplexTween();
-            tween.Add(multiplex);
+            animationTween.Add(multiplex);
 
             var targetX = -totalStringSize.X / 2;
             var targetY = -totalStringSize.Y / 2;

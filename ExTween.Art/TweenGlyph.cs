@@ -1,23 +1,20 @@
 ﻿namespace ExTween.Art
 {
-    public class TweenGlyph : DrawableTweenPath
+    public class TweenGlyph : TweenPathDrawer
     {
         private readonly IFont font;
         private readonly char letter;
 
-        public TweenGlyph(TweenPath path, IFont font, char letter) : base(path)
+        public TweenGlyph(TweenPath tweenPath, IFont font, char letter) : base(tweenPath)
         {
             this.font = font;
             this.letter = letter;
         }
 
         public override FloatXyPair Size => this.font.CharacterSize(this.letter);
-
-        protected override PenState TransformState(PenState state, FloatXyPair renderOffset)
-        {
-            return new PenState(
-                new FloatXyPair(state.Position.X * Size.X, state.Position.Y * Size.Y) + renderOffset,
-                state.ShouldDraw);
-        }
+        
+        // TODO: NOTE TO SELF to make kerning work!
+        // public FloatXyPair GlyphBounds { get; }
+        // TweenGlyph (NOT parent class, NOT TweenPathDrawer!) should have a "Bounds" field, TweenFigure does not need a bounds
     }
 }
