@@ -52,7 +52,7 @@ namespace MonoGameDemo
             symbolsText.Position.Value = new FloatXyPair(0, -200);
             symbolsText.Position.Value = new FloatXyPair(0, 200);
             
-            UpdateFunctions.Add(() =>
+            UpdateFunctions.Add((dt) =>
             {
             });
 

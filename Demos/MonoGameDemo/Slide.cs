@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ExTween;
 using ExTween.Art;
+using Microsoft.Xna.Framework;
 
 namespace MonoGameDemo
 {
@@ -9,7 +10,7 @@ namespace MonoGameDemo
     {
         private readonly SequenceTween tween = new SequenceTween();
         protected List<ISlideElement> Elements { get; } = new List<ISlideElement>();
-        protected List<Action> UpdateFunctions { get; } = new List<Action>();
+        protected List<Action<float>> UpdateFunctions { get; } = new List<Action<float>>();
 
         public void Setup()
         {
@@ -24,10 +25,6 @@ namespace MonoGameDemo
         
         public void Draw(Painter painter)
         {
-            foreach (var updateFunction in UpdateFunctions)
-            {
-                updateFunction();
-            }
             
             foreach (var element in Elements)
             {
@@ -42,6 +39,11 @@ namespace MonoGameDemo
 
         public void UpdateTween(float dt)
         {
+            foreach (var updateFunction in UpdateFunctions)
+            {
+                updateFunction(dt);
+            }
+
             this.tween.Update(dt);
         }
     }

@@ -15,6 +15,11 @@ namespace ExTween
         
         public float Update(float dt)
         {
+            if (this.Items.Count == 0)
+            {
+                return dt;
+            }
+            
             if (IsAtEnd())
             {
                 if (IsLooping)
@@ -45,7 +50,7 @@ namespace ExTween
 
         private bool IsAtEnd()
         {
-            return this.currentItemIndex >= this.Items.Count;
+            return this.currentItemIndex >= this.Items.Count || this.Items.Count == 0;
         }
 
         public void Reset()
