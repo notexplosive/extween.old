@@ -302,10 +302,10 @@ namespace ExTween.Art
 
                 case 'c':
                     builder.KeyframeInitialize(right, lowercaseVerticalCenter, false);
-                    builder.KeyframeArcAPartial(centerX, lowercaseTop, 0.5f, 1f);
+                    builder.KeyframeArcVerticalPartial(centerX, lowercaseTop, 0.5f, 1f);
                     builder.KeyframeArcHorizontal(left, lowercaseVerticalCenter);
                     builder.KeyframeArcVertical(centerX, bottom);
-                    builder.KeyframeArcBPartial(right, lowercaseVerticalCenter, 0f, 0.5f);
+                    builder.KeyframeArcHorizontalPartial(right, lowercaseVerticalCenter, 0f, 0.5f);
                     break;
 
                 case 'd':
@@ -324,7 +324,7 @@ namespace ExTween.Art
                     builder.KeyframeArcVertical(centerX, lowercaseTop);
                     builder.KeyframeArcHorizontal(left, eCrossHeight);
                     builder.KeyframeArcVertical(centerX, bottom);
-                    builder.KeyframeArcBPartial(right, eCrossHeight, 0f, 0.5f);
+                    builder.KeyframeArcHorizontalPartial(right, eCrossHeight, 0f, 0.5f);
                     break;
 
                 case 'f':
@@ -374,7 +374,7 @@ namespace ExTween.Art
                     builder.KeyframeInitialize(left, top);
                     builder.KeyframeAxisLine(path.Y, bottom);
                     builder.KeyframeAxisLine(path.Y, centerY);
-                    builder.KeyframeArcBPartial(right, top, 0, 0.75f);
+                    builder.KeyframeArcHorizontalPartial(right, top, 0, 0.75f);
                     builder.KeyframeWarpTo(left, centerY);
                     builder.KeyframeArcHorizontal(right, bottom);
                     break;

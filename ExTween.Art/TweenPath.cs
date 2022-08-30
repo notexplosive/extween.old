@@ -133,14 +133,14 @@ namespace ExTween.Art
                 return new Tween<float>(tweenable, destination, PathBuilder.Duration, Ease.Linear);
             }
 
-            private ITween ArcA(float x, float y)
+            private ITween ArcVertical(float x, float y)
             {
                 return new MultiplexTween()
                     .AddChannel(new Tween<float>(this.path.X, x, PathBuilder.Duration, Ease.SineSlowFast))
                     .AddChannel(new Tween<float>(this.path.Y, y, PathBuilder.Duration, Ease.SineFastSlow));
             }
 
-            private ITween ArcB(float x, float y)
+            private ITween ArcHorizontal(float x, float y)
             {
                 return new MultiplexTween()
                     .AddChannel(new Tween<float>(this.path.X, x, PathBuilder.Duration, Ease.SineFastSlow))
@@ -225,25 +225,25 @@ namespace ExTween.Art
 
             public PathBuilder KeyframeArcVertical(float x, float y)
             {
-                AddKeyframeAndSubTween(ArcA(x, y));
+                AddKeyframeAndSubTween(ArcVertical(x, y));
                 return this;
             }
 
             public PathBuilder KeyframeArcHorizontal(float x, float y)
             {
-                AddKeyframeAndSubTween(ArcB(x, y));
+                AddKeyframeAndSubTween(ArcHorizontal(x, y));
                 return this;
             }
 
-            public PathBuilder KeyframeArcAPartial(float x, float y, float startPercent, float endPercent)
+            public PathBuilder KeyframeArcVerticalPartial(float x, float y, float startPercent, float endPercent)
             {
-                KeyframeDrawPercentOf(ArcA(x, y), startPercent, endPercent);
+                KeyframeDrawPercentOf(ArcVertical(x, y), startPercent, endPercent);
                 return this;
             }
 
-            public PathBuilder KeyframeArcBPartial(float x, float y, float startPercent, float endPercent)
+            public PathBuilder KeyframeArcHorizontalPartial(float x, float y, float startPercent, float endPercent)
             {
-                KeyframeDrawPercentOf(ArcB(x, y), startPercent, endPercent);
+                KeyframeDrawPercentOf(ArcHorizontal(x, y), startPercent, endPercent);
                 return this;
             }
 
@@ -262,6 +262,20 @@ namespace ExTween.Art
             private PathBuilder KeyframeDrawPercentOf(ITween subTween, float startPercent, float endPercent)
             {
                 AddKeyframeAndSubTween(DrawPercentOf(subTween, startPercent, endPercent));
+                return this;
+            }
+
+            public PathBuilder KeyframeFullArcVerticalHorizontal(float x1, float y1, float x2, float y2)
+            {
+                KeyframeArcVertical(x1, y1);
+                KeyframeArcHorizontal(x2, y2);
+                return this;
+            }
+            
+            public PathBuilder KeyframeFullArcHorizontalVertical(float x1, float y1, float x2, float y2)
+            {
+                KeyframeArcHorizontal(x1, y1);
+                KeyframeArcVertical(x2, y2);
                 return this;
             }
         }

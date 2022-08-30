@@ -19,9 +19,14 @@ namespace MonoGameDemo
                 theta += dt;
                 figure.TweenPath.ClearKeyframes();
 
+                var x1 = MathF.Cos(theta) * 0.5f;
+                var y1 = MathF.Sin(theta) * 0.5f;
+                var x2 = MathF.Cos(theta + MathF.PI / 4);
+                var y2 = MathF.Sin(theta + MathF.PI / 4);
+                
                 figure.TweenPath.Builder
                         .KeyframeInitialize(0, 0)
-                        .KeyframeArcVertical(MathF.Cos(theta), MathF.Sin(theta))
+                        .KeyframeFullArcVerticalHorizontal(0.5f, 0.5f, x2, y2)
                         .KeyframeWarpTo(0, 0f)
                     ;
             });
