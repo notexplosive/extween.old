@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ExTween
 {
-    public class TweenCollection
+    public abstract class TweenCollection
     {
         protected readonly List<ITween> Items = new List<ITween>();
 
@@ -22,8 +22,11 @@ namespace ExTween
 
         public void Clear()
         {
+            Reset();
             this.Items.Clear();
         }
+
+        public abstract void Reset();
 
         public int ChildrenWithDurationCount
         {

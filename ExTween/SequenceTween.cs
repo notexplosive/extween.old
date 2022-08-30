@@ -53,7 +53,7 @@ namespace ExTween
             return this.currentItemIndex >= this.Items.Count || this.Items.Count == 0;
         }
 
-        public void Reset()
+        public override void Reset()
         {
             ResetAllItems();
             this.currentItemIndex = 0;

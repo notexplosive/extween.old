@@ -33,7 +33,7 @@ namespace ExTween
             return result;
         }
 
-        public void Reset()
+        public override void Reset()
         {
             ResetAllItems();
         }
